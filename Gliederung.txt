@@ -1,0 +1,51 @@
+1. Einleitung
+2. 3D-Servo-Presse
+	2.1 Grundlagen und Funktionen (Bezug auf Blackbox-Modelle nehmen)
+3. Stand der Technik
+	3.1 Blackbox-Modelle in Pressen, nicht sicher, ob bereits vorhanden
+	3.2 Blackbox-Modelle in Werkzeugmaschinen (allgemeinere Untersuchung, falls nicht genug Material vorhanden ist)
+4. Theoretische Grundlagen der Arbeit
+	4.1 Modellierungsansätze (Neural Network (Forward, Recurrent, NARX), lineare u. nichtlineare multiple Regression, Markow)
+        4.1.1 Blackbox-Modell 1 - Erklärung
+	    4.1.2 Blackbox-Modell 2 - Erklärung
+        4.1.3 Blackbox-Modell 3 - Erklärung
+    4.2 Allgemeine Methodik der Systemidentifikation
+        4.2.1 Auswahl geeigneter Modellierungsansätze
+    4.3 Anwenden der Modellierungansätze auf die Problemstellung
+        4.3.1 Definition der System- und Modellgrenzen
+        4.3.2 Benötigte Referenzdatensätze
+        4.3.3 Parameteridentifikation (allgemeines Vorgehen für jeden Modellierungsansatz kurz zusammenfassen, Bezug zur Presse)
+        4.3.4 Modellstruktur (kurz beschreiben, welche Modellstruktur jedem Blackbox-Ansatz zugrunde liegt, Bezug zur Presse)
+5. Erheben von Referenzdaten
+    5.1. Messaufbau
+        5.1.1 Vorstellung der Messerfassungsysteme
+    5.2 Messszenarien
+        5.2.1 Ablauf der Messung
+
+6. Auswertung der Messdaten
+    6.1 Erste Entscheidung bezüglich Modellierung
+    6.2 Messdatenübersicht
+    6.3 Auswertung der Messkonfigurationen
+        6.3.1 Auswahl der relevanten Datenbereiches
+    6.4 Zwischenfazit
+7. Modellentwicklung
+    7.1. Modellierung Blackbox-Modell1
+        7.1.1 Parameteridentifikation
+        7.1.2 Bewertung des Modells
+    7.2. Modellierung Blackbox-Modell2
+        7.2.1. Parameteridentifikation
+        7.2.2. Bewertung des Modells
+
+    7.3. Vergleich der Modelle
+
+8. Bewertung der Modelle
+    8.1. Überprüfen auf Robustheit
+
+
+9. Zusammenfassung
+
+10. Fazit und Ausblick
+    9.1 Anwendungsfall 1
+    9.2 Anwendungsfall 2
+
+

@@ -1,0 +1,103 @@
+% Dieses File dient für wichtige Einstellungen. Änderungen sind zu vermeiden.
+%
+
+% =================================================================================
+% Anpassung Absatzformat
+% =================================================================================
+% Der Abstand der Zeilen beträgt das 1,25-fache des Standard-Abstands von
+% LaTeX. Da technische Arbeiten viele Formeln und Bilder enthalten, werden
+% Absätze durch einen zusätzlichen vertikalen Zwischenraum statt durch einen
+% Einzug getrennt.
+\linespread{1.25}
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{1ex}
+
+% =================================================================================
+
+% =================================================================================
+% Definitionen aus tudreport-Vorlage 
+% =================================================================================
+
+\newlength{\longtablewidth}
+\setlength{\longtablewidth}{0.7\linewidth}
+\addtolength{\longtablewidth}{-\marginparsep}
+\addtolength{\longtablewidth}{-\marginparwidth}
+% =================================================================================
+
+% =================================================================================
+% Farbige Deckseite, graue Balken auf allen anderen Seiten
+% =================================================================================
+\newif\ifOnlyColorFront
+\OnlyColorFronttrue	% Balken nur auf Deckblatt farbig
+%\OnlyColorFrontfalse		% alle Balken farbig
+
+% =================================================================================
+% Texte für den Titel und die Rückseite des Titels vorgeben
+% =================================================================================
+\title{Entwicklung einer Regelung mit neuronalen Netzen f\"ur die 3D-Servo-Presse}
+\subtitle{Tajinder Singh Dhaliwal}
+\ifStdClassDraft
+%
+\else
+    \subsubtitle{\SADATyp\ -- 31.01.2019  \\Betreuer: Florian Hoppe}
+% \settitlepicture{}	% Bild für Deckblatt
+% \printpicturesize
+
+        \newcommand{\SADAProf}{Prof. Dr.-Ing. Dipl.-Wirtsch.-Ing. Peter Groche}
+        \newcommand{\SADAinstitut}{Institut für Produktionstechnik und Umformmaschinen\\
+                                   \SADAProf}
+        \newcommand{\SADAwebsite}{www.ptu.tu-darmstadt.de}
+        \newcommand{\SADAtel}{06151/16-3056}
+        \newcommand{\SADAlogo}{\includegraphics[width=3cm]{./common/PtU_Logo.eps}}
+
+    \setinstitutionlogo[height]{common/PtU_Logo.eps}
+
+\fi
+% Folgende Einträge werden auf der Rückseite der Titelseite gedruckt:
+\uppertitleback{}
+\lowertitleback{}
+\dedication{}
+% =================================================================================
+
+% =================================================================================
+% Befehle, die in scrreprt nicht exisiteren werden hier definiert, wenn diese
+% Klasse verwendet wird.
+% Auch die Seitenränder werden angepasst, so dass es grob wie mit tudreport
+% aussieht.
+% =================================================================================
+\ifStdClassDraft
+    % Diese Pakete nur extra einbinden, wenn NICHT tudreport als Basis.
+	\usepackage{amssymb}
+	\usepackage{geometry}
+	\newcommand{\subsubtitle}[1]{}
+	\newcommand{\settitlepicture}[1]{}
+	\newcommand{\printpicturesize}{}
+	\newcommand{\institution}[1]{}
+    \pagestyle{headings}
+	
+	\author{\SADAAutor}	% scrreprt erwartet Autor
+\fi
+% =================================================================================
+
+
+% =================================================================================
+% Informationen (Meta-Daten) für pdf
+% =================================================================================
+\hypersetup{
+	pdftitle = {\SADATitel},
+	pdfsubject = {},
+	pdfauthor = {\SADAAutor},
+	pdfkeywords = {},
+	pdfcreator = {},
+	pdfproducer = {LaTeX with hyperref},
+	pdfstartview = {Fit},
+	pdfpagelayout = {SinglePage}
+}
+% =================================================================================
+
+% =================================================================================
+% Anpassung der Seitenränder
+% =================================================================================
+% für bessere Lesbarkeit nach der Bindung
+\geometry{left=30mm, right=20mm, top=15mm, bottom=20mm}
+% ================================================================================= 

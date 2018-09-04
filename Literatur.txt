@@ -1,0 +1,6 @@
+Literatur
+
+
+Nonlinear System Indentification (Oliver Nelles)
+Identification of dynamic Systems (Rolf Isermann)
+Nonlinear Modeling: Advanced Black-Box Techniques

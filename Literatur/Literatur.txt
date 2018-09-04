@@ -1,0 +1,36 @@
+Literatur
+
+
+
+A Critical Review of Recurrent Neural Networks
+		
+		- Beschreibung aller Arten von neuronalen Netzen (Forward, Recurrent (allgemein, Elman, Jordan,LSTM,BRNN,NTM)  )
+			- mathematische Hintergründe
+			- Training von rekurrente Netzen (Algorithmen)
+
+		- Schwächen von Markov
+
+
+
+Modellbildung, Identifikation und Simulation dynamischer Systeme
+
+		- Auflistung von Blackbox-Ansätzen
+		- Motivation für Modellbildung, Modellbegriff
+		- Modellierungsvorgehen
+
+Neural Networks vs. multiple linear regression for estimating previous diameter
+
+		- Vor- und Nachteile von neuronalen Netzen
+		- Schwächen von einigen Algorithmen
+		- Skalierung von Paramtern
+		- Vorgehen bei neuronalen Netzen
+
+
+Neuronale Netze zur Steuerung von Walzstraßen
+
+		- Verbesserungen der Qualitätsparameter von gewalztem Blech
+		- 3 Anwendungsfälle mit nachgewiesenen Verbesserungen
+		- weitere Anwendungsfälle in Erprobung
+
+Nonlinear Black-Box Modeling in System Identification - a unified Overview
+		- Regressor-Variation

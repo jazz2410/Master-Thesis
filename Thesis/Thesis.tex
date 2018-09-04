@@ -1,0 +1,204 @@
+\documentclass[11pt, twoside, colorbacktitle, accentcolor=tud1b, nopartpage, bigchapter,
+ fleqn, ngerman, longdoc]{tudreport}
+%\documentclass[11pt, a4paper, twoside, fleqn, ngerman]{scrreprt}
+% =================================================================================
+% Falls scrreprt anstelle von tudreport gewählt, muss das über diesen Schalter
+% mitgeteilt werden!
+% =================================================================================
+\newif\ifStdClassDraft
+\StdClassDraftfalse	% tudreport
+%\StdClassDrafttrue		% scrreprt
+
+
+
+\makeatletter
+\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
+\makeatother
+
+
+% =================================================================================
+
+% =================================================================================
+% Hier Daten für studentische Arbeit eingeben
+% =================================================================================
+% Wenn studentische Arbeit, müssen hier für Titel, Seite nach Titel und Erklärung
+% einige Angaben gemacht werden:
+\newcommand{\SADATyp}{Master-Thesis}
+\newcommand{\SADATitel}{Entwicklung einer Regelung mit neuronalen Netzen für die 3D-Servo-Presse}
+\newcommand{\SADAStadt}{Darmstadt}
+\newcommand{\SADAAutor}{Tajinder Singh Dhaliwal}
+\newcommand{\SADAAutorII}{}
+\newcommand{\SADABetreuer}{}
+\newcommand{\SADABetreuerII}{}
+\newcommand{\SADABetreuerIII}{}
+\newcommand{\SADABegin}{27. April 2015}
+\newcommand{\SADAAbgabe}{28. April 2015}
+\newcommand{\SADASeminar}{29. April 2015}
+
+% Die folgende Zeile deklariert die möglichen Varianten der Erklärung, dass die
+% Arbeit ohne Hilfe Dritter etc. erstellt wurde.
+\def\MBMA{MBMA}\def\MBDA{MBDA}
+% Es ist eine der möglichen Varianten auszuwählen:
+%	MBDA	Für Maschinenbauer, Diplomarbeiten
+%	MBMA	Für Maschinenbauer, Standard für Projektseminare und Abschlussarbeiten
+% Entsprechende Zeile einkommentieren
+\def\SADAVarianteErklaerung{MBMA}
+%\def\SADAVarianteErklaerung{MBDA}
+% =================================================================================
+
+
+% =================================================================================
+% Hauptdefintionen sind aus Platzgründen ausgelagert
+% =================================================================================
+% Einbinden wichtiger und weniger wichtiger Pakete
+
+\input{common/includes.tex}
+
+%Tikz-Hilfen und PGF-Plots einbinden  
+\input{common/TikZsetup.tex}
+\input{common/commonTikZblockPictures.tex}
+\input{common/pgfplotssetup.tex}
+
+% Wichtige Einstellungen, immer verwenden!
+\input{common/setups.tex}
+
+% Nützliche Befehle und Abkürzungen
+\input{common/commonmacros.tex}
+
+% Ausnahmen von der automatischen Silbentrennung werden mit dem Befehl
+% \hyphenation definiert und gelten für das ganze Dokument.
+
+
+%\usepackage[final]{pdfpages}
+%\usepackage{setspace}
+%\usepackage[framed,numbered,autolinebreaks]{mcode}
+\usepackage{colortbl}
+\usepackage{pstricks}
+%\usepackage[absolute]{textpos}
+%\usepackage{everyshi}
+
+% =================================================================================
+
+% =================================================================================
+% Hier beginnt das eigentliche Dokument
+% =================================================================================
+\begin{document}
+\selectlanguage{ngerman}% Sprache ist deutsch
+\pagenumbering{roman}	% Bis zum Hauptteil werden römische Seitenzahlen verwendet
+
+\maketitle      % erzeugt die Titelseite
+
+% Die Farbe der Identitätsleiste wird auf Grau umgestellt, damit nicht alle Seiten
+% farbig gedruckt werden müssen
+\ifStdClassDraft
+%
+\else
+    \ifOnlyColorFront	% ggf. nachfolgende Balken andere Farbe zuweisen
+      \makeatletter %benötigt, um die @-Befehle auszuführen
+    		\renewcommand{\@TUD@largerulecolor}{\color{tud0c}}% am besten gleiche Farbe wie in der ersten Zeile und die Zahl durch die 0 ersetzen, dann hat das Grau die richtige Intensität
+    	\makeatother
+    \fi
+\fi
+
+
+
+% =================================================================================
+% Spezielle Seiten für studentische Arbeiten
+% =================================================================================
+\cleardoublepage
+\input{common/SADA_Aufgabenstellung.tex}
+
+\cleardoublepage
+\input{common/SADA_Erklaerung.tex}
+
+\clearpage
+\input{common/SADA_Abstract.tex}
+% =================================================================================
+
+% =================================================================================
+% Inhaltsverzeichnis
+% =================================================================================
+\cleardoublepage	% Auf einer leeren rechten Seite beginnen
+\phantomsection		% Diese und die nächste Zeile dient dazu, für das Inhalts-
+					% verzeichnis einen Eintrag in das pdf-Inhaltsverzeichnis,
+					% aber nicht in das normale Verzeichnis zu erzeugen.
+\pdfbookmark[0]{\contentsname}{pdf:toc}	
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3} 
+\tableofcontents	% Inhaltsverzeichnis einfügen
+\clearpage	% Sonst kommt nichts mehr auf die Seite
+% =================================================================================
+
+
+% =================================================================================
+% Symbole und Abkürzungen
+% =================================================================================
+% Nach dem Inhaltsverzeichnis kommt ein Verzeichnis der häufig verwendeten
+% Symbole und Abkürzungen. Dazu kann man das Paket 'nomencl' verwenden, oder man
+% erstellt es von Hand.
+\input{inc/Symbole.tex}
+\cleardoublepage
+
+%% =================================================================================
+%% Abbildungsverzeichnis
+%% =================================================================================
+\cleardoublepage
+\phantomsection					% Für Aufnahme ins Inhaltsverzeichnis
+\addcontentsline{toc}{chapter}{\listfigurename}	% In Inhaltsverzeichnis von
+												% Dokument und pdf aufnehmen
+\listoffigures
+%% =================================================================================
+%
+%% =================================================================================
+%% Tabellenverzeichnis
+%% =================================================================================
+\cleardoublepage
+\phantomsection					% Für Aufnahme ins Inhaltsverzeichnis
+\addcontentsline{toc}{chapter}{\listtablename}	% In Inhaltsverzeichnis von
+												% Dokument und pdf aufnehmen
+\listoftables
+%% =================================================================================
+
+% =================================================================================
+% Hauptteil
+% =================================================================================
+\cleardoublepage
+\phantomsection					% Für Aufnahme ins Inhaltsverzeichnis
+\pagenumbering{arabic}	% Hauptteil bekommt arabische Seitenzahlen
+
+
+\input{inc/Einleitung.tex}
+\input{inc/Grundlagen.tex}
+\input{inc/Ausblick.tex}
+
+
+
+% =================================================================================
+% Anhang
+% =================================================================================
+\appendix % Damit wird der Anhang begonnen. Die Kapitel werden ab jetzt mit Buchstaben nummeriert
+%\input{inc/Anhang_Messrauschen.tex}
+%\input{inc/Anhang_MesstasterHalterung.tex}
+%\input{inc/Herleitung_Bauteildynamik.tex}
+
+% =================================================================================
+
+
+
+
+% =================================================================================
+% Literaturverzeichnis
+% =================================================================================
+\cleardoublepage
+\phantomsection					% Für Aufnahme ins Inhaltsverzeichnis
+\addcontentsline{toc}{chapter}{\bibname}	% In Inhaltsverzeichnis von
+											% Dokument und pdf aufnehmen
+\bibliographystyle{gerabbrv}	% Festlegen, wie das Verzeichnis und die Verweise
+%\bibliographystyle{plain}
+								% im Text aussehen
+\bibliography{./bib/literature}	% Literaturverzeichnis einfügen, mit Angabe der
+%\bibliography{./bib/literature2}	% Literaturverzeichnis einfügen, mit Angabe der
+								% Bibtex-Datei
+% =================================================================================
+
+\end{document}
