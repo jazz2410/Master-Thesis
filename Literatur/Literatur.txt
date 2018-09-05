@@ -25,6 +25,10 @@ Neural Networks vs. multiple linear regression for estimating previous diameter
 		- Skalierung von Paramtern
 		- Vorgehen bei neuronalen Netzen
 
+Nonlinear Black-Box Modeling in System Identification - a unified Overview
+		- Regressor-Variation
+
+
 
 Neuronale Netze zur Steuerung von Walzstraßen
 
@@ -32,5 +36,40 @@ Neuronale Netze zur Steuerung von Walzstraßen
 		- 3 Anwendungsfälle mit nachgewiesenen Verbesserungen
 		- weitere Anwendungsfälle in Erprobung
 
-Nonlinear Black-Box Modeling in System Identification - a unified Overview
-		- Regressor-Variation
+
+A precise NP neural network-based online model predictive for die forging hydraulic press machine
+		- Einstellen der Eingabeparamter (Öldruck), um Maschine mit genauer Geschwindigkeit zu regeln
+		- zwei neuronale Netze: predictive neural network und control neural network
+		- das PNN simuliert die Ausgangsgröße
+		- das CNN ermittelt die optimalen Eingabeparameter
+		- besser als konventioneller MPC (Model Predictive Control und PID-Regler)
+
+
+
+Application of RFB neural network and sliding mode control for a servo mechanical press
+		- Kombination eines neuronalen Netzes und eines Fuzzy sliding mode controlllers
+		- das neuronale Netz hat als Eingangsparameter die Geschwindigkeit und Position 
+		des Stößels und als Ausgangsgröße das Drehmoment des Motors
+		- der Fuzzy Slide Controller erhöht die Robustheit des Systems, verringert das Vibrieren
+		- durch Kombinationd der beiden verringert sich das Vibrieren und eine genauere Positionierung ist möglich
+
+
+Hybrid-loop servo control system of double toggel mechanical press for flexible forming process based on sliding mode control and neural network techiques
+
+		- Kombination aus ANN und SMC (Sliding Mode Controller) genutzt, um Störungen beim Stanzen auszugleichen
+		- SMC wird benutzt, um den Positionierungsfehler des Stößels auszugleichen (durch Getriebefehler etc.)
+		- RFNN wird benutzt, Abweichungen aufgrund der Stanzkraft auszugleichen
+
+
+Machine learning for detection of anomalies in press-hardening - Selection of efficient methods 
+		
+		- drei ML-Methoden (neurnonale Netze, One Class Support Vector Machine, Isolation Forest), um Anomalien in einem Datensatz asufindig zu machen
+		- durch Einbringn eines fehlerhaften Datensatzes konnt auf Anomalie (hydraulisches Problem) der Maschine geschlossen werde (Verschiebung der Kraft- und Geschwindkeitsverläufe des Stößels
+
+Prediction and Analysis of Forged Workpiece's Precision in Hyraulic Press Based on BP Neural Network and Genetic Alorithm
+
+		- neuronales Netz mit Maschinengeometrieparametern als Input
+		- Output ist Maßgenauigkeit des Bauteils (aus FEM)
+		- neuronales Netz mappt die Maschinengeometrieparameter mit der Maßgenauigkeit der Bauteile
+		- Maschinengeometrieparameter während Umformprozess bestimmen Maßgenauigkeit des Bauteils
+		
