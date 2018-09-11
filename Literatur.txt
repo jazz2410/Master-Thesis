@@ -1,6 +1,11 @@
 Literatur
 
 
-Nonlinear System Indentification (Oliver Nelles)
-Identification of dynamic Systems (Rolf Isermann)
-Nonlinear Modeling: Advanced Black-Box Techniques
+Nonlinear System Identification (Oliver Nelles, Stadtmitte) 
+Identification of dynamic Systems (Rolf Isermann, Stadtmitte)
+Nonlinear Modeling: Advanced Black-Box Techniques (Link, anfragen)
+Regelungstechnik (Otto Föllinger, Stadtmitte)
+Growing adaptive machines (Taras Kowaliw, Stadtmitte)
+Neuronale Netze zur Regelung verfahrenstechnischer Anlagen (Andreas Draeger, Stadtmitte)
+Neuronale Netze für technische Anwendungen (Karsten Berns, Stadtmitte)
+Systemdynamik und Regelungstechnik II (Jürgen Adamy, Stadtmitte)
