@@ -1,7 +1,9 @@
 \begin{thebibliography}{1}
 
-\bibitem{Pintelon.2012b}
-{\sc Pintelon, R.} \btxandshort{.}\ {\sc J.~Schoukens}: {\em System
-  identification : a frequency domain approach\/}, 2012.
+\bibitem{Isermann.2011}
+{\sc Isermann, R.} \btxandshort{.}\ {\sc M.~M{\"u}nchhof}: {\em Identification
+  of Dynamic Systems: An Introduction with Applications\/}.
+\newblock Advanced Textbooks in Control and Signal Processing. {Springer-Verlag
+  Berlin Heidelberg}, Berlin, Heidelberg, 2011.
 
 \end{thebibliography}
