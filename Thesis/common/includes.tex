@@ -1,15 +1,15 @@
-% Dieses File dient zum einbinden wichtiger und nützlicher Pakete.
-% Nicht alle Pakete müssen verwendet werden.
+% Dieses File dient zum einbinden wichtiger und nï¿½tzlicher Pakete.
+% Nicht alle Pakete mï¿½ssen verwendet werden.
 %
 \usepackage{etex}
 \reserveinserts{28}
 
 \usepackage{t1enc}			% evtl. dc-Fonts
-\usepackage[T1]{fontenc}	% Für Silbentrennung bei Wörten mit Sonderzeichen (z.B. Umlaute)
+\usepackage[T1]{fontenc}	% Fï¿½r Silbentrennung bei Wï¿½rten mit Sonderzeichen (z.B. Umlaute)
 \usepackage[utf8]{inputenc}
-							% Um Sonderzeichen (ä, ß, é, ...) direkt eingeben zu können
+							% Um Sonderzeichen (ï¿½, ï¿½, ï¿½, ...) direkt eingeben zu kï¿½nnen
 \usepackage[english,ngerman]{babel}
-							% Für Sprachenspezifisches
+							% Fï¿½r Sprachenspezifisches
 							% ngerman ist schon als globale Option definiert
 
 %\usepackage{helvet}			% Helvetica als Standard-Sans-Schriftart
@@ -20,47 +20,48 @@
 \usepackage{graphicx}		% zum Einbinden von Postscript
 \usepackage{psfrag}			% Beschriftung der Bilder
 \usepackage{amsmath}		% Mehr mathematischen Formelsatz
+\usepackage{sistyle}                            % fÃ¼r korrekten Abstand zwischen zahl und einheit, sowie aufrecht geschriebenen einheiten Bsp.: \SI{10}{mm}
 %\usepackage{amssymb}		% Mehr mathematische Symbole
 %\usepackage{amsthm}
 
-\usepackage{float}			% Für Parameter [H] bei Fließobjekten
-\usepackage{dsfont}			% Befehleh fŸr natŸrliche Zahlen R, Z 
+\usepackage{float}			% Fï¿½r Parameter [H] bei Flieï¿½objekten
+\usepackage{dsfont}			% Befehleh fï¿½r natï¿½rliche Zahlen R, Z 
 
-\usepackage{subfigure}      	% Für Unterabbildungen NEU Neu NeuNeu Neu Neu Neu Neu
+\usepackage{subfigure}      	% Fï¿½r Unterabbildungen NEU Neu NeuNeu Neu Neu Neu Neu
 
 \usepackage{epsfig}			% Um eps-Bilder einzubinden
-%\usepackage{subfig}			% Für Unterabbildungen
+%\usepackage{subfig}			% Fï¿½r Unterabbildungen
 \usepackage{ltxtable} 		% Vereinigt TabularX und Longtable
 \usepackage{rotating}		% Zum Drehen von Objekten
-\usepackage{bibgerm}		% Für deutsche Literaturverwaltung
-%\usepackage{wrapfig}		% Für kleine Bilder am Rand
+\usepackage{bibgerm}		% Fï¿½r deutsche Literaturverwaltung
+%\usepackage{wrapfig}		% Fï¿½r kleine Bilder am Rand
 %\usepackage{floatflt}		% Alternative zu wrapfig
 %\usepackage[hang]{caption}	% Damit mehrzeilige Bildunterschriften gut aussehen
-\usepackage{upgreek}		% Für nicht-kursive kleine griechischen Buchstaben
+\usepackage{upgreek}		% Fï¿½r nicht-kursive kleine griechischen Buchstaben
 
-\usepackage{multirow}		% Für mehrzeilige Felder in Tabellen
+\usepackage{multirow}		% Fï¿½r mehrzeilige Felder in Tabellen
 
-\usepackage{textcomp}		% Für Sonderzeichen im normalen Text
+\usepackage{textcomp}		% Fï¿½r Sonderzeichen im normalen Text
 							% (offensichtlich in tudreport schon eingebunden)
-\usepackage[ngerman]{varioref}		% Für vref
-\usepackage{color}			% Für farbigen Text
-\usepackage{placeins}		% Für \FloatBarrier
+\usepackage[ngerman]{varioref}		% Fï¿½r vref
+\usepackage{color}			% Fï¿½r farbigen Text
+\usepackage{placeins}		% Fï¿½r \FloatBarrier
 \usepackage{xspace}
-\usepackage{icomma}			% Damit nach Dezimalkommas kein Abstand eingefügt wird
+\usepackage{icomma}			% Damit nach Dezimalkommas kein Abstand eingefï¿½gt wird
 							% (in math-Umgebungen)
 
 \usepackage{cancel}			% Zum Wegstreichen von Gleichungstermen
 
-\usepackage{array}			% Für Zellentyp "m{}" in tabular-Umgebungen (Vertikal zentriert)
+\usepackage{array}			% Fï¿½r Zellentyp "m{}" in tabular-Umgebungen (Vertikal zentriert)
 
 \usepackage{listings}		% Um formatierten Quellcode einzubinden
-\usepackage{moreverb}		% Für Umgebung "`verbatimtab"' (Verbatim mit Tabs)
+\usepackage{moreverb}		% Fï¿½r Umgebung "`verbatimtab"' (Verbatim mit Tabs)
 \renewcommand{\verbatimtabsize}{4\relax}	% Standardtabweite in "`verbatimtab"'
 											% ist 4 Zeichen
 %\usepackage{timing}
 % Das Packet hyperref immer als letztes einbinden!
 %\usepackage[ps2pdf, colorlinks=false, pdfborder={0 0 0}]{hyperref}
-%\usepackage[ps2pdf, breaklinks=true]{hyperref}	% Für Verlinkungen im erzeugten pdf
+%\usepackage[ps2pdf, breaklinks=true]{hyperref}	% Fï¿½r Verlinkungen im erzeugten pdf
 \usepackage[breaklinks=true]{hyperref}
 
 % Seit 01.04.2018 eine digitale Version auf tabuma im PDF/A Dokument eingereicht werden.

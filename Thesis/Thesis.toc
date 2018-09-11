@@ -1,8 +1,8 @@
-\babel@toc {english}{}
-\babel@toc {english}{}
-\babel@toc {ngerman}{}
-\babel@toc {english}{}
-\babel@toc {ngerman}{}
+\select@language {english}
+\select@language {english}
+\select@language {ngerman}
+\select@language {english}
+\select@language {ngerman}
 \contentsline {chapter}{Symbole und Abkungen}{vii}{section*.7}
 \contentsline {chapter}{Abbildungsverzeichnis}{xi}{section*.8}
 \contentsline {chapter}{Tabellenverzeichnis}{xiii}{section*.12}
