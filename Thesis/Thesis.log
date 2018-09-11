@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6800 64-bit) (preloaded format=pdflatex 2018.9.1)  11 SEP 2018 17:34
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.9)  6 SEP 2018 20:25
->>>>>>> 1ed2587216516ab9abf31ff6251a3f3999db00f8
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.9)  11 SEP 2018 18:00
 entering extended mode
 **./Thesis.tex
 (Thesis.tex
@@ -3740,35 +3736,6 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 204.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 204.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: B132BF4908A6E4D26378225A12AD32C1;446.
-<<<<<<< HEAD
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 204.
- ) 
-Here is how much of TeX's memory you used:
- 45173 strings out of 492973
- 968915 string characters out of 3135936
- 1272681 words of memory out of 3000000
- 48020 multiletter control sequences out of 15000+200000
- 98918 words of font info for 116 fonts, out of 3000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 67i,12n,100p,9110b,2123s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}{C:/Users/Toni/AppDa
-ta/Roaming/MiKTeX/2.9/fonts/enc/dvips/ly1/texnansi.enc}<C:/Program Files/tuddes
-ign/fonts/type1/softmake/charter/5chb8a.pfb><C:/Program Files/tuddesign/fonts/t
-ype1/softmake/charter/5chr8a.pfb><C:/Program Files/tuddesign/fonts/type1/softma
-ke/charter/5chri8a.pfb><C:/Program Files/tuddesign/fonts/type1/softmake/frontpa
-ge/5fpm8a.pfb><C:/Program Files/tuddesign/fonts/type1/softmake/frontpage/5fpr8a
-.pfb><C:/Users/Toni/AppData/Roaming/MiKTeX/2.9/fonts/type1/bitstrea/charter/bch
-b8a.pfb><C:/Users/Toni/AppData/Roaming/MiKTeX/2.9/fonts/type1/bitstrea/charter/
-bchr8a.pfb><C:/Users/Toni/AppData/Roaming/MiKTeX/2.9/fonts/type1/bitstrea/chart
-er/bchri8a.pfb><C:/Users/Toni/AppData/Roaming/MiKTeX/2.9/fonts/type1/mathdesign
-/mdbch/md-chb7m.pfb><C:/Users/Toni/AppData/Roaming/MiKTeX/2.9/fonts/type1/mathd
-esign/mdbch/md-chbi7m.pfb><C:/Users/Toni/AppData/Roaming/MiKTeX/2.9/fonts/type1
-/mathdesign/mdbch/md-chr7m.pfb><C:/Users/Toni/AppData/Roaming/MiKTeX/2.9/fonts/
-type1/mathdesign/mdbch/md-chr7t.pfb><C:/Users/Toni/AppData/Roaming/MiKTeX/2.9/f
-onts/type1/mathdesign/mdbch/md-chr7y.pfb><C:/Users/Toni/AppData/Roaming/MiKTeX/
-2.9/fonts/type1/mathdesign/mdbch/md-chri7m.pfb>
-Output written on Thesis.pdf (23 pages, 419344 bytes).
-=======
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -3778,7 +3745,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 204.
  ) 
 Here is how much of TeX's memory you used:
  45895 strings out of 493312
- 976921 string characters out of 3138899
+ 976919 string characters out of 3138899
  1256063 words of memory out of 3000000
  48375 multiletter control sequences out of 15000+200000
  134880 words of font info for 168 fonts, out of 3000000 for 9000
@@ -3800,8 +3767,7 @@ s/type1/mathdesign/mdbch/md-chr7m.pfb><C:/Users/tonid/AppData/Roaming/MiKTeX/2.
 9/fonts/type1/mathdesign/mdbch/md-chr7t.pfb><C:/Users/tonid/AppData/Roaming/MiK
 TeX/2.9/fonts/type1/mathdesign/mdbch/md-chr7y.pfb><C:/Users/tonid/AppData/Roami
 ng/MiKTeX/2.9/fonts/type1/mathdesign/mdbch/md-chri7m.pfb>
-Output written on Thesis.pdf (23 pages, 421133 bytes).
->>>>>>> 1ed2587216516ab9abf31ff6251a3f3999db00f8
+Output written on Thesis.pdf (23 pages, 421645 bytes).
 PDF statistics:
  268 PDF objects out of 1000 (max. 8388607)
  48 named destinations out of 1000 (max. 500000)
