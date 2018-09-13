@@ -1,9 +1,33 @@
 \begin{thebibliography}{1}
 
-\bibitem{Isermann.2011}
-{\sc Isermann, R.} \btxandshort{.}\ {\sc M.~M{\"u}nchhof}: {\em Identification
-  of Dynamic Systems: An Introduction with Applications\/}.
-\newblock Advanced Textbooks in Control and Signal Processing. {Springer-Verlag
-  Berlin Heidelberg}, Berlin, Heidelberg, 2011.
+\bibitem{Gerwin.1993}
+{\sc Gerwin, D.}: {\em Manufacturing Flexibility: A Strategic Perspective\/}.
+\newblock Management Science, 39(4):395--410, 1993.
+
+\bibitem{Groche.2010}
+{\sc Groche, P.}, {\sc M.~Scheitza}, {\sc M.~Kraft} \btxandshort{.}\ {\sc
+  S.~Schmitt}: {\em Increased total flexibility by 3D Servo Presses\/}.
+\newblock CIRP Annals, 59(1):267--270, 2010.
+
+\bibitem{Groche.2004}
+{\sc Groche, P.} \btxandshort{.}\ {\sc R.~Schneider}: {\em Method for the
+  Optimization of Forming Presses for the Manufacturing of Micro Parts\/}.
+\newblock CIRP Annals, 53(1):281--284, 2004.
+
+\bibitem{Schmoeckel.1991}
+{\sc Schmoeckel, D.}: {\em Developments in Automation, Flexibilization and
+  Control of Forming Machinery\/}.
+\newblock CIRP Annals, 40(2):615--622, 1991.
+
+\bibitem{Sinz.2018}
+{\sc Sinz, J.}: {\em Die 3D-Servo-Presse - von der Forschungsversion zur
+  industriellen Standardmaschine\/}, 2018 (Zugriff am 13.09.2018.
+\newblock
+  \url{{https://www.ptu.tu-darmstadt.de/mu_forschung/mu_prozesskettenundanlagen/abgeschlossene_forschungsprojekte_pa/die_3d_servo_presse___von_der_forschungsversion_zur_industriellen_standartmaschine/index.de.jsp}},.
+
+\bibitem{Son.1987}
+{\sc Son, Y.~K.} \btxandshort{.}\ {\sc C.~S. Park}: {\em Economic measure of
+  productivity, quality and flexibility in advanced manufacturing systems\/}.
+\newblock Journal of Manufacturing Systems, 6(3):193--207, 1987.
 
 \end{thebibliography}
