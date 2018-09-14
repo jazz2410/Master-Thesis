@@ -4,9 +4,11 @@
 \select@language {english}
 \select@language {ngerman}
 \contentsline {chapter}{Symbole und Abkungen}{vii}{section*.7}
-\contentsline {chapter}{Abbildungsverzeichnis}{xi}{section*.8}
-\contentsline {chapter}{Tabellenverzeichnis}{xiii}{section*.12}
+\contentsline {chapter}{Abbildungsverzeichnis}{ix}{section*.8}
+\contentsline {chapter}{Tabellenverzeichnis}{xi}{section*.12}
 \contentsline {chapter}{\numberline {1}Einf\IeC {\"u}hrung}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Grundlagen}{3}{chapter.2}
-\contentsline {chapter}{\numberline {3}Ausblick}{5}{chapter.3}
-\contentsline {chapter}{Literaturverzeichnis}{7}{section*.17}
+\contentsline {section}{\numberline {1.1}Abgrenzung zu vorherigen Arbeiten}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Vorgehensweise}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}Grundlagen}{5}{chapter.2}
+\contentsline {chapter}{\numberline {3}Ausblick}{7}{chapter.3}
+\contentsline {chapter}{Literaturverzeichnis}{9}{section*.17}

@@ -4,9 +4,29 @@ Die Planung und Einführung von Fertigungssystemen geht mit Unsicherheiten einhe
 
 Bisher kommen Umformmaschinen vor allem bei großen Stückzahlen und ausgewählten Umformmethoden oder kleinen Stückzahlen und vorher speziell festgelegten Werkzeugverfahrwegen zum Einsatz \cite{Groche.2010}. Dadurch ist die Adaptionsfähigkeit auf Nachfrageschwankungen sehr eingeschränkt \cite{Schmoeckel.1991}. Dagegen bietet bringt die Integration von Servomotoren in Pressen neue Möglichkeiten der Flexibilisierung mit \cite{Groche.2004}. Um dem Anspruch einer höheren Flexibilität für Pressen gerecht zu werden, entwickelte das Institut für Produktionstechnik und Umformmaschinen (PtU) die   neuartige 3D-Servo-Presse. Diese verfügt über drei Antriebssysteme. Diese erlauben es der 3D-Servo-Presse, zuzüglich zur translatorischen Stößelbewegung eine Verkippung orthogonal zur Translationsbewegung durchzuführen. Dadurch ergeben sich insgesamt drei Freiheitsgrade: eine translatorische Hubbewegung und zwei rotatorische Kippbewegungen. Dadurch ist die Herstellung neuartiger Produktgeometrien und das Einbringen bestimmter Materialeigenschaften in den umgeformten Produkten durch definierte Werkzeugbewegungen denkbar. Beispielsweise lässt sich durch den Einsatz der 3D-Servo-Presse die Anzahl der Prozessschritte bei der Herstellung von Bauteilen mit sehr hohen Umformgraden durch die gezielte Steuerung des Materialflusses reduzieren \cite{Sinz.2018}. Durch den Einsatz der 3D-Servo-Presse soll damit dem Anspruch nach höherer Flexibilisierung und der damit einhergehenden höheren Wirtschaftlichkeit gerecht werden. \\
 
+Zusätzlich zum Thema Flexibilisierung von Fertigungssystemen hat sich das Thema Industrie 4.0 als weiterer Forschungsgegenstand in der Literatur etabliert. Nach \cite{VDMA.2018} stellt die Integration von Sensoren und die damit ermöglichte Zustandsüberwachung einer Werkzeugmaschine ein Teilaspekt der Industrie 4.0 dar. Durch die Zustandsüberwachung ist eine frühzeitige Detektion von Ausfällen möglich. Darüber hinaus können durch die Erfassung des Betriebszustandes Prognosen zur zukünftigen Funktionsfähigkeit der Werkzeugmaschine gemacht werden. Diese erlauben im weiteren Verlauf das Initiieren von Maßnahmen zur Behebung von möglich auftretenden Ausfällen, Defekten etc. \cite{VDMA.2018} \\
+
+Sowohl für die Regelung der 3D-Servo-Presse während des normalen Betriebsfalles als auch für die Zustandsüberwachung der 3D-Servo-Presse ist eine Modellbildung dieser notwendig. Im Gegensatz zu vergangenen Arbeiten kommt in diesiger Arbeit kein White-Box-Ansatz, in dem a priori alle Modellierungsparameter und Einflüsse genau ermittelt werden, sondern ein Blackbox-Ansatz zur Anwendung. Für die Parametrisierung des Black-Box-Modells kommen Methoden des maschinellen Lernens zum Einsatz, um anhand gemessener Eingangs- und Ausgangsgrößen ein dynamisches Modell zu erstellen. Auf Basis dieses Modells sollen Konzepte zur Zustandsüberwachung als auch zur Regelung der 3D-Servo-Presse entwickelt werden. Als Grundlage dieser Arbeit dient der Prototyp der 3D-Servo-Presse. Diese steht als Forschungsobjekt am PtU an der Technischen Universität Darmstadt zur Verfügung. \\
+
+\section{Abgrenzung zu vorherigen Arbeiten}
+
+Wie bereits erwähnt verfügt die 3D-Servo-Presse über drei Servo-Motoren, welche die Antriebsmomente liefern. Mit der Hilfe von ungleich übersetzenden Koppelgetrieben werden nicht nur die Drehmomente in die auf den Stößel wirkende Zustellkraft übersetzt, sondern auch eine Kippbewegung des Stößels in zwei rotatorische Freiheitsgraden ermöglicht. Für diese Presse sind in mehreren Vorarbeiten bereits Pressenmodelle entwickelt worden. \\
+
+\cite{Rakowitsch.2018} entwickelte in seiner Arbeit ein mechanisches Mehrkörpermodell des Getriebes der 3D-Servo-Presse. Bei diesem Pressenmodell berücksichtigt er sowohl die Nachgiebigkeiten als auch die Massenträgheiten aller Getriebeglieder, um damit dynamische Vorgänge, wie z.B. Schwingungen und das Verfahren der Getriebestellung, zu untersuchen. \cite{Rakowitsch.2018} kommt zum Ergebnis, dass das Mehrkörpermodell steifer ist als das reale Getriebe. Nach einer erneuten Parameteridentifikation zeigte sich in den Messdaten eine Hysterese und mechanisches Spiel. Nach \cite{Rakowitsch.2018} konnten diese nicht durch das Modell abgebildet werden. Weiterhin kommt \cite{Rakowitsch.2018} zum Schluss, dass die aus der Identifikation entspringenden Parameter einer Unsicherheit unterliegen. Daraufhin untersuchte \cite{Rakowitsch.2018} die Auswirkungen der Parameterunsicherheit und wählte aus den unsicheren Parametern zwei Parametersätze, aus welchen zwei Grenzmodelle hervorgingen, ein weiches und steifes Pressenmodell. Mit diesen konnte \cite{Rakowitsch.2018} letztlich die Zustandsüberwachung durchführen. \\
+
+In dieser Arbeit soll nun im Gegensatz zu \cite{Rakowitsch.2018} ein Black-Box-Modell an Stelle eines White-Box-Modells entwickelt werden. Die Parametrisierung des Modells findet dabei über Methoden des maschinellen Lernens statt. 
+
+
+\section{Vorgehensweise}
 
 
 
+
+
+
+
+
+   
 
 
 

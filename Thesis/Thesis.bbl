@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{VDMA.2018}
+{\sc Anderl, R.}, {\sc A.~Picard}, {\sc Y.~Wang}, {\sc S.~Dosch}, {\sc B.~Klee}
+  \btxandshort{.}\ {\sc J.~Bauer}: {\em Leitfaden Industrie 4.0:
+  Orientierungshilfe zur Einf{\"u}hrung in den Mittelstand\/}, 2018.
+
 \bibitem{Gerwin.1993}
 {\sc Gerwin, D.}: {\em Manufacturing Flexibility: A Strategic Perspective\/}.
 \newblock Management Science, 39(4):395--410, 1993.
@@ -14,6 +19,11 @@
   Optimization of Forming Presses for the Manufacturing of Micro Parts\/}.
 \newblock CIRP Annals, 53(1):281--284, 2004.
 
+\bibitem{Rakowitsch.2018}
+{\sc Rakowitsch, M.}: {\em Modellierung der Dynamik eines Koppelgetriebes am
+  Beispiel der 3D-Servo-Presse: Studienarbeit\/}.
+\newblock Darmstadt, 2018.
+
 \bibitem{Schmoeckel.1991}
 {\sc Schmoeckel, D.}: {\em Developments in Automation, Flexibilization and
   Control of Forming Machinery\/}.
@@ -21,9 +31,7 @@
 
 \bibitem{Sinz.2018}
 {\sc Sinz, J.}: {\em Die 3D-Servo-Presse - von der Forschungsversion zur
-  industriellen Standardmaschine\/}, 2018 (Zugriff am 13.09.2018.
-\newblock
-  \url{{https://www.ptu.tu-darmstadt.de/mu_forschung/mu_prozesskettenundanlagen/abgeschlossene_forschungsprojekte_pa/die_3d_servo_presse___von_der_forschungsversion_zur_industriellen_standartmaschine/index.de.jsp}},.
+  industriellen Standardmaschine\/}, 2018.
 
 \bibitem{Son.1987}
 {\sc Son, Y.~K.} \btxandshort{.}\ {\sc C.~S. Park}: {\em Economic measure of
