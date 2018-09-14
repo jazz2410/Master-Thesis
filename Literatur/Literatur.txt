@@ -73,3 +73,12 @@ Prediction and Analysis of Forged Workpiece's Precision in Hyraulic Press Based 
 		- neuronales Netz mappt die Maschinengeometrieparameter mit der Maßgenauigkeit der Bauteile
 		- Maschinengeometrieparameter während Umformprozess bestimmen Maßgenauigkeit des Bauteils
 		
+
+Improvement of Tracking Control of a Sliding Mode Controller for Robot
+Manipulators by a Neural Network
+
+		- neuronales Netz und Sliding Mode Controller zur Verbesserung der Positioniergenauigkeit eines Roboterarmes 
+		- für SMC muss der Gain-Parameter richtig angepasst werden, um globale Stabilität zu gewährleisten
+		- der Gain-Paramter muss groß gewählt sein, um Stabilität zu gewährleisten, aber verursacht Vibrationen
+		- neuronales Netz wird benutzt, um die Referenzbewegung zu verändern, welche in den Sliding Mode Controller geht
+		- korrigiert dadurch den Gain-Parameter und führt zu einer besseren Positionierung
