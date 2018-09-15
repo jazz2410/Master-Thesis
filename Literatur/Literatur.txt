@@ -36,6 +36,7 @@ Neuronale Netze zur Steuerung von Walzstraßen
 		- 3 Anwendungsfälle mit nachgewiesenen Verbesserungen
 		- weitere Anwendungsfälle in Erprobung
 
+-------------------------------------------------------------------------------------------------------
 
 A precise NP neural network-based online model predictive for die forging hydraulic press machine
 		- Einstellen der Eingabeparamter (Öldruck), um Maschine mit genauer Geschwindigkeit zu regeln
@@ -74,11 +75,33 @@ Prediction and Analysis of Forged Workpiece's Precision in Hyraulic Press Based 
 		- Maschinengeometrieparameter während Umformprozess bestimmen Maßgenauigkeit des Bauteils
 		
 
-Improvement of Tracking Control of a Sliding Mode Controller for Robot
-Manipulators by a Neural Network
 
-		- neuronales Netz und Sliding Mode Controller zur Verbesserung der Positioniergenauigkeit eines Roboterarmes 
-		- für SMC muss der Gain-Parameter richtig angepasst werden, um globale Stabilität zu gewährleisten
-		- der Gain-Paramter muss groß gewählt sein, um Stabilität zu gewährleisten, aber verursacht Vibrationen
-		- neuronales Netz wird benutzt, um die Referenzbewegung zu verändern, welche in den Sliding Mode Controller geht
-		- korrigiert dadurch den Gain-Parameter und führt zu einer besseren Positionierung
+--------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Optimal Neural Network Output Feebback Control for Robot Manupulators
+
+		- neuronales Netz (Feedforward-Netz) zur Erhöhung der Genaugkeit von Roboterarmen
+		- Neural Network Observer zum Schätzen der Geschwindigkeit des Armes
+		- es wird die invertierte Trägheitsmatrix benötigt
+		- Feedforward Controller wird in den Feedback-Pfad eingebracht, um die nichtlinearen 
+		Charkteristiken nachzubilden
+		- kein offline lernen notwendig
+		- Fehler verringert sich
+
+
+
+
+A New Artificial Neural Network Approach in Solving Inverse Kinematics of
+Robotic Arm
+
+		- neuronales Netz, welches die invertierte Dynamik abbildet
+		- als Eingangsgröße die Position und Orientierung des Werkzeuges (eigentliche Ausgangsgröße des Roboters)
+		- als Ausgangsgröße die Verdrehwinkel der Servomotoren (eingetliche Eingangsgrößen des Roboters)
+		- auch aktuelle Motorstellungen als Eingangsgröße für das Netz 
+		- das Netz ermittelt die notwendigen Motorwinkel für den Roboter, um die Wekrzeugstellung zu erreichen
+
+	
