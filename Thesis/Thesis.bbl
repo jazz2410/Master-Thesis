@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{VDMA.2018}
 {\sc Anderl, R.}, {\sc A.~Picard}, {\sc Y.~Wang}, {\sc S.~Dosch}, {\sc B.~Klee}
@@ -24,6 +24,12 @@
   of Dynamic Systems: An Introduction with Applications\/}.
 \newblock Advanced Textbooks in Control and Signal Processing. {Springer-Verlag
   Berlin Heidelberg}, Berlin, Heidelberg, 2011.
+
+\bibitem{Lunze.2013}
+{\sc Lunze, J.}: {\em Regelungstechnik 1: Systemtheoretische Grundlagen,
+  Analyse und Entwurf einschleifiger Regelungen\/}.
+\newblock Springer-Lehrbuch. Springer, Berlin, 9., {\"u}berarb. Aufl.
+  \btxeditionshort{.}, 2013.
 
 \bibitem{Rakowitsch.2018}
 {\sc Rakowitsch, M.}: {\em Modellierung der Dynamik eines Koppelgetriebes am

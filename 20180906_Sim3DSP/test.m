@@ -6,3 +6,5 @@ y = net(x);
 
 net.IW{1,1}
 net.b{1}  
+
+wb = getwb(net);
