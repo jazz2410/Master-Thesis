@@ -16,7 +16,7 @@ traingd     Gradient Descent
 
 
 error_list = [];
-output_liste = [];
+output_list = [];
 %Importieren und Vorbereiten der Daten
 
 load('u1.mat');
@@ -25,7 +25,7 @@ load('y1.mat');
 u = u';
 y = y';
 
-for i=1:1:20
+for i=1:1:10
     
 
     %Bestimmen der Netzparamter
@@ -74,23 +74,47 @@ for i=1:1:20
     error = sum(error);
     error = error/length(y);
     error_list(1,i) = error;
-    
-    
-    clear error
-    clear net
-    clear perf
-    clear trainFcn
-    clear wb
+    output_list(i,:) = netz_output;
     
 end
 
 disp(error_list);
 
 figure(1);
+subplot(3,1,1);
 plot3(u(3,:), u(2,:), y, 'r.');
-hold;
+hold on;
 plot3(u(3,:), u(2,:), netz_output, 'bo');
+xlabel('Exzenterwinkel [Grad]');
+ylabel('Spindelposition unten [mm]');
+zlabel('Stößelposition [mm]');
 grid on;
+hold on;
+
+subplot(3,1,2);
+plot(y,'ro');
+hold  on;
+
+for i=1:2:10
+    
+    plot(output_list(i,:),'color',rand(1,3));
+    hold on;
+
+end
+
+
+xlabel('Zeitschritte [-]');
+ylabel('Stößelposition [mm]');
+grid on;
+
+subplot(3,1,3);
+plot(error_list);
+hold on;
+xlabel('Anzahl der Neuronen');
+ylabel('MSE');
+grid on;
+
+
 
 
 
