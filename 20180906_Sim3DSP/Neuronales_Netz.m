@@ -80,39 +80,7 @@ end
 
 disp(error_list);
 
-figure(1);
-subplot(3,1,1);
-plot3(u(3,:), u(2,:), y, 'r.');
-hold on;
-plot3(u(3,:), u(2,:), netz_output, 'bo');
-xlabel('Exzenterwinkel [Grad]');
-ylabel('Spindelposition unten [mm]');
-zlabel('Stößelposition [mm]');
-grid on;
-hold on;
 
-subplot(3,1,2);
-plot(y,'ro');
-hold  on;
-
-for i=1:2:10
-    
-    plot(output_list(i,:),'color',rand(1,3));
-    hold on;
-
-end
-
-
-xlabel('Zeitschritte [-]');
-ylabel('Stößelposition [mm]');
-grid on;
-
-subplot(3,1,3);
-plot(error_list);
-hold on;
-xlabel('Anzahl der Neuronen');
-ylabel('MSE');
-grid on;
 
 
 
