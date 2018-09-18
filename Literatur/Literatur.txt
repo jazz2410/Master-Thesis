@@ -76,13 +76,10 @@ Prediction and Analysis of Forged Workpiece's Precision in Hyraulic Press Based 
 		
 
 
---------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 
 
-
-
-
-Optimal Neural Network Output Feebback Control for Robot Manupulators
+Optimal Neural Network Output Feedback Control for Robot Manipulators
 
 		- neuronales Netz (Feedforward-Netz) zur Erhöhung der Genaugkeit von Roboterarmen
 		- Neural Network Observer zum Schätzen der Geschwindigkeit des Armes
@@ -105,3 +102,37 @@ Robotic Arm
 		- das Netz ermittelt die notwendigen Motorwinkel für den Roboter, um die Wekrzeugstellung zu erreichen
 
 	
+
+Neuronale Netze zur Modellbildung in der Regelungstechnik
+
+		- neuronales Netz mit der inversen Dynamik berlernt und als Vorsteuerung eingesetzt
+		- Nachteile: mangelnde Stabilität, da sie in noch unbekannten Regionen des Eingaberaumes zufällige Werte liefern 
+		- zusätzliche Aussage über Stabilität notwendig
+
+
+
+
+Neural Networks for Control Theory and Practice 
+
+		- Direct Inverse Control 
+		- Feedforward Inverse Control 
+		- Feedforward Inverse Control with Error Feedback
+
+
+A Mulitlayered Neural Network Controller
+
+		- der Einsatz eines inversen Netzes alleine bringt Probleme, da nicht der Prozessoutputfehler minimiert wird, sondern der Prozessinputfehler
+		- deswegen der Einsatz von zwei verschiedenen Trainingsmethoden
+		- allgemeines Training: erzeugt in invertiertes Netz, welches den allgemeinen Betriebszustand abbildet und am Anfang eingesetzt wird
+		- spezielles Training: ebenfalls invertiertes Netz, welches aber den Fehler zwischen 
+		desired und actual Input als Eingangsgröße hat, erzeugt einen Input u, wird online trainiert
+		- allgemeine Trainingsmethode wird offline angewendet
+
+
+Neural Networks for Self-Learning Control Systems
+		- zwei neuronale Netze, ein invertiertes und ein nicht-nicht invertiertes
+		- das Neural-Net-Emulator simuliert das dynamische System (nicht invertiert)
+		- dabei Zeitversertzung zwischen Eingangs- und Ausgangsgrößen, und Ausgangsgröße des letzten Zeitschrittes wird ebenfalls als Eingang benutzt 
+		- der Neural-Net-Emulator wird benutzt, um dann den Neural Controller (invertiertes Netz) zu trainieren
+		- beim Trainieren muss die Differenz zwischen tatsächlichen und erwünschten Ausgangsgrößen minimiert werden --> deswegen in Kombination mit dem Emulator notwendig, da der Fehler durch das Emulator Netz gegeben ist
+		- beim Einsatz des invertierten Netzes alleine würde man den Fehler für die Prozesseingänge minimieren, was nicht gewollt ist
