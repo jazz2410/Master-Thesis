@@ -5,6 +5,19 @@
   \btxandshort{.}\ {\sc J.~Bauer}: {\em Leitfaden Industrie 4.0:
   Orientierungshilfe zur Einf{\"u}hrung in den Mittelstand\/}, 2018.
 
+\bibitem{Dobel.2018}
+{\sc D{\"o}bel, I.}, {\sc M.~Leis}, {\sc M.-M. Vogelsang}, {\sc D.~Neustroev},
+  {\sc H.~Petzka}, {\sc S.~R{\"u}ping}, {\sc A.~Voss}, {\sc M.~Mengele}
+  \btxandshort{.}\ {\sc J.~Welz}: {\em Maschinelles Lernen: Kompetenzen,
+  Anwendungen und Forschungsbedarf\/}, 2018.
+
+\bibitem{Duriez.2017}
+{\sc Duriez, T.}, {\sc S.~L. Brunton} \btxandshort{.}\ {\sc B.~R. Noack}: {\em
+  Machine Learning Control - Taming Nonlinear Dynamics and Turbulence\/},
+  \btxvolumeshort{.}\ 116 \btxofseriesshort{.}\ {\em Fluid Mechanics and Its
+  Applications\/}.
+\newblock {Springer International Publishing}, Cham and s.l., 2017.
+
 \bibitem{Gerwin.1993}
 {\sc Gerwin, D.}: {\em Manufacturing Flexibility: A Strategic Perspective\/}.
 \newblock Management Science, 39(4):395--410, 1993.
