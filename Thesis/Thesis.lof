@@ -5,9 +5,10 @@
 \select@language {ngerman}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Multilayer Perceptron (MLP)}}{7}{figure.2.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Mathematische Modelle von White-Box- bis zu Black-Box-Modellen \cite {Isermann.2011}}}{9}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Erweiterte Grundstruktur des Regelkreises \cite {Lunze.2013}}}{10}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Fehlererkennung mit Signal- und Prozessmodellen (a) signalmodellbasiert, (b) prozessmodellbasiert. \cite {Isermann.2010}}}{12}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces \IeC {\"U}bersicht der Fehlererkennungsmethoden \cite {Isermann.2010}}}{12}{figure.3.4}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Mathematische Modelle von White-Box- bis zu Black-Box-Modellen \cite {Isermann.2011}}}{13}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Erweiterte Grundstruktur des Regelkreises \cite {Lunze.2013}}}{14}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Fehlererkennung mit Signal- und Prozessmodellen (a) signalmodellbasiert, (b) prozessmodellbasiert. \cite {Isermann.2010}}}{16}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces \IeC {\"U}bersicht der Fehlererkennungsmethoden \cite {Isermann.2010}}}{16}{figure.3.4}
 \addvspace {10\p@ }

@@ -1,0 +1,74 @@
+\section{Künstliche neuronale Netzwerke}
+
+Wie in Abschnitt \ref{cha:machine_learning} erläutert, bieten sich für die Modellierung des dynamischen Verhaltens der 3D-Servo-Presse neuronale Netze an. Nach Quelle sind diese in der Lage jeden stetigen nichtlinearen Zusammenhang zwischen Eingangs- und Ausgangsgrößen beliebig genau abzubilden. Es gibt eine Bandbreite von verschiedenen Typen neuronaler Netze, für die nachfolgend ein Überblick gegeben wird. 
+
+\subsection{Feedforward Neuronale Netzwerke}
+
+Die grundsätzliche Funktionsweise von neuronalen Netzen besteht darin, einen mehrdimensionalen Eingabevektor $x$ in ein Ausgabesignal $\hat{y} = N(x|w)$ zu transformieren. Dabei bezeichnet $w = (w_1,...,w_n)$ die Netzwerkgewichte. Diese nehmen vor der Parametrisierung bzw. vor dem Training des Netzes zunächst zufällige Werte an. Das Multilayer Perceptron (MLP) ist ein weitverbreter Netzwerktyp, siehe Abbildung \ref{fig:mlp}. 
+
+\begin{figure} 
+	\centering
+	\includegraphics[width=0.95\textwidth]{images/MLP}
+	\caption{Multilayer Perceptron (MLP)}
+	\label{fig:mlp}
+\end{figure}
+
+
+Bei diesem Netzwerktyp entspricht der Wert eines Knotens einer linearen Überlagerung $n$ sigmoidaler Funktionen, ausgedrückt durch 
+
+\begin{equation} 
+\label{eq:feedforward}
+\sigma(w_0 + \sum_{i=1}^{n} w_i x_i)
+\end{equation}
+
+Die lineare Überlagerung der Netzwerkgewichte $w_1,w_2,...,w_n$ multipliziert mit den Eingangsgrößen $x_1,x_2,...,x_n$ und verschoben um den Wert $w_0$ wird nochmals durch eine Aktivierungsfunktion transformiert. Mögliche Aktivierungsfunktionen sind die \textit{sigmoidale}-Funktion $\sigma(z) = \frac{1}{1 + e^{-z}}$, die \textit{tangenssigmoidale}-Funktion $\phi(z)=\frac{2}{1 + e^{-2z}}-1$ und die \textit{lineare} Funktion $a(z)=z$. \\ 
+Die Auswahl der Aktivierungsfunktion ist hierbei vom konkreten Anwendungsfall abhängig. Das Training bzw. die Parametrisierung des Netzes geschieht nun in zwei Schritten. Im ersten Schritt findet eine Übergabe der Eingangsgrößen $x_1,x_2,...,x_n$ an das Netz statt. Weiterhin nehmen die Netzwerkgewichte $w$ anfangs zufällige Werte an. Da die Eingangsgrößen und die Netzwerkgewichte bekannt sind, kann jeder Knotenwert nach Gleichung \ref{eq:feedforward} berechnet werden. Die nachfolgenden Knotenwerte der nächsten Schicht lassen sich somit sukzessive als Funktion der vorherigen Schicht berechnen. Auf diese Weise des Vorwärtsrechnens findet eine Transformation der Eingabegrößen $x_1,x_2,...x_n$ in ein Ausgangssignal $\hat{y}$ statt. \\
+Der zweite Schritt umfasst nun die Adaptierung der Netzwerkgewichte, sodass die vom Netz herausgegebenen Ausgabegrößen $\hat{y}$ mit den gemessenen Ausgabegrößen $y_i$ möglichst übereinstimmen. Dabei ist es zweckmäßig, die Abweichung zwischen diesen Größen in Form der Fehlerfunktion 
+
+\begin{equation}
+E(w) = (y_i-N(x_i|w))^{2}
+\end{equation}
+
+zu beschreiben. Die Adaptierung der Netzwerkgewichte beschränkt sich nun darauf, die Fehlerfunktion zu minimieren. Eine der gängigsten Methoden ist die Methode des Gradientenabstieges. Diese gibt als Adaptionsregel für die Netzwerkgewichte 
+
+\begin{equation}
+\label{eq:weight_adapt}
+\Delta w_i = \epsilon  (-\nabla E_i) = \epsilon * - \dfrac{\partial E}{\partial w}\bigg|_{w_i}
+\end{equation}
+
+mit $\epsilon$ als Lernrate bzw. Adaptionsschrittweite vor. Das Ziel besteht darin, für die Fehlerfunktion $E(w)$ die partiellen Ableitungen $\dfrac{\partial E}{\partial w}\bigg|_{w_i}$ zu identifizieren und gleich null zu setzen. Damit würde die Fehlerfunktion $E(w)$ ein lokales Minima erreichen. Dies geschieht durch die lokale Suche nach dem Minimum der Fehlerfunktion $E(w)$ in Richtung des steilsten Abstiegs. Die Richtung des steilsten Abstiegs entspricht dabei dem negativen Gradienten von $E$ nach den Netzwerkgewichten $w$.\\ 
+Die Adaption findet für jedes Datenpaar $((x_1,x_2,...,x_n)|(y_1))$ statt. Durch das Wiederholen des Adaptionsvorgang passt sich das Netz dem zu modellierenden Systemverhalten an. \\
+
+Wie bereits erwähnt, bietet sich die Methode des Gradientenabstieges als ein mögliches Verfahren zur Minimierung der Fehlerfunktion an. Es gibt darüber hinaus in der Literatur eine Vielzahl von Verfahren, die sich in folgende Kategorien einteilen lassen:
+
+\begin{itemize}
+	\item Gradientenverfahren erster Ordnung
+	\item Gradientenverfahren zweiter Ordnung
+	\item stochastische Optimierungsverfahren
+	\item Verfahren der globalen Optimierung
+\end{itemize}
+
+
+Den Verfahren der ersten Kategorie ist gemein, dass die Berechnung des Gradienten des Gütefunktionals
+
+\begin{equation}
+\nabla E_i = \dfrac{\partial E}{\partial w}\bigg|_{w_i}
+\end{equation}
+
+in jeder Iteration problematisch ist, da sich die Gradienten nicht in einem Schritt berechnen lassen. In der Regel kommt für die Lösung dieses Problems der Backpropagation-Algorithmus zum Einsatz. Dieser wendet die Kettenregel an, um die Gradienten in mehrere Faktoren, bestehend aus partiellen Ableitungen, zu zerlegen. Auf diese Weise können die partiellen Ableitungen der letzten Schicht, welche in der Regel bekannt sind, benutzt werden können, um die partiellen Ableitungen der vorangehenden Schichten zu bestimmen. 
+Die Ermittlung der partiellen Ableitungen findet also von der letzten bis zur ersten Schicht, also rückwärts, statt. Nach Ermittlung der partiellen Ableitungen aller Schichten, kann die Adaption der Netzwerkgewichte gemäß einer Adaptionsregel, siehe \ref{eq:weight_adapt}, erfolgen. Während des Adaptionsprozesses nimmt der Gesamtfehler ab. Sinkt der Gesamtfehler über alle Netzausgänge $y_1,...,y_m$ unter eine festgelegte Grenze, bricht das Training des Netzes ab. \\
+
+Es bleibt festzuhalten, dass die Anpassungsfähigkeit des Netzes an das nichtlineare Verhalten dynamischer Systeme von folgenden Faktoren abhängt:
+
+\begin{itemize}
+	\item Anzahl der Neuronen
+	\item Anzahl der Schichten
+	\item Wahl des Algorithmus zur Minimierung der Fehlerfunktion
+	\item Auswahl der Aktivierungsfunktionen
+	\item Repräsentationsfähigkeit der Trainingsdaten
+	\item Wahl des Regressors
+	
+\end{itemize}
+
+
+

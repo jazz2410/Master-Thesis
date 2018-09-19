@@ -79,17 +79,6 @@ Prediction and Analysis of Forged Workpiece's Precision in Hyraulic Press Based 
 --------------------------------------------------------------------------------------------------
 
 
-Optimal Neural Network Output Feedback Control for Robot Manipulators
-
-		- neuronales Netz (Feedforward-Netz) zur Erhöhung der Genaugkeit von Roboterarmen
-		- Neural Network Observer zum Schätzen der Geschwindigkeit des Armes
-		- es wird die invertierte Trägheitsmatrix benötigt
-		- Feedforward Controller wird in den Feedback-Pfad eingebracht, um die nichtlinearen 
-		Charkteristiken nachzubilden
-		- kein offline lernen notwendig
-		- Fehler verringert sich
-
-
 
 
 A New Artificial Neural Network Approach in Solving Inverse Kinematics of
@@ -136,3 +125,45 @@ Neural Networks for Self-Learning Control Systems
 		- der Neural-Net-Emulator wird benutzt, um dann den Neural Controller (invertiertes Netz) zu trainieren
 		- beim Trainieren muss die Differenz zwischen tatsächlichen und erwünschten Ausgangsgrößen minimiert werden --> deswegen in Kombination mit dem Emulator notwendig, da der Fehler durch das Emulator Netz gegeben ist
 		- beim Einsatz des invertierten Netzes alleine würde man den Fehler für die Prozesseingänge minimieren, was nicht gewollt ist
+
+
+Anwendung neuronaler Netze zur Regelung von nichtlinearen Roboterantrieben
+
+		-Direct Inverse Control mit Offline Training (inmvertiertes Netz wird direkt vor das System geschaltet, vorher offline trainiert) --> mangelnde Robustheit, da keine Fehlerrückführung vorhanden
+		- Direct Inverse Control mit online Training: wie wird der Fehler ec berücksichtigt und minimiert?
+		- am Anfang unkontrolliertes Systemverhalten, da untrainiertes Netz
+		-Feedforward Inverse Control: 
+
+		-Feedforward Inverse Control: Emulator Modell wird offline traiinert, um das System abzubilden
+		- daraus ergibt sich der Fehler ec, den man minimieren muss, dafür werden die Gewichte vom Controller Netz angepasst
+
+		- Internal Model Control: es wird immer noch der Fehler ec genutzt, um die Gewichte des Controller Netzes anzupassen, allerdings hat das Controller Netz einen weiteren Eingang, nämlich den Fehler em, welcher die Differenz zwischen System- und Modellausgang abbildet
+
+		- Feedforward-Feedback-Error Regelung: 
+
+		- der Fehler ec soll minimiert werden, dafür werden die Gewichte von FB und FF angepasst, durch FB entsteht ein geschlossener Regelkreis, durch FF ist ein Vorsteuerungsregler
+
+		- Nichtlineare prädiktive Regelung: Stellsignale sollen so gebildet sein, dass die Differenz der zukünftigen Refereznsignale und Modellvorhersage möglichst minimal ist 
+
+
+Model predictive control for systems with fast dynamics using inverse neural Models
+
+
+		- Direct Design: invertiertes Netz wird benutzt, als Controller
+
+		- Indirect Design: NN bildet das Modell ab, wird in Model Predictive Control benutzt, Modell mach Vorhersagen, daraus Optmierungsproblem aufgestellt, NAchteil ist, dass das Optimierungsproblem in Echtzeit gelöst werden muss, ansonsten kann es zu Instabilitäten kommen
+
+
+		- invertiertes RBFNN-basiertes System
+		- basiert auf zwei neuronalen Netzen, ein forward Netz, um Vorhersagen zum 	Systemzustand zu machen
+		- ein invertiertes Netz, um auf die Stellgrößen zu betimmen
+		- das Forward-Netz ist ein dynamisches Netz, enthält vorherige Systemzustände als Eingangsparamter, gibt die Ausgangsgröße zum Zeitpunkt t+1 heraus
+		- das invertierte Netz berechnet daraus die Eingangsgröße, das invertierte Netz hatte als Eingangsgröße ebenfalls die Differez der vorherigen Ausgangsgrößen
+
+	Neural Network control of nonlinear dynamic systems using hybrid algorithm
+
+		- zwei forward Neurnonale Netze-
+		- neural model und neural controller
+		- der zu minimierende Fehler ist ec=neural_modell vorhersage - desired value
+		- neural model wird vorher trainiert und soll den den prozess sehr gut abbilden
+		- im zweiten Schritt wird der Controller trainiert, um den fehler ec zu minimieren, dabei kommt hybrider Algroithmus zum Einsatz, welcher (Kombination aus Gradienabstigesverfahren und Kohonen Algorithmus)
