@@ -43,6 +43,10 @@
 \newblock Advanced Textbooks in Control and Signal Processing. {Springer-Verlag
   Berlin Heidelberg}, Berlin, Heidelberg, 2011.
 
+\bibitem{Lipton.5292015}
+{\sc Lipton, Z.~C.}, {\sc J.~Berkowitz} \btxandshort{.}\ {\sc C.~Elkan}: {\em A
+  Critical Review of Recurrent Neural Networks for Sequence Learning\/}.
+
 \bibitem{Lunze.2013}
 {\sc Lunze, J.}: {\em Regelungstechnik 1: Systemtheoretische Grundlagen,
   Analyse und Entwurf einschleifiger Regelungen\/}.
@@ -63,9 +67,25 @@
 {\sc Sinz, J.}: {\em Die 3D-Servo-Presse - von der Forschungsversion zur
   industriellen Standardmaschine\/}, 2018.
 
+\bibitem{Sklyarenko.2002}
+{\sc Sklyarenko, Y.}: {\em Anwendung neuronmaler Netze zur Gegelung von
+  nichtlinearen Roboterantrieben: Dissertation\/}.
+\newblock 2002.
+
 \bibitem{Son.1987}
 {\sc Son, Y.~K.} \btxandshort{.}\ {\sc C.~S. Park}: {\em Economic measure of
   productivity, quality and flexibility in advanced manufacturing systems\/}.
 \newblock Journal of Manufacturing Systems, 6(3):193--207, 1987.
+
+\bibitem{Sturm.2000}
+{\sc Sturm, M.}: {\em Neuronale Netze zur Modellbildung in der
+  Regelungstechnik: Dissertation\/}.
+\newblock 2000.
+
+\bibitem{Velickovic.2018}
+{\sc Veli{\v{c}}kovi{\'c}, P.}: {\em : Multilayer perceptron~(MLP): A diagram
+  representing an in-depth view at a single perceptron, along with its position
+  within a larger-scale multilayer perceptron ({\~{}}unrestricted feedforward
+  neural network).\/}, 2018.
 
 \end{thebibliography}
