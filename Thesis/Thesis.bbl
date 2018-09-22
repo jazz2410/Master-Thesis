@@ -1,9 +1,38 @@
 \begin{thebibliography}{10}
 
+\bibitem{.2008}
+{\em Appendix G: Thirty Years of Adaptive Neural Networks: Perceptron,
+  Madaline, and Backpropagation\/}.
+\newblock \Btxinshort{.}\ {\sc Widrow, B.} \btxandshort{.}\ {\sc E.~Walach}\
+  (\btxeditorsshort{.}): {\em Adaptive inverse control\/}, IEEE Press Series on
+  Power Engineering, \btxpagesshort{.}\ 409--474. {IEEE Press
+  Wiley-Interscience} and {IEEE Xplore}, Piscataway, New Jersey and Hoboken, NJ
+  and Piscataway, New Jersey, 2008.
+
+\bibitem{Kollias.March1993}
+{\sc Anastassiou} \btxandshort{.}\ {\sc Kollias}: {\em Adaptive training of
+  multilayer neural networks using a least squares estimation technique\/}.
+\newblock \Btxinshort{.}\ {\em IEEE International Conference on Neural Networks
+  1993\/}, \btxpagesshort{.}\ 383--390 vol.1, Piscataway, March 1993. IEEE.
+
 \bibitem{VDMA.2018}
 {\sc Anderl, R.}, {\sc A.~Picard}, {\sc Y.~Wang}, {\sc S.~Dosch}, {\sc B.~Klee}
   \btxandshort{.}\ {\sc J.~Bauer}: {\em Leitfaden Industrie 4.0:
   Orientierungshilfe zur Einf{\"u}hrung in den Mittelstand\/}, 2018.
+
+\bibitem{Bayer.2009}
+{\sc Bayer, J.}, {\sc D.~Wierstra}, {\sc J.~Togelius} \btxandshort{.}\ {\sc
+  J.~Schmidhuber}: {\em Evolving Memory Cell Structures for Sequence
+  Learning\/}.
+\newblock \Btxinshort{.}\ {\sc Alippi, C.}, {\sc M.~Polycarpou}, {\sc
+  C.~Panayiotou} \btxandshort{.}\ {\sc G.~Ellinas}\ (\btxeditorsshort{.}): {\em
+  Artificial neural networks - ICANN 2009\/}, \btxvolumeshort{.}\ 5769
+  \btxofseriesshort{.}\ {\em Lecture Notes in Computer Science\/},
+  \btxpagesshort{.}\ 755--764. Springer, Berlin, 2009.
+
+\bibitem{Bishop.2010}
+{\sc Bishop, C.~M.}: {\em Neural networks for pattern recognition\/}.
+\newblock {Oxford Univ. Press}, Oxford, Reprinted. \btxeditionshort{.}, 2010.
 
 \bibitem{Dobel.2018}
 {\sc D{\"o}bel, I.}, {\sc M.~Leis}, {\sc M.-M. Vogelsang}, {\sc D.~Neustroev},
@@ -11,12 +40,24 @@
   \btxandshort{.}\ {\sc J.~Welz}: {\em Maschinelles Lernen: Kompetenzen,
   Anwendungen und Forschungsbedarf\/}, 2018.
 
+\bibitem{JohnDuchi.2010}
+{\sc Duchi, J.}, {\sc E.~Hazan} \btxandshort{.}\ {\sc Y.~Singer}: {\em Adaptive
+  Subgradient Methods for Online Learning and Stochastic Optimization\/}, 2010.
+
 \bibitem{Duriez.2017}
 {\sc Duriez, T.}, {\sc S.~L. Brunton} \btxandshort{.}\ {\sc B.~R. Noack}: {\em
   Machine Learning Control - Taming Nonlinear Dynamics and Turbulence\/},
   \btxvolumeshort{.}\ 116 \btxofseriesshort{.}\ {\em Fluid Mechanics and Its
   Applications\/}.
 \newblock {Springer International Publishing}, Cham and s.l., 2017.
+
+\bibitem{Fumumoto.2017}
+{\sc Fumumoto, Y.}, {\sc S.~Owaki} \btxandshort{.}\ {\sc M.~Nakamura}: {\em
+  Effect of number of neurons of a neural-network on compensation performance
+  of SPM non-linear waveform distortion\/}.
+\newblock \Btxinshort{.}\ {\em 2017 Opto-Electronics and Communications
+  Conference (OECC) and Photonics Global Conference (PGC)\/},
+  \btxpagesshort{.}\ 1--2, Piscataway, NJ, 2017. IEEE.
 
 \bibitem{Gerwin.1993}
 {\sc Gerwin, D.}: {\em Manufacturing Flexibility: A Strategic Perspective\/}.
@@ -31,6 +72,20 @@
 {\sc Groche, P.} \btxandshort{.}\ {\sc R.~Schneider}: {\em Method for the
   Optimization of Forming Presses for the Manufacturing of Micro Parts\/}.
 \newblock CIRP Annals, 53(1):281--284, 2004.
+
+\bibitem{Han.682015}
+{\sc Han, S.}, {\sc J.~Pool}, {\sc J.~Tran} \btxandshort{.}\ {\sc W.~J. Dally}:
+  {\em Learning both Weights and Connections for Efficient Neural Networks\/}.
+
+\bibitem{StevenA.Harp.1992}
+{\sc Harp, S.~A.} \btxandshort{.}\ {\sc T.~Samad}: {\em Optimizing Neural
+  Networks with Genetic Algorithms\/}.
+\newblock Proceedings of the American Power Conference, 54 pt 2:1138--1143,
+  1992.
+
+\bibitem{Hassoun.1996}
+{\sc Hassoun, M.~H.}: {\em Fundamentals of Artificial Neural Networks\/}.
+\newblock Proceedings of the IEEE, 84(6):906, 1996.
 
 \bibitem{Isermann.2010}
 {\sc Isermann, R.}: {\em Modellbasierte {\"U}berwachung und Fehlerdiagnose von
@@ -53,10 +108,26 @@
 \newblock Springer-Lehrbuch. Springer, Berlin, 9., {\"u}berarb. Aufl.
   \btxeditionshort{.}, 2013.
 
+\bibitem{Masters.1995}
+{\sc Masters, T.}: {\em Advanced algorithms for neural networks A C++
+  sourcebook\/}.
+\newblock Wiley, New York, 1. Dr \btxeditionshort{.}, 1995.
+
+\bibitem{Parekh.2000}
+{\sc Parekh, R.}, {\sc J.~Yang} \btxandshort{.}\ {\sc V.~Honavar}: {\em
+  Constructive neural-network learning algorithms for pattern
+  classification\/}.
+\newblock IEEE transactions on neural networks, 11(2):436--451, 2000.
+
 \bibitem{Rakowitsch.2018}
 {\sc Rakowitsch, M.}: {\em Modellierung der Dynamik eines Koppelgetriebes am
   Beispiel der 3D-Servo-Presse: Studienarbeit\/}.
 \newblock Darmstadt, 2018.
+
+\bibitem{WarrenS.Sarle.1994}
+{\sc Sarle, W.~S.}: {\em Neural Network Implementation in SAS{\circledR}
+  Software: Proceedings of the Nineteenth Annual SAS Users Group International
+  Conference\/}, 1994.
 
 \bibitem{Schmoeckel.1991}
 {\sc Schmoeckel, D.}: {\em Developments in Automation, Flexibilization and
@@ -87,5 +158,8 @@
   representing an in-depth view at a single perceptron, along with its position
   within a larger-scale multilayer perceptron ({\~{}}unrestricted feedforward
   neural network).\/}, 2018.
+
+\bibitem{Zeiler.12222012}
+{\sc Zeiler, M.~D.}: {\em ADADELTA: An Adaptive Learning Rate Method\/}.
 
 \end{thebibliography}

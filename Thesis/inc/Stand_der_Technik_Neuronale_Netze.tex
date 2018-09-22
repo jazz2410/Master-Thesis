@@ -3,7 +3,7 @@
 Wie in Abschnitt \ref{cha:machine_learning} erläutert, bieten sich für die Modellierung des dynamischen Verhaltens der 3D-Servo-Presse neuronale Netze an. Nach \cite{Lipton.5292015} sind diese in der Lage, jeden stetigen nichtlinearen Zusammenhang zwischen Eingangs- und Ausgangsgrößen beliebig genau abzubilden. Es gibt eine Bandbreite von verschiedenen Typen neuronaler Netze, für die nachfolgend ein Überblick gegeben wird. 
 
 \subsection{Feedforward neuronale Netzwerke}
-
+\label{cha_ff}
 Die grundsätzliche Funktionsweise von neuronalen Netzen besteht darin, einen mehrdimensionalen Eingabevektor $x = (x_1,x_2,...,x_n)$ in ein Ausgabesignal $\hat{y} = N(x|w)$ zu transformieren. Dabei bezeichnet $w = (w_1,...,w_n)$ die Netzwerkgewichte. Diese nehmen vor der Parametrisierung bzw. vor dem Training des Netzes zunächst zufällige Werte an. Das Multi-Layer-Perceptron (MLP) ist ein weitverbreiteter Netzwerktyp, siehe Abbildung \ref{fig:mlp}. 
 
 \begin{figure} 
@@ -96,8 +96,49 @@ Es bleibt festzuhalten, dass die Anpassungsfähigkeit des Netzes an das nichtlin
 	
 \end{itemize}
 
-Die richtige Auslegung der Parameter für das neuronale Netz stellt eine Herausforderung dar. In Abschnitt KAPITEL ist eine ausführliche Diskussion über die Auswahl der Netzparameter, vor allem über den Algorithmus und  die Anzahl der Neuronen, enthalten. \\ 
+Die richtige Auslegung der Parameter für das neuronale Netz stellt eine Herausforderung dar. In Abschnitt \ref{cha:ff_herausforderung} ist eine ausführliche Diskussion über die Auswahl der Netzparameter, vor allem über den Algorithmus und  die Anzahl der Neuronen, enthalten. \\ 
+
+\subsubsection{Herausforderungen bei der Auslegung neuronaler Netze}
+\label{cha:ff_herausforderung}
+
+\textbf{Anzahl der Neuronen}
+
+Für die Auslegung neuronaler Netze ist die Abschätzung der Neuronenanzahl relevant. Dabei ist die Festlegung der optimalen Neuronenanzahl eine Abwägung zwischen der Traningszeit, der Generalisierungs- und der Anpassungsfähigkeit an die Nichtlinearitäten des dynamischen Systems. Beispielsweise erhöht nach \cite{Fumumoto.2017} die Anzahl der Neuronen in der verdeckten Schicht die Güte des neuronalen Netzes bei einem Anstieg nichtlinearer Effekte. \\
+Nach \cite{.2008} können ebenfalls heuristische Aussagen über eine minimale und maximale Neuronenanzahl getroffen werden. Diese bieten allerdings nur Abschätzungen an. Weiterhin gibt es Vorschläge, die Neuronenanzahl während des Trainings zu adaptieren.\\ 
+Dafür lassen sich die Verfahren in zwei Gruppen aufteilen, einmal in konstruktive und reduzierende Verfahren. \\ 
+Bei den reduzierenden Verfahren ist die Ausgangsbasis ein bereits trainiertes Netz, welches ein System ausreichend  genau modelliert. \\ 
+Nach \cite{Han.682015} sind viele neuronale Netze über-parametrisiert, d.h. sie verfügen über redundante Gewichte. Eine Möglichkeit der Reduktion besteht nun darin, sämtliche Gewichte, deren Wert unter einer vorher definierten Grenze liegt, zu entfernen. Es findet somit eine Unterscheidung zwischen bedeutenden und unbedeutenden Gewichte statt. Nach einer erneuten Trainingsphase findet eine erneute Adaptierung der verbliebenen Netzwerkgewichte statt, sodass diese die erzeugte Abweichung durch das Entfernen der unbedeutenden Netze kompensieren können. \cite{Han.682015} \\
+Der Einsatz reduzierender Verfahren ist mit Nachteilen verbunden. Zum einen muss ein bereits über-parametrisiertes Netz vorliegen. Die Trainingszeit bei über-parametrisierten Netzen ist in Regel höher also bei nicht über-parametrisierten Netzen. Der Reduktionsvorgang der neuronalen Netze stellt somit einen weiteren Arbeitsschritt dar, dessen zeitlicher Aufwand sich mit dem bereits erhöhten zeitlichen Aufwand für das Training des über-parametrisierten Netzes überlagert. \\
+Konstruktive Ansätze dagegen verfolgen den Ansatz, durch Algorithmen ein anfangs mit einer minimalen Topologie ausgestattetes Netz inkrementell mit einer höheren Anzahl an Neuronen und Gewichten auszustatten, wobei jede Modifikation auf ihre Güte untersucht wird. Nach \cite{Parekh.2000} kann dabei durch die Auswahl der Algorithmus erzwungen werden, dass jede weitere Netztopologie einen geringeren Fehler aufweist als die Vorgängertopologie.
+
+
+\textbf{Trainingsalgorithmen}
+
+Wie in Abschnitt \ref{cha_ff} erwähnt, ist die Methode des Gradientenabstieges eine Möglichkeit der Gewichtsadaption. Jedoch ist diese Methode im Bereich der Gewichtsadaption für neuronale Netze zum größten Teil durch fortschrittlichere Methoden abgelöst worden. Die Limitierungen der Methode des Gradientenabstieges und alternative Algorithmen (z.B. konjugierte Gradienten-Methode, David-Fletcher-Powell-Algorithmus) sind in \cite{WarrenS.Sarle.1994}, \cite{Masters.1995} und \cite{Bishop.2010} sehr gut dokumentiert. Eine weitere Alternative stellt der Levenberg-Marquadt-Algorithmus dar, dessen Implementierung in \cite{Kollias.March1993} diskutiert ist. Weitere Trainingsverfahren sind genetische Algorithmen, deren Einführung in \cite{Hassoun.1996} erörtert worden ist. Diese kommen nicht nur für die Adaptierung der Gewichte, sondern auch für die Adaptierung der Netzwerktopologie (Anzahl der Schichten, Anzahl der Knoten, Auswahl der Aktivierungsfunktionen, etc.) zum Einsatz, siehe \cite{Bayer.2009} und \cite{StevenA.Harp.1992}.  \\
+Weitere Möglichkeiten sind stochastische Methoden des Gradientenabstieges (stochastic gradient descent oder SGD), welche vor allem das Ziel haben, den Trainingsvorgang zu beschleunigen. \cite{JohnDuchi.2010} und \cite{Zeiler.12222012} verändern dafür die Adaptions- bzw. Trainingsrate während der Trainingsphase. Dies führt zu schnelleren bei konvexen, aber zu geringeren Konvergenzgeschwindigkeiten bei nicht-konvexen Fehlerfunktionen. 
+
+
+Bei der Auswahl von Algorithmen spielt außerdem  die Anzahl der Netzwerkgewichte eine Rolle. Nach \cite{WarrenS.Sarle.1994} eignet sich der Levenberg-Marquardt-Algorithmus bei mehreren Zehnten, der Davidon-Fletscher-Power-Algorithmus bei mehreren Hunderten und der konjugierte Gradienten-Algorithmus bei mehreren Tausenden von Netzwerkgewichten. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Das bisher vorgestellte \textit{Feedforward-Netz} ist vor allem dazu geeignet, den statischen Zusammenhang zwischen Eingangs- und Ausgangsgrößen abzubilden. \textit{Feedforward-Netze} sind rein vorwärts gerichtete Netze und definieren sich lediglich über die Eingabegrößen und die Parametrisierung der Gewichte. Somit sind \textit{Feedforward-Netze} zustandsfrei. Davon unterscheiden sich sogenannte \textit{rekurrente Netze}, welche den Einfluss der Zeit zusätzlich berücksichtigen können. 
+
+
+
+
 
 \subsection{Rekurrente neuronale Netze}
 
