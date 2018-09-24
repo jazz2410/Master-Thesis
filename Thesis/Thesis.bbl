@@ -87,6 +87,11 @@
 {\sc Hassoun, M.~H.}: {\em Fundamentals of Artificial Neural Networks\/}.
 \newblock Proceedings of the IEEE, 84(6):906, 1996.
 
+\bibitem{Hornik.1989}
+{\sc Hornik, K.}, {\sc M.~Stinchcombe} \btxandshort{.}\ {\sc H.~White}: {\em
+  Multilayer feedforward networks are universal approximators\/}.
+\newblock Neural Networks, 2(5):359--366, 1989.
+
 \bibitem{Isermann.2010}
 {\sc Isermann, R.}: {\em Modellbasierte {\"U}berwachung und Fehlerdiagnose von
   kontinuierlichen technischen Prozessen\/}.
@@ -97,6 +102,13 @@
   of Dynamic Systems: An Introduction with Applications\/}.
 \newblock Advanced Textbooks in Control and Signal Processing. {Springer-Verlag
   Berlin Heidelberg}, Berlin, Heidelberg, 2011.
+
+\bibitem{Kalman.June1992}
+{\sc Kalman, B.~L.} \btxandshort{.}\ {\sc S.~C. Kwasny}: {\em Why tanh:
+  choosing a sigmoidal function\/}.
+\newblock \Btxinshort{.}\ {\em IEEE-INNS International Joint Conference on
+  Neural Networks, Baltimore, 1992\/}, \btxpagesshort{.}\ 578--581, Piscataway,
+  June 1992. IEEE.
 
 \bibitem{Lipton.5292015}
 {\sc Lipton, Z.~C.}, {\sc J.~Berkowitz} \btxandshort{.}\ {\sc C.~Elkan}: {\em A
@@ -118,6 +130,13 @@
   Constructive neural-network learning algorithms for pattern
   classification\/}.
 \newblock IEEE transactions on neural networks, 11(2):436--451, 2000.
+
+\bibitem{Piovoso.1991b}
+{\sc Piovoso, M.~J.} \btxandshort{.}\ {\sc A.~J. Owens}: {\em Sensor Data
+  Analysis Using Neural Networks\/}.
+\newblock \Btxinshort{.}\ {\sc Arkun, Y.} \btxandshort{.}\ {\sc W.~H. Ray}\
+  (\btxeditorsshort{.}): {\em Chemical process control-CPCIV\/}, AIChE
+  publication. CACHE, Austin Tex., 1991.
 
 \bibitem{Rakowitsch.2018}
 {\sc Rakowitsch, M.}: {\em Modellierung der Dynamik eines Koppelgetriebes am
