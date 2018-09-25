@@ -1,11 +1,10 @@
-\select@language {english}
-\select@language {english}
-\select@language {ngerman}
-\select@language {english}
-\select@language {ngerman}
+\babel@toc {english}{}
+\babel@toc {english}{}
+\babel@toc {ngerman}{}
+\babel@toc {english}{}
+\babel@toc {ngerman}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{Methoden des maschinellen Lernens im Bereich Klassifikation und Regression}}{6}{table.2.1}
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{Eigenschaften theoretischer und experimenteller Modellierungsans\IeC {\"a}tze \cite {Isermann.2011}}}{18}{table.3.1}
+\contentsline {table}{\numberline {2.1}{Eigenschaften theoretischer und experimenteller Modellierungsans\IeC {\"a}tze \cite {Isermann.2011}}}{6}{table.2.1}
+\contentsline {table}{\numberline {2.2}{Methoden des maschinellen Lernens im Bereich Klassifikation und Regression}}{12}{table.2.2}
 \addvspace {10\p@ }
