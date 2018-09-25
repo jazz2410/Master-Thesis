@@ -167,3 +167,17 @@ Model predictive control for systems with fast dynamics using inverse neural Mod
 		- der zu minimierende Fehler ist ec=neural_modell vorhersage - desired value
 		- neural model wird vorher trainiert und soll den den prozess sehr gut abbilden
 		- im zweiten Schritt wird der Controller trainiert, um den fehler ec zu minimieren, dabei kommt hybrider Algroithmus zum Einsatz, welcher (Kombination aus Gradienabstigesverfahren und Kohonen Algorithmus)
+
+
+	
+
+Neural Networks for Control
+
+
+Neural networks for control systems—A survey (ANFRAGEN)
+
+
+Neurocontrol - A Literature Survey
+
+A CRITICAL REVIEW OF THE MOST POPULAR TYPES
+OF NEURO CONTROL
