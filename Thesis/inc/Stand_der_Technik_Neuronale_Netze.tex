@@ -14,7 +14,7 @@ Die grundsätzliche Funktionsweise von neuronalen Netzen besteht darin, einen me
 \end{figure}
 
 
-Bei diesem Netzwerktyp entspricht der Wert eines Knotens einer linearen Überlagerung $n$ sigmoidaler Funktionen, ausgedrückt durch 
+Bei diesem Netzwerktyp entspricht der Wert eines Neurons einer linearen Überlagerung $n$ sigmoidaler Funktionen, ausgedrückt durch 
 
 \begin{equation} 
 \label{eq:feedforward}
@@ -22,7 +22,7 @@ Bei diesem Netzwerktyp entspricht der Wert eines Knotens einer linearen Überlag
 \end{equation}
 
 Die lineare Überlagerung der Netzwerkgewichte $w_1,w_2,...,w_n$ multipliziert mit den Eingangsgrößen $x_1,x_2,...,x_n$ und verschoben um den Wert $w_0$ wird nochmals durch eine Aktivierungsfunktion transformiert. Mögliche Aktivierungsfunktionen sind die \textit{logistische Sigmoid}-Funktion $\sigma(z) = \frac{1}{1 + e^{-z}}$, die \textit{tangentiale hyperbolische Sigmoid}-Funktion $\phi(z)=\frac{2}{1 + e^{-2z}}-1$ und die \textit{lineare} Funktion $a(z)=z$. \\ 
-Die Auswahl der Aktivierungsfunktion ist hierbei vom konkreten Anwendungsfall abhängig. Das Training bzw. die Parametrisierung des Netzes erfolgt nun in zwei Schritten. Im ersten Schritt findet eine Übergabe der Eingangsgrößen $x_1,x_2,...,x_n$ an das Netz statt. Weiterhin nehmen die Netzwerkgewichte $w$ anfangs zufällige Werte an. Da die Eingangsgrößen und die Netzwerkgewichte bekannt sind, kann jeder Knotenwert nach Gleichung \ref{eq:feedforward} berechnet werden. Die nachfolgenden Knotenwerte der nächsten Schicht lassen sich somit sukzessive als Funktion der vorherigen Schicht berechnen. Auf diese Weise des Vorwärtsrechnens findet eine Transformation der Eingabegrößen $x_1,x_2,...x_n$ in ein Ausgangssignal $\hat{y}$ statt (in Abbildung \ref{fig:mlp} als $O_1$ und $O_2$ bezeichnet). \\
+Die Auswahl der Aktivierungsfunktion ist hierbei vom konkreten Anwendungsfall abhängig. Das Training bzw. die Parametrisierung des Netzes erfolgt nun in zwei Schritten. Im ersten Schritt findet eine Übergabe der Eingangsgrößen $x_1,x_2,...,x_n$ an das Netz statt. Weiterhin nehmen die Netzwerkgewichte $w$ anfangs zufällige Werte an. Da die Eingangsgrößen und die Netzwerkgewichte bekannt sind, kann jeder Neuronenwert nach Gleichung \ref{eq:feedforward} berechnet werden. Die nachfolgenden Neuronenwerte der nächsten Schicht lassen sich somit sukzessive als Funktion der vorherigen Schicht berechnen. Auf diese Weise des Vorwärtsrechnens findet eine Transformation der Eingabegrößen $x_1,x_2,...x_n$ in ein Ausgangssignal $\hat{y}$ statt (in Abbildung \ref{fig:mlp} als $O_1$ und $O_2$ bezeichnet). \\
 Der zweite Schritt umfasst nun die Adaptierung der Netzwerkgewichte, sodass die vom Netz herausgegebenen Ausgabegrößen $\hat{y}$ mit den gemessenen Ausgabegrößen $y_i$ möglichst übereinstimmen. Dabei ist es zweckmäßig, die Abweichung zwischen diesen Größen in Form der Fehlerfunktion 
 
 \begin{equation}
@@ -92,6 +92,7 @@ Es bleibt festzuhalten, dass die Anpassungsfähigkeit des Netzes an das nichtlin
 	\item Anzahl der Schichten
 	\item Wahl des Algorithmus zur Minimierung der Fehlerfunktion
 	\item Auswahl der Aktivierungsfunktionen
+	\item Initialisierung der Gewichte
 	\item Repräsentationsfähigkeit der Trainingsdaten
 	
 \end{itemize}
@@ -109,13 +110,13 @@ Dafür lassen sich die Verfahren in zwei Gruppen aufteilen, einmal in konstrukti
 Bei den reduzierenden Verfahren ist die Ausgangsbasis ein bereits trainiertes Netz, welches ein System ausreichend  genau modelliert. \\ 
 Nach \cite{Han.682015} sind viele neuronale Netze über-parametrisiert, d.h. sie verfügen über redundante Gewichte. Eine Möglichkeit der Reduktion besteht nun darin, sämtliche Gewichte, deren Wert unter einer vorher definierten Grenze liegt, zu entfernen. Es findet somit eine Unterscheidung zwischen bedeutenden und unbedeutenden Gewichte statt. Nach einer erneuten Trainingsphase findet eine erneute Adaptierung der verbliebenen Netzwerkgewichte statt, sodass diese die erzeugte Abweichung durch das Entfernen der unbedeutenden Gewichte kompensieren können. \cite{Han.682015} \\
 Der Einsatz reduzierender Verfahren ist mit Nachteilen verbunden. Zum einen muss ein bereits über-parametrisiertes Netz vorliegen. Die Trainingszeit bei über-parametrisierten Netzen ist in Regel höher also bei nicht über-parametrisierten Netzen. Der Reduktionsvorgang der neuronalen Netze stellt somit einen weiteren Arbeitsschritt dar, dessen zeitlicher Aufwand sich mit dem bereits erhöhten zeitlichen Aufwand für das Training des über-parametrisierten Netzes überlagert. \\
-Konstruktive Ansätze dagegen verfolgen den Ansatz, durch Algorithmen ein anfangs mit einer minimalen Topologie ausgestattetes Netz inkrementell mit einer höheren Anzahl an Neuronen und Gewichten auszustatten, wobei jede Modifikation auf ihre Güte untersucht wird. Nach \cite{Parekh.2000} kann dabei durch die Auswahl der Algorithmus erzwungen werden, dass jede weitere Netztopologie einen geringeren Fehler aufweist als die Vorgängertopologie. \\
+Konstruktive Ansätze dagegen verfolgen den Ansatz, durch Algorithmen ein anfangs mit einer minimalen Topologie ausgestattetes Netz inkrementell mit einer höheren Anzahl an Neuronen und Gewichten auszustatten, wobei jede Modifikation auf ihre Güte untersucht wird. Nach \cite{Parekh.2000} kann dabei durch die Auswahl des Algorithmus erzwungen werden, dass jede weitere Netztopologie einen geringeren Fehler aufweist als die Vorgängertopologie. \\
 Der Vorteil bei konstruktiven Ansätzen liegt darin, dass das Entstehen über-parametrisierter Netze von Anfang an unterbunden wird. Über-parametrisierte Netze neigen zum sogenannten \textit{Overfitting}. Beim \textit{Overfitting} sind Netze nicht in der Lage, die Zusammenhänge zwischen Eingangs- und Ausgangsgrößen ausreichend zu verallgemeinern bzw. zu generalisieren. Sie sind zwar in der Lage, den Trainingsdatensatz gut abzubilden, aber nicht in der Lage, für einen unbekannten Datensatz die Ausgangsgröße gut genug zu approximieren. Das gleiche Problem tritt beim \textit{Underfitting} auf. Dabei ist das Netz unter-parametriesiert, d.h. es verfügt nicht über genug Parameter (Netzwerkgewichte), um die Zusammenhänge zwischen Eingags- und Ausgangsgrößen gut genug abzubilden.
 
 
 \textbf{Trainingsalgorithmen}
 
-Wie in Abschnitt \ref{cha_ff} erwähnt, ist die Methode des Gradientenabstieges eine Möglichkeit der Gewichtsadaption. Jedoch ist diese Methode im Bereich der Gewichtsadaption für neuronale Netze zum größten Teil durch fortschrittlichere Methoden abgelöst worden. Die Limitierungen der Methode des Gradientenabstieges und alternative Algorithmen (z.B. konjugierte Gradienten-Methode, David-Fletcher-Powell-Algorithmus) sind in \cite{WarrenS.Sarle.1994}, \cite{Masters.1995} und \cite{Bishop.2010} sehr gut dokumentiert. Eine weitere Alternative stellt der Levenberg-Marquadt-Algorithmus dar, dessen Implementierung in \cite{Kollias.March1993} diskutiert ist. Weitere Trainingsverfahren sind genetische Algorithmen, deren Einführung in \cite{Hassoun.1996} erörtert worden ist. Diese kommen nicht nur für die Adaptierung der Gewichte, sondern auch für die Adaptierung der Netzwerktopologie (Anzahl der Schichten, Anzahl der Knoten, Auswahl der Aktivierungsfunktionen, etc.) zum Einsatz, siehe \cite{Bayer.2009} und \cite{StevenA.Harp.1992}.  \\
+Wie in Abschnitt \ref{cha_ff} erwähnt, ist die Methode des Gradientenabstieges eine Möglichkeit der Gewichtsadaption. Jedoch ist diese Methode im Bereich der Gewichtsadaption für neuronale Netze zum größten Teil durch fortschrittlichere Methoden abgelöst worden. Die Limitierungen der Methode des Gradientenabstieges und alternative Algorithmen (z.B. konjugierte Gradienten-Methode, David-Fletcher-Powell-Algorithmus) sind in \cite{WarrenS.Sarle.1994}, \cite{Masters.1995} und \cite{Bishop.2010} sehr gut dokumentiert. Eine weitere Alternative stellt der Levenberg-Marquadt-Algorithmus dar, dessen Implementierung in \cite{Kollias.March1993} diskutiert ist. Weitere Trainingsverfahren sind genetische Algorithmen, deren Einführung in \cite{Hassoun.1996} erörtert worden ist. Diese kommen nicht nur für die Adaptierung der Gewichte, sondern auch für die Adaptierung der Netzwerktopologie (Anzahl der Schichten, Anzahl der Neuronen, Auswahl der Aktivierungsfunktionen, etc.) zum Einsatz, siehe \cite{Bayer.2009} und \cite{StevenA.Harp.1992}.  \\
 Weitere Möglichkeiten sind stochastische Methoden des Gradientenabstieges (stochastic gradient descent oder SGD), welche vor allem das Ziel haben, den Trainingsvorgang zu beschleunigen. \cite{JohnDuchi.2010} und \cite{Zeiler.12222012} verändern dafür die Adaptions- bzw. Trainingsrate während der Trainingsphase. Dies führt zu schnelleren bei konvexen, aber zu geringeren Konvergenzgeschwindigkeiten bei nicht-konvexen Fehlerfunktionen. 
 
 Bei der Auswahl von Algorithmen spielt außerdem  die Anzahl der Netzwerkgewichte eine Rolle. Nach \cite{WarrenS.Sarle.1994} eignet sich der Levenberg-Marquardt-Algorithmus bei mehreren Zehnten, der Davidon-Fletscher-Power-Algorithmus bei mehreren Hunderten und der konjugierte Gradienten-Algorithmus bei mehreren Tausenden von Netzwerkgewichten. 
@@ -123,7 +124,7 @@ Bei der Auswahl von Algorithmen spielt außerdem  die Anzahl der Netzwerkgewicht
 
 \textbf{Aktivierungsfunktionen} 
 
-Wie in Abschnitt \ref{cha_ff} erwähnt, gibt es für die Auswahl der Aktivierungsfunktion mehrere Möglichkeiten (u.a. die \textit{logistische Sigmoid-}, die \textit{tangentiale hyperbolische Sigmoidfunktion} und die \textit{lineare} Funktion). Während die \textit{lineare} Funktion die Eingangsgröße linear in die Ausgangsgröße transformiert, besteht die Aufgabe der \textit{logistischen Sigmoid-} und der \textit{tangentialen hyperbolischen Sigmoid}- Funktion darin, Nichtlinearitäten in das Netz zu induzieren. So transformiert die \textit{logistische Sigmoid}-Funktion die Eingangsgröße in einen Wertebereich zwischen 0 und 1 und die \textit{tangentiale hyperbolische Sigmoid}-Funktion die Eingangsgröße in einen Wertebereich zwischen -1 und 1. Generell eignet sich jedoch jede differenzierbare Funktion als Aktivierungsfunktion. Die Auswahl der Aktivierungsfunktion der letzten Schicht sollte jedoch auf den Wertebereich der Ausgangsgröße abgestimmt sein. Befindet sich der Wertebereich der Ausgangsgrößen nicht nur in einem Bereich zwischen -1 und 1, kommen dafür in der Regel \textit{lineare} Aktivierungsfunktionen in der letzten Schicht, auch Ausgabeschicht genannt, zum Einsatz. Unterscheidungsmerkmal ist nicht nur der Wertebereich der Ausgangsgröße, sondern auch der Typ der Ausgangsgröße, welcher numerisch, kategorisch oder binär sein kann.  Weiterhin haben die Aktivierungsfunktionen einen Einfluss auf die Konvergenzgeschwindigkeit bzw. Trainingsgeschwindigkeit des Netzes. Nach \cite{Bishop.2010} weisen Netze mit \textit{tangentialen hyperbolischen Sigmoid}-Funktionen höhere Konvergenzzeiten auf als Netze mit \textit{logistischen Sigmoid}-Funktionen. In \cite{Kalman.June1992} dagegen sind die Vorzüge der \textit{tangentialen hyperbolischen Sigmoidfunktion} gegenüber anderen Aktivierungsfunktionen in Bezug auf mathematischen Eigenschaften während der Trainingsphase diskutiert.
+Wie in Abschnitt \ref{cha_ff} erwähnt, gibt es für die Auswahl der Aktivierungsfunktion mehrere Möglichkeiten (u.a. die \textit{logistische Sigmoid-}, die \textit{tangentiale hyperbolische Sigmoidfunktion} und die \textit{lineare} Funktion). Während die \textit{lineare} Funktion die Eingangsgröße linear in die Ausgangsgröße transformiert, besteht die Aufgabe der \textit{logistischen Sigmoid-} und der \textit{tangentialen hyperbolischen Sigmoid}- Funktion darin, Nichtlinearitäten in das Netz zu induzieren. So transformiert die \textit{logistische Sigmoid}-Funktion die Eingangsgröße in einen Wertebereich zwischen 0 und 1 und die \textit{tangentiale hyperbolische Sigmoid}-Funktion die Eingangsgröße in einen Wertebereich zwischen -1 und 1. Generell eignet sich jedoch jede differenzierbare Funktion als Aktivierungsfunktion. Die Auswahl der Aktivierungsfunktion der letzten Schicht sollte jedoch auf den Wertebereich der Ausgangsgröße abgestimmt sein. Befindet sich der Wertebereich der Ausgangsgrößen nicht nur in einem Bereich zwischen -1 und 1, kommen dafür in der Regel \textit{lineare} Aktivierungsfunktionen in der letzten Schicht, auch Ausgabeschicht genannt, zum Einsatz. Unterscheidungsmerkmal ist nicht nur der Wertebereich der Ausgangsgröße, sondern auch der Typ der Ausgangsgröße, welcher numerisch, kategorisch oder binär sein kann.  Weiterhin haben die Aktivierungsfunktionen einen Einfluss auf die Konvergenzgeschwindigkeit bzw. Trainingsgeschwindigkeit des Netzes. Nach \cite{Bishop.2010} weisen Netze mit \textit{tangentialen hyperbolischen Sigmoid}-Funktionen höhere Konvergenzzeiten auf als Netze mit \textit{logistischen Sigmoid}-Funktionen. In \cite{Kalman.June1992} dagegen sind die Vorzüge der \textit{tangentialen hyperbolischen Sigmoid}-Funktion gegenüber anderen Aktivierungsfunktionen in Bezug auf mathematischen Eigenschaften während der Trainingsphase diskutiert.
 
 \textbf{Initialisierung der Gewichte}
 
@@ -133,7 +134,7 @@ Wie in Abschnitt \ref{cha_ff} beschrieben, nehmen die Gewichte am Anfang der Tra
 
 Die Netzwerktopologie ist ebenfalls durch die Anzahl der Schichten bestimmt. Nach \cite{Hornik.1989} ist jedoch ein Netz mit nur einer verdeckten Schicht in der Lage, fast jede beliebige Funktion zu approximieren. Die Notwendigkeit einer zweiten Schicht kann sich dann ergeben, wenn stückweise stetige Funktionen zu approximieren sind.
 
-
+\textbf{Schlussfolgerung}
 
 Das bisher vorgestellte \textit{Feedforward-Netz} ist vor allem dazu geeignet, den statischen Zusammenhang zwischen Eingangs- und Ausgangsgrößen abzubilden. \textit{Feedforward-Netze} sind rein vorwärts gerichtete Netze und definieren sich lediglich über die Eingabegrößen und die Parametrisierung der Gewichte. Somit sind \textit{Feedforward-Netze} zustandsfrei. Davon unterscheiden sich sogenannte \textit{rekurrente Netze}, welche den Einfluss der Zeit zusätzlich berücksichtigen können. 
 
@@ -147,29 +148,61 @@ Bei \textit{rekurrenten Netzen} findet - im Gegensatz zu \textit{Feedforward-Net
 
 \begin{figure} [h]
 	\centering
-	\includegraphics[width=0.75\textwidth]{images/recurrent_net}
+	\includegraphics[width=0.65\textwidth]{images/recurrent_net}
 	\caption{Rekurrentes Netz \cite{Lipton.5292015}}
 	\label{fig:recurrent}
 \end{figure}
 
-Die \textit{rekurrenten Kanten} erlauben es, dass die Netzwerkknoten zum Zeitpunkt $t$ nicht nur die Eingabegröße $x(t)$, sondern auch die Ausgabegrößen $h^{(t-1)}$ der verdeckten Knoten des vorherigen Zeitschrittes zum Eingang haben. Der Ausgang des Netzes $\hat{y}^{(t)}$ zum Zeitpunkt $t$ ergibt sich aus dem Ausgang $h^{(t)}$ aller verdeckten Knoten zum Zeitpunkt $t$. Auf diese Weise beeinflusst die Eingangsgröße $x^{(t-1)}$ zum Zeitpunkt $t-1$ die Ausgangsgröße $\hat{y}^{(t)}$ zum Zeitpunkt $t$. Der Ausgang der verdeckten Knoten $h^{(t)}$ zum Zeitpunkt $t$ kann nach \cite{Lipton.5292015} durch 
+Die \textit{rekurrenten Kanten} erlauben es, dass die Netzwerkneuronen zum Zeitpunkt $t$ nicht nur die Eingangsgröße $x(t)$, sondern auch die Ausgangsgröße $h^{(t-1)}$ der verdeckten Neuronen des vorherigen Zeitschrittes zum Eingang haben. Der Ausgang des Netzes $\hat{y}^{(t)}$ zum Zeitpunkt $t$ ergibt sich aus dem Ausgang $h^{(t)}$ aller verdeckten Neuronen zum Zeitpunkt $t$. Auf diese Weise beeinflusst die Eingangsgröße $x^{(t-1)}$ zum Zeitpunkt $t-1$ die Ausgangsgröße $\hat{y}^{(t)}$ zum Zeitpunkt $t$. Der Ausgang der verdeckten Neuronen $h^{(t)}$ zum Zeitpunkt $t$ kann nach \cite{Lipton.5292015} durch 
 
 \begin{equation}
-h(t) = \sigma(W^{hx}x^{(t)} + W^{hh}h^{(t-1)} + b_h)
+h^{(t)} = \sigma(W^{hx}x^{(t)} + W^{hh}h^{(t-1)} + b_h)
 \end{equation}
 
-beschrieben werden. Dabei besteht die Matrix $W^{hx}$ aus den konventionellen Gewichten, welche sich zwischen den Eingabegrößen und den verborgenen Knoten befinden. Die Matrix $W^{hh}$ dagegen besteht aus \textit{rekurrenten Gewichten}, welche sich zwischen den verborgenen Knoten des aktuellen und des vorangegangenen Zeitschrittes befinden. Für die Adaptierung der Netzwerkgewichte kommt bei \textit{rekurrenten Netzen} üblicherweise der \textit{backpropagation-through-time}-Algorithmus zum Einsatz. \cite{Lipton.5292015}
+beschrieben werden. Dabei besteht die Matrix $W^{hx}$ aus den konventionellen Gewichten, welche sich zwischen den Eingangsgrößen und den verdeckten Neuronen befinden. Die Matrix $W^{hh}$ dagegen besteht aus \textit{rekurrenten Gewichten}, welche sich zwischen den verdeckten Neuronen des aktuellen und des vorangegangenen Zeitschrittes befinden. Für die Adaptierung der Netzwerkgewichte kommt bei \textit{rekurrenten Netzen} üblicherweise der \textit{Backpropagation-Through-Time}-Algorithmus zum Einsatz. \cite{Lipton.5292015} \\ 
+Im Laufe der Zeit haben sich unterschiedliche Varianten \textit{rekurrenter Netze} entwickelt. Zunächst seien frühere Architekturen \textit{rekurrenter Netze} erläutert.
 
 
+\textbf{Jordan-Netz}
+
+Das \textit{Jordan-Netz} stellt eine der frühen rekurrenten Netzarchitekturen dar, siehe Abbildung \ref{fig:jordan}. 
+
+\begin{figure} [h]
+	\centering
+	\includegraphics[width=0.65\textwidth]{images/jordan}
+	\caption{Jordan-Netz \cite{Lipton.5292015}}
+	\label{fig:jordan}
+\end{figure}
 
 
+Das \textit{Jordan}-Netz entspricht einem \textit{Feedforward}-Netz mit einer nachgeschalteten Zustandsschicht, bestehend aus Zustandsneuronen. Diese sind über feste Gewichte (in der Regel haben diese den Wert 1) mit den Neuronen der Ausgangsschicht verbunden. Im nächsten Zeitschritt übergeben diese ihre Ausgangsgröße an die Neuronen der verdeckten Schicht. Durch die festen Gewichte der \textit{rekurrenten} Kanten findet eine Speicherung der Ausgangsgrößen aus dem letzten Zeitschritt in den Zustandsneuronen statt. Auf diese Weise ist das Netz in der Lage Zustände zu speichern, wozu konventionelle \textit{Feedforward-Netze} nicht in der Lage sind. Der Ausgang der verdeckten Schicht $h^{(t)}$ zum Zeitpunkt $t$ ergibt sich nach \cite{Jordan.1997} durch
 
+\begin{equation}
+h^{(t)} = \sigma(W^{hx}x^{(t)} + W^{hh}y^{(t-1)} + b^{h})
+\end{equation}
 
+Dabei enthält die Matrix $W^{hx}$ die Gewichte zwischen den Eingangsgrößen und den Neuronen in der verdeckten Schicht. Die Matrix $W^{hh}$ dagegen enthält die konstanten Gewichte der \textit{rekurrenten Kanten}. Der Unterschied zu moderneren \textit{rekurrenten Netzen} besteht darin, dass das Jordan-Netz wie ein \textit{Feedforward}-Netz mittels des \textit{Backpropagation}-Algorithmus trainiert wird, wobei die Gewichte der \textit{rekurrenten} Kanten ignoriert bzw. nicht adaptiert werden. Dabei findet - im Gegensatz zu modernen \textit{rekurrenten Netzen} - keine Rückführung des Fehlers über verschiedene Zeitschritte statt. Damit ist dieses Netz nur eingeschränkt für komplexere Dynamiken einsetzbar. Ein weiterer Nachteil ist, dass die Anzahl der \textit{rekurrenten Kanten} durch die Anzahl der Ausgabeneuronen, also durch die Problemstellung, festgelegt ist. Diesen Nachteil umgeht das \textit{Elman-Netz}.
 
+\textbf{Elman-Netz}
 
+Das \textit{Elman-Netz} stellt ebenfalls eine der früheren \textit{rekurrenten} Netzarchitekturen dar. Der entscheidende Unterschied zum \textit{Jordan-Netz} ist, dass die \textit{rekurrenten Kanten} nicht wie beim \textit{Jordan-Netz} die Ausgabeneuronen mit den Zustandsneuronen, sondern die verdeckten Neuronen mit den Zustandsneuronen verbinden, siehe Abbildung \ref{fig:elman}.
 
+\begin{figure} [h]
+	\centering
+	\includegraphics[width=0.65\textwidth]{images/elman}
+	\caption{Elman-Netz \cite{Lipton.5292015}}
+	\label{fig:elman}
+\end{figure}
 
+Das \textit{Elman-Netz} ist wie das \textit{Jordan-Netz} in der Lage, Zustände zu speichern, indem die Zustandsneuronen den Zustand des vorherigen Zeitschrittes im nächsten Zeitschritt an die verdeckten Neuronen übergeben. Somit ergibt sich der Ausgang der verdeckten Schicht $h^{(t)}$ zum Zeitpunkt $t$ nach \cite{Elman.1990} durch 
 
+\begin{equation}
+h^{(t)} = \sigma(W^{hx}x^{(t)} + W^{hh}h^{(t-1)} + b^{h})
+\end{equation}
+
+Auch hier enthält die Matrix $W^{(hx)}$ die Gewichte zwischen den Eingangsgrößen und den verdeckten Neuronen und die Matrix $W^{(hh)}$ die konstanten Gewichte der \textit{rekurrenten Kanten}.
+Wie bei den \textit{Jordan-Netzen} findet das Training des Netzes über den \textit{Backpropagation-Algorithmus} statt, wobei die konstanten Gewichte der \textit{rekurrenten Kanten} ignoriert bzw. nicht adaptiert werden. 
+Somit ergibt sich auch beim \textit{Elman-Netz} das Problem, dass keine Rückführung des Fehlers über die Zeit stattfindet, sodass die Anwendbarkeit für komplexere Dynamiken beschränkt ist. Beim \textit{Elman-Netz} hängt jedoch die Anzahl der \textit{rekurrenten Kanten} nicht von der Anzahl der Ausgabeneuronen, sondern von der Anzahl der verdeckten Neuronen ab. Da die Anzahl der Neuronen in der verdeckten Schicht frei ausgewählt werden kann, hängt die Anzahl der \textit{rekurrenten Kanten} nicht von der Aufgabenstellung ab. Dies ist ein Vorteil gegenüber dem \textit{Jordan-Netz}.
 
  
 

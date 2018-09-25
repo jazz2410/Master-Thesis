@@ -8,9 +8,11 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Multi-Layer-Perceptron (MLP) \cite {Velickovic.2018}}}{7}{figure.2.1}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Multi-Layer-Perceptron \cite {Sturm.2000}}}{9}{figure.2.2}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Rekurrentes Netz \cite {Lipton.5292015}}}{13}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Jordan-Netz \cite {Lipton.5292015}}}{14}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Elman-Netz \cite {Lipton.5292015}}}{15}{figure.2.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Mathematische Modelle von White-Box- bis zu Black-Box-Modellen \cite {Isermann.2011}}}{17}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Erweiterte Grundstruktur des Regelkreises \cite {Lunze.2013}}}{18}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Fehlererkennung mit Signal- und Prozessmodellen (a) signalmodellbasiert, (b) prozessmodellbasiert. \cite {Isermann.2010}}}{20}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces \IeC {\"U}bersicht der Fehlererkennungsmethoden \cite {Isermann.2010}}}{20}{figure.3.4}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Mathematische Modelle von White-Box- bis zu Black-Box-Modellen \cite {Isermann.2011}}}{19}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Erweiterte Grundstruktur des Regelkreises \cite {Lunze.2013}}}{20}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Fehlererkennung mit Signal- und Prozessmodellen (a) signalmodellbasiert, (b) prozessmodellbasiert. \cite {Isermann.2010}}}{22}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces \IeC {\"U}bersicht der Fehlererkennungsmethoden \cite {Isermann.2010}}}{22}{figure.3.4}
 \addvspace {10\p@ }

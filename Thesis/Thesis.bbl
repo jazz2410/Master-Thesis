@@ -51,6 +51,10 @@
   Applications\/}.
 \newblock {Springer International Publishing}, Cham and s.l., 2017.
 
+\bibitem{Elman.1990}
+{\sc Elman, J.~L.}: {\em Finding Structure in Time\/}.
+\newblock Cognitive Science, 14(2):179--211, 1990.
+
 \bibitem{Fumumoto.2017}
 {\sc Fumumoto, Y.}, {\sc S.~Owaki} \btxandshort{.}\ {\sc M.~Nakamura}: {\em
   Effect of number of neurons of a neural-network on compensation performance
@@ -102,6 +106,14 @@
   of Dynamic Systems: An Introduction with Applications\/}.
 \newblock Advanced Textbooks in Control and Signal Processing. {Springer-Verlag
   Berlin Heidelberg}, Berlin, Heidelberg, 2011.
+
+\bibitem{Jordan.1997}
+{\sc Jordan, M.~I.}: {\em Serial Order: A Parallel Distributed Processing
+  Approach\/}.
+\newblock \Btxinshort{.}\ {\sc Donahoe, J.~W.} \btxandshort{.}\ {\sc V.~P.
+  Dorsel}\ (\btxeditorsshort{.}): {\em Neural-network models of cognition\/},
+  \btxvolumeshort{.}\ 121 \btxofseriesshort{.}\ {\em Advances in Psychology\/},
+  \btxpagesshort{.}\ 471--495. Elsevier, Amsterdam and New York, 1997.
 
 \bibitem{Kalman.June1992}
 {\sc Kalman, B.~L.} \btxandshort{.}\ {\sc S.~C. Kwasny}: {\em Why tanh:
