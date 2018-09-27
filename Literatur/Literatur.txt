@@ -3,7 +3,7 @@ Literatur
 
 
 A Critical Review of Recurrent Neural Networks
-		
+
 		- Beschreibung aller Arten von neuronalen Netzen (Forward, Recurrent (allgemein, Elman, Jordan,LSTM,BRNN,NTM)  )
 			- mathematische Hintergründe
 			- Training von rekurrente Netzen (Algorithmen)
@@ -49,7 +49,7 @@ A precise NP neural network-based online model predictive for die forging hydrau
 
 Application of RFB neural network and sliding mode control for a servo mechanical press
 		- Kombination eines neuronalen Netzes und eines Fuzzy sliding mode controlllers
-		- das neuronale Netz hat als Eingangsparameter die Geschwindigkeit und Position 
+		- das neuronale Netz hat als Eingangsparameter die Geschwindigkeit und Position
 		des Stößels und als Ausgangsgröße das Drehmoment des Motors
 		- der Fuzzy Slide Controller erhöht die Robustheit des Systems, verringert das Vibrieren
 		- durch Kombinationd der beiden verringert sich das Vibrieren und eine genauere Positionierung ist möglich
@@ -62,8 +62,8 @@ Hybrid-loop servo control system of double toggel mechanical press for flexible 
 		- RFNN wird benutzt, Abweichungen aufgrund der Stanzkraft auszugleichen
 
 
-Machine learning for detection of anomalies in press-hardening - Selection of efficient methods 
-		
+Machine learning for detection of anomalies in press-hardening - Selection of efficient methods
+
 		- drei ML-Methoden (neurnonale Netze, One Class Support Vector Machine, Isolation Forest), um Anomalien in einem Datensatz asufindig zu machen
 		- durch Einbringn eines fehlerhaften Datensatzes konnt auf Anomalie (hydraulisches Problem) der Maschine geschlossen werde (Verschiebung der Kraft- und Geschwindkeitsverläufe des Stößels
 
@@ -73,7 +73,7 @@ Prediction and Analysis of Forged Workpiece's Precision in Hyraulic Press Based 
 		- Output ist Maßgenauigkeit des Bauteils (aus FEM)
 		- neuronales Netz mappt die Maschinengeometrieparameter mit der Maßgenauigkeit der Bauteile
 		- Maschinengeometrieparameter während Umformprozess bestimmen Maßgenauigkeit des Bauteils
-		
+
 
 
 --------------------------------------------------------------------------------------------------
@@ -87,24 +87,26 @@ Robotic Arm
 		- neuronales Netz, welches die invertierte Dynamik abbildet
 		- als Eingangsgröße die Position und Orientierung des Werkzeuges (eigentliche Ausgangsgröße des Roboters)
 		- als Ausgangsgröße die Verdrehwinkel der Servomotoren (eingetliche Eingangsgrößen des Roboters)
-		- auch aktuelle Motorstellungen als Eingangsgröße für das Netz 
-		- das Netz ermittelt die notwendigen Motorwinkel für den Roboter, um die Wekrzeugstellung zu erreichen
+		- auch aktuelle Motorstellungen als Eingangsgröße für das vorgeschlagene Netz, nicht so beim tradionellen Netz
+		- das Netz ermittelt die notwendigen Motorwinkel für den Roboter, um die Werkzeugstellung zu erreichen
+        - mit Levenberg-Algorithmus trainiert, Validierung von zwei neuronalen Netzen, ein traditionelles und ein vorogeschlagenes
+        - das vorgeschlagene Netz ist besser als das traditionelle
 
-	
+
 
 Neuronale Netze zur Modellbildung in der Regelungstechnik
 
 		- neuronales Netz mit der inversen Dynamik berlernt und als Vorsteuerung eingesetzt
-		- Nachteile: mangelnde Stabilität, da sie in noch unbekannten Regionen des Eingaberaumes zufällige Werte liefern 
+		- Nachteile: mangelnde Stabilität, da sie in noch unbekannten Regionen des Eingaberaumes zufällige Werte liefern
 		- zusätzliche Aussage über Stabilität notwendig
 
 
 
 
-Neural Networks for Control Theory and Practice 
+Neural Networks for Control Theory and Practice
 
-		- Direct Inverse Control 
-		- Feedforward Inverse Control 
+		- Direct Inverse Control
+		- Feedforward Inverse Control
 		- Feedforward Inverse Control with Error Feedback
 
 
@@ -113,17 +115,20 @@ A Mulitlayered Neural Network Controller
 		- der Einsatz eines inversen Netzes alleine bringt Probleme, da nicht der Prozessoutputfehler minimiert wird, sondern der Prozessinputfehler
 		- deswegen der Einsatz von zwei verschiedenen Trainingsmethoden
 		- allgemeines Training: erzeugt in invertiertes Netz, welches den allgemeinen Betriebszustand abbildet und am Anfang eingesetzt wird
-		- spezielles Training: ebenfalls invertiertes Netz, welches aber den Fehler zwischen 
-		desired und actual Input als Eingangsgröße hat, erzeugt einen Input u, wird online trainiert
-		- allgemeine Trainingsmethode wird offline angewendet
+        - solange Sollwerte und Prozessausgangsgrößen nahe genug beeeinander liegem, liefert das Netz Prozesseingangsgrößen, die dafür sorgen, dass der Prozessausgang nahe an den Sollwerten liegt
+		- spezielles Training: ebenfalls invertiertes Netz, welches den Sollwert als Eingangsgröße hat, das Training findet so statt, dass die Differenz zwischen Prozessausgang und Sollwert minimiert wird
+        - allerdings wird die Jacobi-Matrix der Anlage dafür gebraucht, welche in der Regel nicht vorhanden ist
+        - die partiellen Ableitungen der Anlage sind nicht bekannt, können aber abgeschätzt werden, inderm Eingangsgrößen um kleine Beträge verändert werden, dabei guckt man sich die Veränderungen der Ausgangsgrößen an und ermittels so die partiellen Ableitungen
+		- allgemeine Trainingsmethode wird offline angewendet und soll das "ungefähre Verhalten der Plant" wiederzugeben
+        - für das Fine-Tuning kommt die spezielle Trainigsmethode, welche einen anderen Fehler minimiert, nämlich den Fehler zwischen Prozessausgang und Sollwert
 
 
 Neural Networks for Self-Learning Control Systems
 		- zwei neuronale Netze, ein invertiertes und ein nicht-nicht invertiertes
 		- das Neural-Net-Emulator simuliert das dynamische System (nicht invertiert)
-		- dabei Zeitversertzung zwischen Eingangs- und Ausgangsgrößen, und Ausgangsgröße des letzten Zeitschrittes wird ebenfalls als Eingang benutzt 
+		- dabei Zeitversertzung zwischen Eingangs- und Ausgangsgrößen, und Ausgangsgröße des letzten Zeitschrittes wird ebenfalls als Eingang benutzt
 		- der Neural-Net-Emulator wird benutzt, um dann den Neural Controller (invertiertes Netz) zu trainieren
-		- beim Trainieren muss die Differenz zwischen tatsächlichen und erwünschten Ausgangsgrößen minimiert werden --> deswegen in Kombination mit dem Emulator notwendig, da der Fehler durch das Emulator Netz gegeben ist
+		- beim Trainieren muss die Differenz zwischen simulierten und erwünschten Ausgangsgrößen minimiert werden --> deswegen in Kombination mit dem Emulator notwendig, da die Jakobi-Matrix von der Anlage nicht bekannt ist, allerdings ist die Jakobi-Matrix des Emulators bekannt, sodass der Fehler durch ihn hindurch backpropagiert wird, weil die Jakobi-Matrix von der Anlage nicht bekannt ist, kann der Fehler nicht durch sie hindurch backpropagiert werden
 		- beim Einsatz des invertierten Netzes alleine würde man den Fehler für die Prozesseingänge minimieren, was nicht gewollt ist
 
 
@@ -132,18 +137,17 @@ Anwendung neuronaler Netze zur Regelung von nichtlinearen Roboterantrieben
 		-Direct Inverse Control mit Offline Training (inmvertiertes Netz wird direkt vor das System geschaltet, vorher offline trainiert) --> mangelnde Robustheit, da keine Fehlerrückführung vorhanden
 		- Direct Inverse Control mit online Training: wie wird der Fehler ec berücksichtigt und minimiert?
 		- am Anfang unkontrolliertes Systemverhalten, da untrainiertes Netz
-		-Feedforward Inverse Control: 
 
-		-Feedforward Inverse Control: Emulator Modell wird offline traiinert, um das System abzubilden
+		-Feedforward Inverse Control (bzw. indriekte Regelung): Emulator Modell wird offline traiinert, um das System abzubilden
 		- daraus ergibt sich der Fehler ec, den man minimieren muss, dafür werden die Gewichte vom Controller Netz angepasst
 
 		- Internal Model Control: es wird immer noch der Fehler ec genutzt, um die Gewichte des Controller Netzes anzupassen, allerdings hat das Controller Netz einen weiteren Eingang, nämlich den Fehler em, welcher die Differenz zwischen System- und Modellausgang abbildet
 
-		- Feedforward-Feedback-Error Regelung: 
+		- Feedforward-Feedback-Error Regelung:
 
 		- der Fehler ec soll minimiert werden, dafür werden die Gewichte von FB und FF angepasst, durch FB entsteht ein geschlossener Regelkreis, durch FF ist ein Vorsteuerungsregler
 
-		- Nichtlineare prädiktive Regelung: Stellsignale sollen so gebildet sein, dass die Differenz der zukünftigen Refereznsignale und Modellvorhersage möglichst minimal ist 
+		- Nichtlineare prädiktive Regelung: Stellsignale sollen so gebildet sein, dass die Differenz der zukünftigen Refereznsignale und Modellvorhersage möglichst minimal ist
 
 
 Model predictive control for systems with fast dynamics using inverse neural Models
@@ -153,23 +157,23 @@ Model predictive control for systems with fast dynamics using inverse neural Mod
 
 		- Indirect Design: NN bildet das Modell ab, wird in Model Predictive Control benutzt, Modell mach Vorhersagen, daraus Optmierungsproblem aufgestellt, NAchteil ist, dass das Optimierungsproblem in Echtzeit gelöst werden muss, ansonsten kann es zu Instabilitäten kommen
 
-
 		- invertiertes RBFNN-basiertes System
+        - RBFNN haben Vorteile (einfachere Netzstrukturen, schnelle Trainingszeiten, höhere Genaugkeiten, aber schlechtere Extrapolation)
 		- basiert auf zwei neuronalen Netzen, ein forward Netz, um Vorhersagen zum 	Systemzustand zu machen
 		- ein invertiertes Netz, um auf die Stellgrößen zu betimmen
-		- das Forward-Netz ist ein dynamisches Netz, enthält vorherige Systemzustände als Eingangsparamter, gibt die Ausgangsgröße zum Zeitpunkt t+1 heraus
-		- das invertierte Netz berechnet daraus die Eingangsgröße, das invertierte Netz hatte als Eingangsgröße ebenfalls die Differez der vorherigen Ausgangsgrößen
+		- das Forward-Netz ist ein dynamisches Netz, enthält vorherige Systemzustände als Eingangsparamter, gibt die Systemeingänge zum Zeitpunkt t+1 heraus,
+		- das invertierte Netz berechnet daraus die Stellgröße, das invertierte Netz ist so trainiert, dass es die zukünftigen Ausgabegrößen t+1 mit den akutellen Eingabegrößen t mappt, die zukünftigen Ausgabegrößen t+1 werden nun gleich mit den Sollgrößen gleichgesetzt, das invertierte Netz gibt nun für eine Sollvorgabe die Stellgröße vor
 
-	Neural Network control of nonlinear dynamic systems using hybrid algorithm
+Neural Network control of nonlinear dynamic systems using hybrid algorithm
 
 		- zwei forward Neurnonale Netze-
 		- neural model und neural controller
 		- der zu minimierende Fehler ist ec=neural_modell vorhersage - desired value
 		- neural model wird vorher trainiert und soll den den prozess sehr gut abbilden
 		- im zweiten Schritt wird der Controller trainiert, um den fehler ec zu minimieren, dabei kommt hybrider Algroithmus zum Einsatz, welcher (Kombination aus Gradienabstigesverfahren und Kohonen Algorithmus)
+        - der hybride Algorithmus sorgt für schnellere KOnvergenzgeschindigkeiten
 
 
-	
 
 Neural Networks for Control
 
@@ -180,4 +184,4 @@ Neural networks for control systems—A survey (ANFRAGEN)
 Neurocontrol - A Literature Survey
 
 A CRITICAL REVIEW OF THE MOST POPULAR TYPES
-OF NEURO CONTROL
+OF NEURO CONTROL (bietet eine sehr gute Übersicht über alle Formen von Regelungsarten mit Neuronalen Netzen)
