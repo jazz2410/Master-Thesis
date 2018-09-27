@@ -159,7 +159,7 @@ Die \textit{rekurrenten Kanten} erlauben es, dass die Netzwerkneuronen zum Zeitp
 h^{(t)} = \sigma(W^{hx}x^{(t)} + W^{hh}h^{(t-1)} + b_h)
 \end{equation}
 
-beschrieben werden. Dabei besteht die Matrix $W^{hx}$ aus den konventionellen Gewichten, welche sich zwischen den Eingangsgrößen und den verdeckten Neuronen befinden. Die Matrix $W^{hh}$ dagegen besteht aus \textit{rekurrenten Gewichten}, welche sich zwischen den verdeckten Neuronen des aktuellen und des vorangegangenen Zeitschrittes befinden. Für die Adaptierung der Netzwerkgewichte kommt bei \textit{rekurrenten Netzen} üblicherweise der \textit{Backpropagation-Through-Time}-Algorithmus zum Einsatz. \cite{Lipton.5292015} \\ 
+beschrieben werden. Dabei besteht die Matrix $W^{hx}$ aus den konventionellen Gewichten, welche sich zwischen den Eingangsgrößen und den verdeckten Neuronen befinden. Die Matrix $W^{hh}$ dagegen besteht aus \textit{rekurrenten Gewichten}, welche sich zwischen den verdeckten Neuronen des aktuellen und des vorangegangenen Zeitschrittes befinden. Für die Adaptierung der Netzwerkgewichte kommt bei \textit{rekurrenten Netzen} üblicherweise der \textit{Backpropagation-Through-Time(BBTT)}- oder der \textit{Real-Time Recurrent Learning(RTRL)}-Algorithmus zum Einsatz. Der Einsatz dieser Algorithmen ist jedoch mit Problemen verbunden, siehe Abschnitt \ref{cha_recurrent_problem}. \\ 
 Im Laufe der Zeit haben sich unterschiedliche Varianten \textit{rekurrenter Netze} entwickelt. Zunächst seien frühere Architekturen \textit{rekurrenter Netze} erläutert.
 
 
@@ -205,6 +205,26 @@ Wie bei den \textit{Jordan-Netzen} findet das Training des Netzes über den \tex
 Somit ergibt sich auch beim \textit{Elman-Netz} das Problem, dass keine Rückführung des Fehlers über die Zeit stattfindet, sodass die Anwendbarkeit für komplexere Dynamiken beschränkt ist. Beim \textit{Elman-Netz} hängt jedoch die Anzahl der \textit{rekurrenten Kanten} nicht von der Anzahl der Ausgabeneuronen, sondern von der Anzahl der verdeckten Neuronen ab. Da die Anzahl der Neuronen in der verdeckten Schicht frei ausgewählt werden kann, hängt die Anzahl der \textit{rekurrenten Kanten} nicht von der Aufgabenstellung ab. Dies ist ein Vorteil gegenüber dem \textit{Jordan-Netz}.
 
  
+\subsubsection{Herausforderungen bei rekurrenten Netzen}
+\label{cha_recurrent_problem}
+
+\textbf{Verschwindende und explodierende Gradienten}
+
+\textit{Rekurrente Netze} können - im Gegensatz zu \textit{Feedforward-Netzen} - durch den Einsatz \textit{rekurrenter Kanten} Informationen speichern. Jedoch ist die Anwendung bestimmter Algorithmen für das Netztraining mit Problemen verbunden. \\
+Nach \cite{Hochreiter.2001} ist der Einsatz von gradientenbasierten Trainingsalgorithmen, zu denen der \textit{Backpropagation-Through-Time}- und der \textit{Real-Time Recurrent}-Algorithmus gehören, beim Training \textit{rekurrenter Netze} problematisch. Beim  Netztraining können dabei zwei Effekte auftreten. Der erste Effekt umfasst das \textit{Verschwinden der Gradienten}. Dabei nehmen die Gradienten verschwindend kleine Werte an. Dies führt dazu, dass die Adaptierung der Gewichte, also das Training des Netzes, einen sehr hohen Zeitaufwand erfordert oder überhaupt nicht mehr stattfindet. Der zweiter Effekt umfasst das \textit{Explodieren der Gradienten}. Dabei nehmen die Gradienten sehr hohe Werte an, was zu oszillierenden Gewichten und somit zu einer schlechteren Robustheit des Netzes führt. \cite{Hochreiter.2001} \\
+\cite{Hochreiter.2001} schlägt vor, das Problem der \textit{verschwindenden Gradienten} durch eine neue Netzstruktur zu lösen. Bei dieser Netzstruktur kommen sogenannte Long Short-Term Memory(LSTM)-Zellen zum Einsatz, welche die konventionellen verdeckten Knoten ersetzen, siehe Abschnitt. 
+
+Die mathematischen Hintergründe und die Charakterisierung der Rahmenbedingungen, welche zu \textit{verschwindenden} oder zu \textit{explodierenden} Gradienten führt, sind in \cite{Pascanu.11212012} erläutert. \cite{Pascanu.11212012} schlägt vor, den Wertebereich der Gewichte durch Regularisierung einzuschränken. Der Einschränkung des Wertebereiches findet derart statt, dass eine zu große Veränderung des Gradienten unterbunden ist. \\
 
 
+\textbf{Minimierung der Fehlerfunktion}
+
+Wie bei den \textit{Feedforward-Netzen} tritt bei den \textit{rekurrenten Netzen} das Problem auf, dass das Auffinden des globalen Minima der Fehlerfunktion kaum möglich ist. \\
+Die Herausforderung besteht darin, durch die Adaption der Gewichte ein möglichst tiefes lokales Minima der Fehlerfunktion zu besetzen. Nach \cite{Dauphin.6102014} sollte bei höher dimensionalen nicht-konvexen Fehlerfunktionen Sattelpunkten eine viel höhere Bedeutung zukommen als lokalen Minima, da die Anzahl der kritischen lokalen Minima bei größeren Netzen exponentiell sinkt. Demnach wird von \cite{Dauphin.6102014} ein Sattelpunkt-freier Newton-Algorithmus vorgeschlagen. Diese Auslegung des Algorithmus unterscheidet sich von der konventionellen Newton-Methode darin, dass die Gewichtsadaptierung derart stattfindet, dass der Wert der Fehlerfunktion sich möglichst weit weg von den kritischeren Sattelpunkten befindet. Es konnten damit zwar Verbesserungen in Hinblick auf die Güte von \textit{rekurrenten Netzen} erzielt werden, allerdings ist für die Anwendung des Sattelpunkt-freien Newton-Methode die rechenintensive Ermittlung der Hesse-Matrix notwendig. \cite{Dauphin.6102014}  
+
+
+
+   
+ 
+ 
  

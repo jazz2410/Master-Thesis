@@ -82,6 +82,16 @@
 }
 
 
+@misc{Dauphin.6102014,
+ abstract = {A central challenge to many fields of science and engineering involves minimizing non-convex error functions over continuous, high dimensional spaces. Gradient descent or quasi-Newton methods are almost ubiquitously used to perform such minimizations, and it is often thought that a main source of difficulty for these local methods to find the global minimum is the proliferation of local minima with much higher error than the global minimum. Here we argue, based on results from statistical physics, random matrix theory, neural network theory, and empirical evidence, that a deeper and more profound difficulty originates from the proliferation of saddle points, not local minima, especially in high dimensional problems of practical interest. Such saddle points are surrounded by high error plateaus that can dramatically slow down learning, and give the illusory impression of the existence of a local minimum. Motivated by these arguments, we propose a new approach to second-order optimization, the saddle-free Newton method, that can rapidly escape high dimensional saddle points, unlike gradient descent and quasi-Newton methods. We apply this algorithm to deep or recurrent neural network training, and provide numerical evidence for its superior optimization performance.},
+ author = {Dauphin, Yann and Pascanu, Razvan and Gulcehre, Caglar and Cho, Kyunghyun and Ganguli, Surya and Bengio, Yoshua},
+ date = {6/10/2014},
+ title = {Identifying and attacking the saddle point problem in high-dimensional  non-convex optimization},
+ url = {http://arxiv.org/pdf/1406.2572v1},
+ keywords = {Computer Science - Learning;Mathematics - Optimization and Control;Statistics - Machine Learning}
+}
+
+
 @misc{Dobel.2018,
  author = {D{\"o}bel, Inga and Leis, Miriam and Vogelsang, Manuel-Molina and Neustroev, Dmitry and Petzka, Henning and R{\"u}ping, Stefan and Voss, Angelika and Mengele, Martin and Welz, Juliane},
  year = {2018},
@@ -216,6 +226,16 @@ This is the first book on a generally applicable control strategy for turbulence
 }
 
 
+@incollection{Hochreiter.2001,
+ author = {Hochreiter, Sepp and Bengio, Yoshua and Frasconi, Paolo},
+ title = {Gradient Flow in Recurrent Nets: the Difficulty of Learning Long-Term Dependencies},
+ publisher = {{IEEE Press}},
+ editor = {Kolen, J. and Kremer, S.},
+ booktitle = {Field Guide to Dynamical Recurrent Networks},
+ year = {2001}
+}
+
+
 @article{Hornik.1989,
  author = {Hornik, Kurt and Stinchcombe, Maxwell and White, Halbert},
  year = {1989},
@@ -310,6 +330,41 @@ This is the first book on a generally applicable control strategy for turbulence
 }
 
 
+@book{Kolen.2001,
+ author = {Kolen, John F. and Kremer, Stefan C.},
+ year = {2001},
+ title = {A field guide to dynamical recurrent networks},
+ keywords = {Neural networks (Computer science)},
+ address = {New York},
+ publisher = {{IEEE Press}},
+ isbn = {9780470544037}
+}
+
+
+@book{Kolen.2001b,
+ year = {2001},
+ title = {Field Guide to Dynamical Recurrent Networks},
+ publisher = {{IEEE Press}},
+ editor = {Kolen, J. and Kremer, S.}
+}
+
+
+@book{Kolen.2009,
+ abstract = {Preface. Acknowledgments. List of Figures. List of Tables. List of Contributors. INTRODUCTION. Dynamical Recurrent Networks (J. Kolen and S. Kremer). ARCHITECTURES. Networks with Adaptive State Transitions (D. Calvert and S. Kremer). Delay Networks: Buffers to Rescue (T. Lin and C. Giles). Memory Kernels (A. Tsoi, et al.). CAPABILITIES. Dynamical Systems and Iterated Function Systems (J. Kolen). Representation of Discrete States (C. Giles and C. Omlin). Simple Stable Encodings of Finite-State Machines in Dynamic Recurrent Networks (M. Forcada and R. Carrasco). Representation Beyond Finite States: Alternatives to Pushdown Automata (J. Wiles, et al.). Universal Computation and Super-Turing Capabilities (H. Siegelmann). ALGORITHMS. Insertion of Prior Knowledge (P. Frasconi, et al.). Gradient Calculations for Dynamic Recurrent Neural Networks (B. Pearlmutter). Understanding and Explaining DRN Behavior (C. Omlin). LIMITATIONS. Evaluating Benchmark Problems by Random Guessing (J. Schmidhuber, et al.). Gradient Flow in Recurrent Nets: The Difficulty of Learning Long-Term Dependencies (S. Hochreiter, et al.. Limiting the Computational Power of Recurrent Neural Networks: VC Dimension and Noise (C. Moore). APPLICATIONS. Dynamical Reccurent Networks in Control (D. Prokhorov, et al.). Sentence Processing and Linguistic Structure (W. Tabor). Neural Network Architectures for the Modeling of Dynamic Systems (H. Zimmerman and R. Neuneier). From Sequences to Data Structures: Theory and Applications (P. Frasconi, et al.). CONCLUSION. Dynamical Recurrent Networks: Looking Back and Looking Forward (S. Kremer and J. Kolen). Bibliography. Glossary. Index. About the Editors
+
+
+Acquire the tools for understanding new architectures and algorithms of dynamical recurrent networks (DRNs) from this valuable field guide, which documents recent forays into artificial intelligence, control theory, and connectionism. This unbiased introduction to DRNs and their application to time-series problems (such as classification and prediction) provides a comprehensive overview of the recent explosion of leading research in this prolific field. A Field Guide to Dynamical Recurrent Networks emphasizes the issues driving the development of this class of network structures. It provides a solid foundation in DRN systems theory and practice using consistent notation and terminology. Theoretical presentations are supplemented with applications ranging from cognitive modeling to financial forecasting. A Field Guide to Dynamical Recurrent Networks will enable engineers, research scientists, academics, and graduate students to apply DRNs to various real-world problems and learn about different areas of active research. It provides both state-of-the-art information and a road map to the future of cutting-edge dynamical recurrent networks},
+ year = {2009},
+ title = {A field guide to dynamical recurrent networks},
+ keywords = {Neural networks (Computer science)},
+ address = {New York and Piscataway, New Jersey},
+ publisher = {{IEEE Press} and {IEEE Xplore}},
+ isbn = {9780780353695},
+ editor = {Kolen, John F. and Kremer, Stefan C.},
+ doi = {10.1109/9780470544037}
+}
+
+
 @inproceedings{Kollias.March1993,
  author = {Anastassiou and Kollias},
  title = {Adaptive training of multilayer neural networks using a least squares estimation technique},
@@ -382,6 +437,16 @@ This is the first book on a generally applicable control strategy for turbulence
  issn = {1045-9227},
  journal = {IEEE transactions on neural networks},
  doi = {10.1109/72.839013}
+}
+
+
+@misc{Pascanu.11212012,
+ abstract = {There are two widely known issues with properly training Recurrent Neural Networks, the vanishing and the exploding gradient problems detailed in Bengio et al. (1994). In this paper we attempt to improve the understanding of the underlying issues by exploring these problems from an analytical, a geometric and a dynamical systems perspective. Our analysis is used to justify a simple yet effective solution. We propose a gradient norm clipping strategy to deal with exploding gradients and a soft constraint for the vanishing gradients problem. We validate empirically our hypothesis and proposed solutions in the experimental section.},
+ author = {Pascanu, Razvan and Mikolov, Tomas and Bengio, Yoshua},
+ date = {11/21/2012},
+ title = {On the difficulty of training Recurrent Neural Networks},
+ url = {http://arxiv.org/pdf/1211.5063v2},
+ keywords = {Computer Science - Learning}
 }
 
 

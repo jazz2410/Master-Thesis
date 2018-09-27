@@ -34,6 +34,11 @@
 {\sc Bishop, C.~M.}: {\em Neural networks for pattern recognition\/}.
 \newblock {Oxford Univ. Press}, Oxford, Reprinted. \btxeditionshort{.}, 2010.
 
+\bibitem{Dauphin.6102014}
+{\sc Dauphin, Y.}, {\sc R.~Pascanu}, {\sc C.~Gulcehre}, {\sc K.~Cho}, {\sc
+  S.~Ganguli} \btxandshort{.}\ {\sc Y.~Bengio}: {\em Identifying and attacking
+  the saddle point problem in high-dimensional non-convex optimization\/}.
+
 \bibitem{Dobel.2018}
 {\sc D{\"o}bel, I.}, {\sc M.~Leis}, {\sc M.-M. Vogelsang}, {\sc D.~Neustroev},
   {\sc H.~Petzka}, {\sc S.~R{\"u}ping}, {\sc A.~Voss}, {\sc M.~Mengele}
@@ -91,6 +96,14 @@
 {\sc Hassoun, M.~H.}: {\em Fundamentals of Artificial Neural Networks\/}.
 \newblock Proceedings of the IEEE, 84(6):906, 1996.
 
+\bibitem{Hochreiter.2001}
+{\sc Hochreiter, S.}, {\sc Y.~Bengio} \btxandshort{.}\ {\sc P.~Frasconi}: {\em
+  Gradient Flow in Recurrent Nets: the Difficulty of Learning Long-Term
+  Dependencies\/}.
+\newblock \Btxinshort{.}\ {\sc Kolen, J.} \btxandshort{.}\ {\sc S.~Kremer}\
+  (\btxeditorsshort{.}): {\em Field Guide to Dynamical Recurrent Networks\/}.
+  {IEEE Press}, 2001.
+
 \bibitem{Hornik.1989}
 {\sc Hornik, K.}, {\sc M.~Stinchcombe} \btxandshort{.}\ {\sc H.~White}: {\em
   Multilayer feedforward networks are universal approximators\/}.
@@ -142,6 +155,10 @@
   Constructive neural-network learning algorithms for pattern
   classification\/}.
 \newblock IEEE transactions on neural networks, 11(2):436--451, 2000.
+
+\bibitem{Pascanu.11212012}
+{\sc Pascanu, R.}, {\sc T.~Mikolov} \btxandshort{.}\ {\sc Y.~Bengio}: {\em On
+  the difficulty of training Recurrent Neural Networks\/}.
 
 \bibitem{Piovoso.1991b}
 {\sc Piovoso, M.~J.} \btxandshort{.}\ {\sc A.~J. Owens}: {\em Sensor Data
