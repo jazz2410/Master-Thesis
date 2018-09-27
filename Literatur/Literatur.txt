@@ -185,3 +185,28 @@ Neurocontrol - A Literature Survey
 
 A CRITICAL REVIEW OF THE MOST POPULAR TYPES
 OF NEURO CONTROL (bietet eine sehr gute Übersicht über alle Formen von Regelungsarten mit Neuronalen Netzen)
+
+
+
+---------------------------------------------------------------------------------------
+
+Adaptive and optimal control of a non-linear process using intelligent controllers
+
+Application of Integral Reinforcement Learning for Optimal Control of a High Speed Flux-switching
+Permanent Magnet Machine
+
+
+Application of policy iteration technique based adaptive optimal control
+design for automatic voltage regulator of power system
+
+
+Neural network approach to continuous-time direct adaptive optimal control for
+partially unknown nonlinear systems
+
+Adaptive Critic Design
+
+Adaptive Optimal Control Algorithm
+for Continuous-Time Nonlinear Systems Based on Policy Iteration
+
+Online actor–critic algorithm to solve the
+continuous-time infinite horizon optimal control problem.
