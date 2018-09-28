@@ -9,9 +9,11 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Erweiterte Grundstruktur des Regelkreises \cite {Lunze.2013}}}{8}{figure.2.2}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Fehlererkennung mit Signal- und Prozessmodellen (a) signalmodellbasiert, (b) prozessmodellbasiert. \cite {Isermann.2010}}}{10}{figure.2.3}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces \IeC {\"U}bersicht der Fehlererkennungsmethoden \cite {Isermann.2010}}}{10}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Multi-Layer-Perceptron (MLP) \cite {Velickovic.2018}}}{13}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Multi-Layer-Perceptron \cite {Sturm.2000}}}{15}{figure.2.6}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Rekurrentes Netz \cite {Lipton.5292015}}}{19}{figure.2.7}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Jordan-Netz \cite {Lipton.5292015}}}{20}{figure.2.8}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Elman-Netz \cite {Lipton.5292015}}}{21}{figure.2.9}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces G\IeC {\"a}ngige Lernverfahren und ihre Modelle \cite {Dobel.2018}}}{12}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Multi-Layer-Perceptron (MLP) \cite {Velickovic.2018}}}{13}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Multi-Layer-Perceptron \cite {Sturm.2000}}}{15}{figure.2.7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Rekurrentes Netz \cite {Lipton.5292015}}}{19}{figure.2.8}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Jordan-Netz \cite {Lipton.5292015}}}{20}{figure.2.9}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Elman-Netz \cite {Lipton.5292015}}}{21}{figure.2.10}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Long Short-Termn Memory-Zelle \cite {Lipton.5292015}}}{23}{figure.2.11}
 \addvspace {10\p@ }

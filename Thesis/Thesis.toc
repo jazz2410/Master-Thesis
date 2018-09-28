@@ -11,13 +11,15 @@
 \contentsline {section}{\numberline {1.2}Vorgehensweise}{3}{section.1.2}
 \contentsline {chapter}{\numberline {2}Stand der Technik}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Modellierungsans\IeC {\"a}tze}{5}{section.2.1}
-\contentsline {section}{\numberline {2.2}Regelung}{7}{section.2.2}
+\contentsline {section}{\numberline {2.2}Allgemeine Regelung}{7}{section.2.2}
 \contentsline {section}{\numberline {2.3}Zustands\IeC {\"u}berwachung}{9}{section.2.3}
 \contentsline {section}{\numberline {2.4}Maschinelles Lernen}{11}{section.2.4}
-\contentsline {section}{\numberline {2.5}K\IeC {\"u}nstliche neuronale Netzwerke}{12}{section.2.5}
+\contentsline {section}{\numberline {2.5}Modellbildung durch k\IeC {\"u}nstliche neuronale Netzwerke}{12}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}Feedforward neuronale Netzwerke}{12}{subsection.2.5.1}
 \contentsline {subsubsection}{\numberline {2.5.1.1}Herausforderungen bei der Auslegung neuronaler Netze}{16}{subsubsection.2.5.1.1}
 \contentsline {subsection}{\numberline {2.5.2}Rekurrente neuronale Netze}{19}{subsection.2.5.2}
-\contentsline {subsubsection}{\numberline {2.5.2.1}Herausforderungen bei rekurrenten Netzen}{22}{subsubsection.2.5.2.1}
+\contentsline {subsubsection}{\numberline {2.5.2.1}Einfache rekurrente Netze}{20}{subsubsection.2.5.2.1}
+\contentsline {subsubsection}{\numberline {2.5.2.2}Herausforderungen bei rekurrenten Netzen}{22}{subsubsection.2.5.2.2}
+\contentsline {subsubsection}{\numberline {2.5.2.3}Moderne rekurrente Netzarchitekturen}{23}{subsubsection.2.5.2.3}
 \contentsline {chapter}{\numberline {3}Ausblick}{25}{chapter.3}
 \contentsline {chapter}{Literaturverzeichnis}{27}{section*.17}

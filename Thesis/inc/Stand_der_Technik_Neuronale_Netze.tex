@@ -1,4 +1,4 @@
-\section{Künstliche neuronale Netzwerke}
+\section{Modellbildung durch künstliche neuronale Netzwerke}
 
 Wie in Abschnitt \ref{cha:machine_learning} erläutert, bieten sich für die Modellierung des dynamischen Verhaltens der 3D-Servo-Presse neuronale Netze an. Nach \cite{Lipton.5292015} sind diese in der Lage, jeden stetigen nichtlinearen Zusammenhang zwischen Eingangs- und Ausgangsgrößen beliebig genau abzubilden. Es gibt eine Bandbreite von verschiedenen Typen neuronaler Netze, für die nachfolgend ein Überblick gegeben wird. 
 
@@ -163,6 +163,8 @@ beschrieben werden. Dabei besteht die Matrix $W^{hx}$ aus den konventionellen Ge
 Im Laufe der Zeit haben sich unterschiedliche Varianten \textit{rekurrenter Netze} entwickelt. Zunächst seien frühere Architekturen \textit{rekurrenter Netze} erläutert.
 
 
+\subsubsection{Einfache rekurrente Netze}
+
 \textbf{Jordan-Netz}
 
 Das \textit{Jordan-Netz} stellt eine der frühen rekurrenten Netzarchitekturen dar, siehe Abbildung \ref{fig:jordan}. 
@@ -181,7 +183,7 @@ Das \textit{Jordan}-Netz entspricht einem \textit{Feedforward}-Netz mit einer na
 h^{(t)} = \sigma(W^{hx}x^{(t)} + W^{hh}y^{(t-1)} + b^{h})
 \end{equation}
 
-Dabei enthält die Matrix $W^{hx}$ die Gewichte zwischen den Eingangsgrößen und den Neuronen in der verdeckten Schicht. Die Matrix $W^{hh}$ dagegen enthält die konstanten Gewichte der \textit{rekurrenten Kanten}. Der Unterschied zu moderneren \textit{rekurrenten Netzen} besteht darin, dass das Jordan-Netz wie ein \textit{Feedforward}-Netz mittels des \textit{Backpropagation}-Algorithmus trainiert wird, wobei die Gewichte der \textit{rekurrenten} Kanten ignoriert bzw. nicht adaptiert werden. Dabei findet - im Gegensatz zu modernen \textit{rekurrenten Netzen} - keine Rückführung des Fehlers über verschiedene Zeitschritte statt. Damit ist dieses Netz nur eingeschränkt für komplexere Dynamiken einsetzbar. Ein weiterer Nachteil ist, dass die Anzahl der \textit{rekurrenten Kanten} durch die Anzahl der Ausgabeneuronen, also durch die Problemstellung, festgelegt ist. Diesen Nachteil umgeht das \textit{Elman-Netz}.
+Dabei enthält die Matrix $W^{hx}$ die Gewichte zwischen den Eingangsgrößen und den Neuronen in der verdeckten Schicht. Die Matrix $W^{hh}$ dagegen enthält die konstanten Gewichte der \textit{rekurrenten Kanten}. Der Unterschied zu moderneren \textit{rekurrenten Netzen} besteht darin, dass das Jordan-Netz wie ein \textit{Feedforward}-Netz mittels des \textit{Backpropagation}-Algorithmus trainiert wird, wobei die Gewichte der \textit{rekurrenten} Kanten ignoriert bzw. nicht adaptiert werden. Nach \cite{Lipton.5292015} findet - im Gegensatz zu modernen \textit{rekurrenten Netzen} - keine Rückführung des Fehlers über verschiedene Zeitschritte statt. Damit ist dieses Netz nur eingeschränkt für komplexere Dynamiken einsetzbar. \cite{Lipton.5292015} Ein weiterer Nachteil ist, dass die Anzahl der \textit{rekurrenten Kanten} durch die Anzahl der Ausgabeneuronen, also durch die Problemstellung, festgelegt ist. Diesen Nachteil umgeht das \textit{Elman-Netz}.
 
 \textbf{Elman-Netz}
 
@@ -202,7 +204,7 @@ h^{(t)} = \sigma(W^{hx}x^{(t)} + W^{hh}h^{(t-1)} + b^{h})
 
 Auch hier enthält die Matrix $W^{(hx)}$ die Gewichte zwischen den Eingangsgrößen und den verdeckten Neuronen und die Matrix $W^{(hh)}$ die konstanten Gewichte der \textit{rekurrenten Kanten}.
 Wie bei den \textit{Jordan-Netzen} findet das Training des Netzes über den \textit{Backpropagation-Algorithmus} statt, wobei die konstanten Gewichte der \textit{rekurrenten Kanten} ignoriert bzw. nicht adaptiert werden. 
-Somit ergibt sich auch beim \textit{Elman-Netz} das Problem, dass keine Rückführung des Fehlers über die Zeit stattfindet, sodass die Anwendbarkeit für komplexere Dynamiken beschränkt ist. Beim \textit{Elman-Netz} hängt jedoch die Anzahl der \textit{rekurrenten Kanten} nicht von der Anzahl der Ausgabeneuronen, sondern von der Anzahl der verdeckten Neuronen ab. Da die Anzahl der Neuronen in der verdeckten Schicht frei ausgewählt werden kann, hängt die Anzahl der \textit{rekurrenten Kanten} nicht von der Aufgabenstellung ab. Dies ist ein Vorteil gegenüber dem \textit{Jordan-Netz}.
+Somit ergibt sich auch beim \textit{Elman-Netz} das Problem, dass keine Rückführung des Fehlers über die Zeit stattfindet, sodass die Anwendbarkeit für komplexere Dynamiken beschränkt ist \cite{Lipton.5292015}. Beim \textit{Elman-Netz} hängt jedoch die Anzahl der \textit{rekurrenten Kanten} nicht von der Anzahl der Ausgabeneuronen, sondern von der Anzahl der verdeckten Neuronen ab. Da die Anzahl der Neuronen in der verdeckten Schicht frei ausgewählt werden kann, hängt die Anzahl der \textit{rekurrenten Kanten} nicht von der Aufgabenstellung ab. Dies ist ein Vorteil gegenüber dem \textit{Jordan-Netz}.
 
  
 \subsubsection{Herausforderungen bei rekurrenten Netzen}
@@ -212,7 +214,7 @@ Somit ergibt sich auch beim \textit{Elman-Netz} das Problem, dass keine Rückfü
 
 \textit{Rekurrente Netze} können - im Gegensatz zu \textit{Feedforward-Netzen} - durch den Einsatz \textit{rekurrenter Kanten} Informationen speichern. Jedoch ist die Anwendung bestimmter Algorithmen für das Netztraining mit Problemen verbunden. \\
 Nach \cite{Hochreiter.2001} ist der Einsatz von gradientenbasierten Trainingsalgorithmen, zu denen der \textit{Backpropagation-Through-Time}- und der \textit{Real-Time Recurrent}-Algorithmus gehören, beim Training \textit{rekurrenter Netze} problematisch. Beim  Netztraining können dabei zwei Effekte auftreten. Der erste Effekt umfasst das \textit{Verschwinden der Gradienten}. Dabei nehmen die Gradienten verschwindend kleine Werte an. Dies führt dazu, dass die Adaptierung der Gewichte, also das Training des Netzes, einen sehr hohen Zeitaufwand erfordert oder überhaupt nicht mehr stattfindet. Der zweiter Effekt umfasst das \textit{Explodieren der Gradienten}. Dabei nehmen die Gradienten sehr hohe Werte an, was zu oszillierenden Gewichten und somit zu einer schlechteren Robustheit des Netzes führt. \cite{Hochreiter.2001} \\
-\cite{Hochreiter.2001} schlägt vor, das Problem der \textit{verschwindenden Gradienten} durch eine neue Netzstruktur zu lösen. Bei dieser Netzstruktur kommen sogenannte Long Short-Term Memory(LSTM)-Zellen zum Einsatz, welche die konventionellen verdeckten Knoten ersetzen, siehe Abschnitt. 
+\cite{Hochreiter.2001} schlägt vor, das Problem der \textit{verschwindenden Gradienten} durch eine neue Netzstruktur zu lösen. Bei dieser Netzstruktur kommen sogenannte \textit{Long Short-Term Memory}(LSTM)-Zellen zum Einsatz, welche die konventionellen verdeckten Knoten ersetzen, siehe Abschnitt \ref{cha:lstm}.
 
 Die mathematischen Hintergründe und die Charakterisierung der Rahmenbedingungen, welche zu \textit{verschwindenden} oder zu \textit{explodierenden} Gradienten führt, sind in \cite{Pascanu.11212012} erläutert. \cite{Pascanu.11212012} schlägt vor, den Wertebereich der Gewichte durch Regularisierung einzuschränken. Der Einschränkung des Wertebereiches findet derart statt, dass eine zu große Veränderung des Gradienten unterbunden ist. \\
 
@@ -221,6 +223,43 @@ Die mathematischen Hintergründe und die Charakterisierung der Rahmenbedingungen
 
 Wie bei den \textit{Feedforward-Netzen} tritt bei den \textit{rekurrenten Netzen} das Problem auf, dass das Auffinden des globalen Minima der Fehlerfunktion kaum möglich ist. \\
 Die Herausforderung besteht darin, durch die Adaption der Gewichte ein möglichst tiefes lokales Minima der Fehlerfunktion zu besetzen. Nach \cite{Dauphin.6102014} sollte bei höher dimensionalen nicht-konvexen Fehlerfunktionen Sattelpunkten eine viel höhere Bedeutung zukommen als lokalen Minima, da die Anzahl der kritischen lokalen Minima bei größeren Netzen exponentiell sinkt. Demnach wird von \cite{Dauphin.6102014} ein Sattelpunkt-freier Newton-Algorithmus vorgeschlagen. Diese Auslegung des Algorithmus unterscheidet sich von der konventionellen Newton-Methode darin, dass die Gewichtsadaptierung derart stattfindet, dass der Wert der Fehlerfunktion sich möglichst weit weg von den kritischeren Sattelpunkten befindet. Es konnten damit zwar Verbesserungen in Hinblick auf die Güte von \textit{rekurrenten Netzen} erzielt werden, allerdings ist für die Anwendung des Sattelpunkt-freien Newton-Methode die rechenintensive Ermittlung der Hesse-Matrix notwendig. \cite{Dauphin.6102014}  
+
+\subsubsection{Moderne rekurrente Netzarchitekturen}
+\label{cha:lstm}
+\textbf{Long Short-Term Memory-Netze}
+
+Wie in \ref{cha_recurrent_problem} erläutern, kann bei \textit{rekurrenten Netzen} der Effekt \textit{verschwindender Gradienten} vorkommen. Zu diesem Zweck führte \cite{Hochreiter.2001} eine neue Netzarchitektur ein, bei dem die verdeckten Neuronen durch sogenannte \textit{Long Short-Term Memory}(LSTM)-Zellen ersetzt sind, siehe Abbildung \ref{fig:lstm}.
+
+
+\begin{figure} [h]
+	\centering
+	\includegraphics[width=0.65\textwidth]{images/LSTM}
+	\caption{Long Short-Termn Memory-Zelle \cite{Lipton.5292015}}
+	\label{fig:lstm}
+\end{figure}
+
+Nach \cite{Lipton.5292015} bestehen LSTM-Netzarchitekturen aus folgenden Komponenten:
+
+\begin{itemize}
+	
+	\item Eingangsneuron $g_c^{(t)}$: Das Eingangsneuron transformiert sowohl die Eingangsgrößen $x^{(t)}$ des aktuellen Zeitpunktes $t$ als auch die Ausgänge der verdeckten Schicht $h^{(t-1)}$ aus dem letzten Zeitschritt durch eine Aktivierungsfunktionen. Mögliche Aktivierungsfunktionen sind die $tanh$- und die $sigmoid$-Funktion.  
+	\item Eingangsgate $i_c^{(t)}$: Das Eingangsgate enthält eine $sigmoid$-Aktivierungfunktion. Das Gate hat wie das Eingangsneuron die aktuellen Eingangsgrößen $x^{(t)}$ als auch die Ausgänge der verdeckten Schicht $h^{(t-1)}$ aus dem vorherigen Zeitschritt zum Eingang. Die Ausgangsgröße des Gates $i_c{(t)}$ wird nun mit der Ausgangsgröße $g_c^{(t)}$ des Eingagsneurons multipliziert. Damit steuert das Gate den Informationsfluss innerhalb der LSTM-Zelle. Ist die Ausgangsgröße des Gates $i_c^{(t)} = 0$, blockiert das Gate den Informationsfluss. Ist die Ausgangsgröße des Gates $i_c^{(t)}=1$, gibt das Gate den Informationsfluss frei.
+	\item Das Zustandsneuron $s_c$ enthält eine lineare Aktivierungsfunktion und soll den internen Zustand der Zelle repräsentieren. Ein Merkmal ist die \textit{rekurrente Kante} mit einem konstanten Gewicht, welche das Zustandsneuron mit sich selbst verbindet. Durch die \textit{rekurrente Kante} können Fehler über mehrere Zeitschritte hinweg in das Zustandsneuron induziert werden. Durch den konstanten Fehlerfluss (in der Literatur oftmals als \textit{contant error carousel} bezeichnet) wird das \textit{Verschwinden} und \textit{Explodieren} der Gradienten unterbunden.
+	\item Löschungsgate $f_c$: Durch das Löschungsgate soll das Netz in die Lage versetzt werden, zu lernen, die Inhalte des Zustandsneurons zu löschen. Dies kann vor allem bei kontinuierlich laufenden Netzen hilfreich sein.
+	\item Ausgangsgate: Die Ausgangsgröße $v_c^{(t)}$ des Ausgangsgates berechnet sich aus der Multiplikation zwischen der Ausgangsgröße der Zustandsneurons $s_c^{(t)}$ und der Ausgangsgröße des Ausgangsgates $o_c^{(t)}$. In der Regel findet vor der Multiplikation eine Transformation des Zustands $s_c^{(t)}$ durch eine $tanh$-Funktion statt, um den Wertebereich der Ausgangsgrößen festzulegen. \cite{Lipton.5292015}
+	
+\end{itemize}
+
+Im Gegensatz zu anderen \textit{rekurrenten Netzen} ist es bei \textit{LSTM-Netzen} möglich, den \textit{Backpropagation-Through-Time}-Algorithmus anzuwenden, ohne das es zu einem \textit{Explodieren} oder \textit{Verschwinden der Gradienten} kommt. Dies liegt daran, dass durch die konstante Fehlerrückführung durch die \textit{rekurrente Kante} der Fehler im internen Zustand der \textit{LSTM-Zelle} gespeichert wird.  Auf diese Weise lernen die Gates, wann sie den Fehler blockieren oder durchlassen. \textit{LSTM}-Netze sind vor allem dafür geeignet, langfristige Abhängigkeiten abzubilden. \cite{Lipton.5292015}
+
+
+
+
+
+
+
+
+
 
 
 
