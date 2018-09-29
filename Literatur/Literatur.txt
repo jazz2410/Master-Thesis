@@ -192,21 +192,40 @@ OF NEURO CONTROL (bietet eine sehr gute Übersicht über alle Formen von Regelun
 
 Adaptive and optimal control of a non-linear process using intelligent controllers
 
-Application of Integral Reinforcement Learning for Optimal Control of a High Speed Flux-switching
-Permanent Magnet Machine
+	- Regelung mit vier neuronalen Netzwerken und dem Einsatz von Dynamic Programming
+
+
 
 
 Application of policy iteration technique based adaptive optimal control
 design for automatic voltage regulator of power system
 
+ - Matrix A wird nicht gebraucht, aber Matrix B
+ - teilweise modellfrei 
+ - gute Quelle für Primärliteratur
 
 Neural network approach to continuous-time direct adaptive optimal control for
 partially unknown nonlinear systems
 
-Adaptive Critic Design
+ 	- zwei neuronale Netze in einer Actor/Critic Architektur
+ 	- das eine Netz repräsentiert den optimalen Coontroller, das andere die optimale Kostenfunktion
+	- es findet keine Systemidentifikation mehr statt, sondern die ermittlung der aktuellen Performance der Strategie in Bezug auf eine optimale Performance
+	-es wird das Mapping der aktuellen Strateigie und der aktuellen Performance benötigt
+	- kann ermittelt werden durch das Anfahren aller stabiler Arbeitspunkte
+	- die HJB-Matrix ist oft nichtlinear und kann nicht analytisch gelöst werden
+	- neurnole Netze können trainiert werden, um die Lösung der HJB Matrix zu approximieren
+	- der Actor parametrisiert die Strategie und der Kritik, welcher die Kostenfunktion repräsentiert, beschreibt die Performance 
+	- der Actor liefert die Lösung des optimalen Problems,  in dem Bereich müsste der Critic einen extremalen Wert annehmen
+	- man startet mit einer initialen Strategie und bewertet diese mit Kosten, dann wird die Strategie variiert, um eine neuer Strategie mit geringeren Kosten zu bekommen
+	- so lange durchführen, bis die Strategie sich nicht merh ändert, man hat damit eine optimale Strategie gefunden
+	- es wird die Funktion g(x) gebraucht
+
+
 
 Adaptive Optimal Control Algorithm
 for Continuous-Time Nonlinear Systems Based on Policy Iteration
 
 Online actor–critic algorithm to solve the
 continuous-time infinite horizon optimal control problem.
+
+Adaptive Critic Design

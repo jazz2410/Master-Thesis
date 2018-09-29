@@ -1,9 +1,16 @@
-young= [458.05,509.63]; %values are for young and old respectively
-young2= [458.05,509.63,200,340];
-old= [200,340];
-group = [young;old];
-SEM=[12,12,56,45]; % values for error bars
- figure
-hold on
-bar(1:2,group)
-errorbar([0.86,1.14,1.86,2.14],young2,SEM,'.') %errorbar(x,y,err)
+
+subplot(3,1,1);
+plot(x(:,1),'b.');
+hold on;
+plot(Xs(:,1),'ro');
+
+
+subplot(3,1,2);
+plot(x(:,2),'b.');
+hold on;
+plot(Xs(:,2),'ro');
+
+subplot(3,1,3);
+plot(x(:,3),'b.');
+hold on;
+plot(Xs(:,3),'ro');

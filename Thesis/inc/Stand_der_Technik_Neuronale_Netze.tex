@@ -1,12 +1,12 @@
 \section{Modellbildung durch künstliche neuronale Netzwerke}
 
-Wie in Abschnitt \ref{cha:machine_learning} erläutert, bieten sich für die Modellierung des dynamischen Verhaltens der 3D-Servo-Presse neuronale Netze an. Nach \cite{Lipton.5292015} sind diese in der Lage, jeden stetigen nichtlinearen Zusammenhang zwischen Eingangs- und Ausgangsgrößen beliebig genau abzubilden. Es gibt eine Bandbreite von verschiedenen Typen neuronaler Netze, für die nachfolgend ein Überblick gegeben wird. 
+Wie in Abschnitt \ref{cha:machine_learning} erläutert, bieten sich für die Modellierung des dynamischen Verhaltens der 3D-Servo-Presse neuronale Netze an. Nach \cite{Lipton.5292015} sind diese in der Lage, jeden stetigen nichtlinearen Zusammenhang zwischen Eingangs- und Ausgangsgrößen beliebig genau abzubilden. Neuronale Netze lassen sich grob in statische und dynamische Funktionsapproximatoren aufteilen. Die statischen Funktionsapproximatoren wiederum teilen sich auf in Netze mit überlagerten Basisfunktionen und Multi-Layer-Perceptron (MLP)-Netze. Zunächst sei eine Einführung in MLP-Netze gegeben. 
 
-\subsection{Feedforward neuronale Netzwerke}
+\subsection{Multi-Layer-Perceptron (statischer Funktionsapproximator)}
 \label{cha_ff}
-Die grundsätzliche Funktionsweise von neuronalen Netzen besteht darin, einen mehrdimensionalen Eingabevektor $x = (x_1,x_2,...,x_n)$ in ein Ausgabesignal $\hat{y} = N(x|w)$ zu transformieren. Dabei bezeichnet $w = (w_1,...,w_n)$ die Netzwerkgewichte. Diese nehmen vor der Parametrisierung bzw. vor dem Training des Netzes zunächst zufällige Werte an. Das Multi-Layer-Perceptron (MLP) ist ein weitverbreiteter Netzwerktyp, siehe Abbildung \ref{fig:mlp}. 
+Die grundsätzliche Funktionsweise von neuronalen Netzen besteht darin, einen mehrdimensionalen Eingabevektor $x = (x_1,x_2,...,x_n)$ in ein Ausgabesignal $\hat{y} = N(x|w)$ zu transformieren. Dabei bezeichnet $w = (w_1,...,w_n)$ die Netzwerkgewichte. Diese nehmen vor der Parametrisierung bzw. vor dem Training des Netzes zunächst zufällige Werte an. Das Multi-Layer-Perceptron-Netz ist ein weitverbreiteter Netzwerktyp, siehe Abbildung \ref{fig:mlp}. 
 
-\begin{figure} 
+\begin{figure} [h]
 	\centering
 	\includegraphics[width=0.95\textwidth]{images/MLP}
 	\caption{Multi-Layer-Perceptron (MLP) \cite{Velickovic.2018}}
@@ -134,17 +134,93 @@ Wie in Abschnitt \ref{cha_ff} beschrieben, nehmen die Gewichte am Anfang der Tra
 
 Die Netzwerktopologie ist ebenfalls durch die Anzahl der Schichten bestimmt. Nach \cite{Hornik.1989} ist jedoch ein Netz mit nur einer verdeckten Schicht in der Lage, fast jede beliebige Funktion zu approximieren. Die Notwendigkeit einer zweiten Schicht kann sich dann ergeben, wenn stückweise stetige Funktionen zu approximieren sind.
 
+
+\textbf{Eignung für Regelungsaufgaben}
+
+MLP-Netze gehören zur Gruppe der konnektionistischen Darstellung. Diese sind zwar in der Lage, Funktionen höherer Ordnung abzubilden, allerdings ist eine physikalische Deutung der Parameter in der Regel nicht möglich. Nach Quelle sind MLP-Netze nur bedingt für regelungstechnische Aufgaben geeignet, da eine Veränderung der Stützstelle sich global auswirkt und die Gestaltung einer optimalen Netzwerktopologie aufwändig ist.
+
+
+
 \textbf{Schlussfolgerung}
 
-Das bisher vorgestellte \textit{Feedforward-Netz} ist vor allem dazu geeignet, den statischen Zusammenhang zwischen Eingangs- und Ausgangsgrößen abzubilden. \textit{Feedforward-Netze} sind rein vorwärts gerichtete Netze und definieren sich lediglich über die Eingabegrößen und die Parametrisierung der Gewichte. Somit sind \textit{Feedforward-Netze} zustandsfrei. Davon unterscheiden sich sogenannte \textit{rekurrente Netze}, welche den Einfluss der Zeit zusätzlich berücksichtigen können. 
+Das bisher vorgestellte \textit{MLP-Netz} ist vor allem dazu geeignet, den statischen Zusammenhang zwischen Eingangs- und Ausgangsgrößen abzubilden. \textit{Feedforward-Netze} sind rein vorwärts gerichtete Netze und definieren sich lediglich über die Eingabegrößen und die Parametrisierung der Gewichte. Somit sind \textit{Feedforward-Netze} zustandsfrei. Eine weitere Gruppe statischer Funktionsapproximatoren stellen Netze mit überlagerten Basisfunktionen dar.
 
 
+\subsection{Netze mit überlagerten Basisfunktionen (statische Funktionsapproximatoren)}
+
+Nach \cite{Schroder.2010} eignen sich vor allem Netze, welche nach der Methode der stützwertbasierten Approximation arbeiten, für regelungstechnische Aufgaben. Diese zeichnen sich vor allem durch kurze Adaptionszeiten und nachweisbare Stabilität aus. Im Gegensatz zu MLP-Netzen, welche zur Gruppe der konnektionistischen Darstellung gehören, verwenden solche Netze lokale Basisfunktionen. Beispiele solcher Basisfunktionen sind die Gauß'sche Glockenkurve, Polynome, ein Dreiecksfenster oder die Manhatten-Distanz, siehe Abbildung \ref{fig:basisfunktionen}.
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=0.65\textwidth]{images/basisfunktionen}
+	\caption{Beispiele lokaler Basisfunktionen \cite{Schroder.2010}}
+	\label{fig:basisfunktionen}
+\end{figure}
 
 
+Zu den Netzstrukturen mit überlagerten Basisfunktionen gehören das Radial-Basis-Funktion (RBF)-, das General-Regression-Neural-Network (GRNN)-, das harmonisch aktivierte neuronale Netz (HANN) und das Local Linear Model Tree (LOLIMOT)-Netz. \\
 
-\subsection{Rekurrente neuronale Netze}
+In allen vier Netzstrukturen werden die lokalen Basisfunktionen als Aktivierungsfunktion der Neuronen eingesetzt, siehe beispielsweise das RBF-Netz in Abbildung \ref{fig:rbf}.
 
-Bei \textit{rekurrenten Netzen} findet - im Gegensatz zu \textit{Feedforward-Netzen} - eine Berücksichtigung des zeitlichen Verlaufs der Eingabe- und Ausgabegrößen statt. Dies wird durch den Einsatz von \textit{rekurrenten Kanten} ermöglicht, welche zwei neuronale Netze in aufeinanderfolgenden Zeitschritten miteinander verbinden, siehe Abbildung \ref{fig:recurrent}.  
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=0.65\textwidth]{images/rbf}
+	\caption{RBF-Netz mit $p$ Stützstellen  \cite{Schroder.2010}}
+	\label{fig:rbf}
+\end{figure}
+
+
+Zudem enthält jede lokale Basisfunktion $\textbf{B}$ einen Vektor \b{$\xi_i$}, welcher die Lage des Zentrums, also das Maximum, der lokalen Basisfunktion angibt. Es findet nun eine Transformation der (mehrdimensionalen) Eingangsgrößen \b{$u$} durch jede Basisfunktion statt, ausgedrückt durch die gesamte Aktivierungsfunktion $\b{\textbf{A}}(\b{u})$
+
+\begin{equation}
+\begin{aligned}
+\b{\textbf{A}}(\b{u}) = [\textbf{B}(\b{u},\b{$\xi_1$}) \quad \textbf{B}(\b{u},\b{$\xi_2$}) \quad  ... \quad \textbf{B}(\b{u},\b{$\xi_p$})]^{T}
+\end{aligned}
+\end{equation}
+
+Weiterhin existiert ein gleichlanger Gewichtsvektor \b{$\theta$}, ausgedrückt durch  
+
+\begin{equation}
+\begin{aligned}
+\b{$\theta$} = [\theta_{1} \quad \theta_2 \quad ... \quad \theta_{p}]^{T}
+\end{aligned}
+\end{equation}
+
+Am Anfang des Trainings nehmen die Gewichte zufällige Werte an. Die Ausgangsgröße des untrainierten Netzes ergibt sich nun als Skalarprodukt aus dem Aktivierungs- und Gewichtsvektor
+
+\begin{equation}
+\begin{aligned}
+y(\b{u}) = \b{$\theta$}^T \b{\textbf{A}}(\b{u})
+\end{aligned}
+\end{equation}
+
+Es wird davon ausgegangen, dass eine trainierte Netzstruktur existiert, deren Approximationsfehler (Differenz zwischen der Ausgangsgröße des Netzes und der zu approximierenden Ausgangsgröße) unter einer beliebig kleinen Schranke liegt. Die Ausgangsgröße $\hat{y}$ eines trainierten Netzes ist durch 
+
+
+\begin{equation}
+\begin{aligned}
+\hat{y}(\b{u}) = \hat{\b{$\theta$}}^T \b{\textbf{A}}(\b{u})
+\end{aligned}
+\end{equation}
+
+beschrieben. Nun kann der Adaptionsfehler zwischen der untrainierten und der trainierten Netzstruktur durch 
+\begin{equation}
+\begin{aligned}
+e(\b{u}) = \hat{y}(\b{u}) - y(\b{u}) = (\hat{\b{$\theta$}}^T -  \b{$\theta$}^T) \; \b{\textbf{A}}(\b{u})
+\end{aligned}
+\end{equation}
+
+beschrieben werden. Somit kann wie bei den MLP-Netzen die Aufgabe der Adaption bei allen vier Netzstrukturen (RBF-, GRNN-, HANN- und LOLIMOT-Netz) auf die Anpassung der Gewichte reduziert werden. Jede Netzstruktur verwendet jedoch eine unterschiedliche Aktivierungsfunktion, aus der sich für jede Netzstruktur verschiedene Vor- und Nachteile ergeben. \\
+
+Nach \cite{Schroder.2010} weist das RBF-Netz, welches eine Gaußsche Glockenkurve als lokale Basisfunktion verwendet, mangelndes Monotonieverhalten zwischen Stützwerten und mangelndes Extrapolationsverhalten auf. Es kommt z.B. dazu, dass die Ausgangsgröße der Netzstruktur außerhalb des Wertebereiches der Trainingsdaten gegen Null sinkt. Bei regelungstechnischen Anwendungen ist allerdings das Einhalten der Monotonie zwischen Stützwerten und ein passendes Extrapolationsverhalten erwünscht. \cite{Schroder.2010} \\ 
+Diese beiden Nachteile des RBF-Netzes umgeht das GRNN-Netz, da es normierte lokale Basisfunktionen verwendet. Durch die Normierung ergeben sich zwei Vorteile gegenüber dem RBF-Netz, erstens wird ein monotoner Verlauf zwischen den Stützwerten sicher gestellt. Der zweite Vorteil besteht darin, dass die Ausgangsgröße des Netzes außerhalb des Wertebereiches der Trainingsdaten den nächstgelegenen Stützwert asymptotisch zustrebt und nicht gegen null geht. Dadurch ergibt sich ein besseres Extrapolationsverhalten für regelungstechnische Anwendungen. Das GRNN-Netz weist jedoch den Nachteil auf, dass für eine hohe Approximationsgenauigkeit eine große Anzahl an Stützstellen und ein somit hoher Rechenaufwand notwendig sind. Insbesondere für die Darstellung periodischer Signale kann dies problematisch sein. \cite{Schroder.2010} \\
+ Aus diesem Grund kommen für diesen Zweck häufig HANN-Netze zum Einsatz, welche periodische Funktionen als Basisfunktion einsetzen. Nach dem Trainingsvorgang entsprechen die Netzwerkgewichte den Fourierkoeffizienten der reellen frequenzdiskreten Fourierreihe. Durch das Lernergebnis kann somit eine Aussage über die spektrale Zusammensetzung des identifizierten Signals gemacht werden, was für Überwachungs- und Diagnosezwecke interessant ist. HANN-Netze können aber auch erweitert werden, sodass nicht nur periodische, sondern auch nicht-periodische Signale berücksichtigt werden können. \cite{Schroder.2010} \\  
+ Eine neuere Netzwerkstruktur stellt das \textit{LOLIMOT}-Netz dar, welche eine komplexe, nicht lineare Funktion durch einfachere lokale lineare Modelle mittels Zugehörigkeitsfunktionen überlagert. Ein entscheidendes Unterscheidungsmerkmal zu anderen Netzstrukturen ist, dass nicht nur eine Adaptierung der Gewichte, sondern schrittweise eine Netzstruktur aufgebaut wird. Dabei findet sowohl eine Optimierung in Bezug auf die Anzahl der Neuronen als auch in Bezug auf deren Gültigkeitsbereiches im Eingangsbereich statt. Entscheidende Vorteile des HANN-Netzes sind die schnellere Parameterberechnung und der relativ geringe Anstieg des Parameteranzahl bei steigender Eingangsdimension des Netzes. \cite{Schroder.2010} 
+
+
+\subsection{Rekurrente neuronale Netze (dynamische Funktionsapproximatoren)}
+
+Bei \textit{rekurrenten Netzen} findet - im Gegensatz zu statischen Funktionsapproximatoren - eine Berücksichtigung des zeitlichen Verlaufs der Eingabe- und Ausgabegrößen statt. Dies wird durch den Einsatz von \textit{rekurrenten Kanten} ermöglicht, welche zwei neuronale Netze in aufeinanderfolgenden Zeitschritten miteinander verbinden, siehe Abbildung \ref{fig:recurrent}.  
 
 \begin{figure} [h]
 	\centering
@@ -163,8 +239,8 @@ beschrieben werden. Dabei besteht die Matrix $W^{hx}$ aus den konventionellen Ge
 Im Laufe der Zeit haben sich unterschiedliche Varianten \textit{rekurrenter Netze} entwickelt. Zunächst seien frühere Architekturen \textit{rekurrenter Netze} erläutert.
 
 
-\subsubsection{Einfache rekurrente Netze}
-
+\subsubsection{Einfache rekurrente Netze (dynamische Funktionsapproximatoren)}
+\label{cha:recurrent_simple}
 \textbf{Jordan-Netz}
 
 Das \textit{Jordan-Netz} stellt eine der frühen rekurrenten Netzarchitekturen dar, siehe Abbildung \ref{fig:jordan}. 
@@ -224,7 +300,7 @@ Die mathematischen Hintergründe und die Charakterisierung der Rahmenbedingungen
 Wie bei den \textit{Feedforward-Netzen} tritt bei den \textit{rekurrenten Netzen} das Problem auf, dass das Auffinden des globalen Minima der Fehlerfunktion kaum möglich ist. \\
 Die Herausforderung besteht darin, durch die Adaption der Gewichte ein möglichst tiefes lokales Minima der Fehlerfunktion zu besetzen. Nach \cite{Dauphin.6102014} sollte bei höher dimensionalen nicht-konvexen Fehlerfunktionen Sattelpunkten eine viel höhere Bedeutung zukommen als lokalen Minima, da die Anzahl der kritischen lokalen Minima bei größeren Netzen exponentiell sinkt. Demnach wird von \cite{Dauphin.6102014} ein Sattelpunkt-freier Newton-Algorithmus vorgeschlagen. Diese Auslegung des Algorithmus unterscheidet sich von der konventionellen Newton-Methode darin, dass die Gewichtsadaptierung derart stattfindet, dass der Wert der Fehlerfunktion sich möglichst weit weg von den kritischeren Sattelpunkten befindet. Es konnten damit zwar Verbesserungen in Hinblick auf die Güte von \textit{rekurrenten Netzen} erzielt werden, allerdings ist für die Anwendung des Sattelpunkt-freien Newton-Methode die rechenintensive Ermittlung der Hesse-Matrix notwendig. \cite{Dauphin.6102014}  
 
-\subsubsection{Moderne rekurrente Netzarchitekturen}
+\subsubsection{Moderne rekurrente Netzarchitekturen (dynamische Funktionsapproximatoren)}
 \label{cha:lstm}
 \textbf{Long Short-Term Memory-Netze}
 
@@ -251,6 +327,13 @@ Nach \cite{Lipton.5292015} bestehen LSTM-Netzarchitekturen aus folgenden Kompone
 \end{itemize}
 
 Im Gegensatz zu anderen \textit{rekurrenten Netzen} ist es bei \textit{LSTM-Netzen} möglich, den \textit{Backpropagation-Through-Time}-Algorithmus anzuwenden, ohne das es zu einem \textit{Explodieren} oder \textit{Verschwinden der Gradienten} kommt. Dies liegt daran, dass durch die konstante Fehlerrückführung durch die \textit{rekurrente Kante} der Fehler im internen Zustand der \textit{LSTM-Zelle} gespeichert wird.  Auf diese Weise lernen die Gates, wann sie den Fehler blockieren oder durchlassen. \textit{LSTM}-Netze sind vor allem dafür geeignet, langfristige Abhängigkeiten abzubilden. \cite{Lipton.5292015}
+
+\subsubsection{Klassifikation rekurrenter Netze}
+
+Abschließend sei darauf hingewiesen, dass die eben vorgestellten Netze nur einen Bruchteil aller \textit{rekurrenten Netze} darstellen. \textit{Rekurrente Netze} lassen sich gemeinhin aufteilen in Netze mit interner und externer Dynamik. Zu den Netzen mit interner Dynamik gehören die \textit{vollrekurrenten} und die partiell \textit{rekurrenten} Netze, wozu die in Abschnitt \ref{cha:recurrent_simple} vorgestellten Jordan- und Elman-Netze gehören. Davon unterscheiden sich sogenannte Netze mit externer Dynamik, wozu das \textit{Time-Delay-Neural Network (TDNN)} in den beiden Variationen \textit{Nonlinear-Output-Error (NOE)} und \textit{Nonlinear-Autoregressiv-with-exogenous-Inputs (NARX)} gehört. Auch die Ansätze basierend auf der Volterra-Funktionalpotentialreihe in der \textit{Nonlinear-Orthogonal-Basis-Functions (NOBF)}- und in der \textit{Nonlinaer-Finite-Impulse-Response (NFIR)}-Form gehören zu den Netzen mit externer Dynamik. An dieser Stelle sie auf QUELLE für eine Übersicht \textit{rekurrenter} Netze verwiesen.
+
+
+
 
 
 
