@@ -1,0 +1,50 @@
+\section{Regelungskonzepte basierend auf Methoden des maschinellen Lernens}
+
+In Abschnitt \ref{cha:regelung} ist bereits das allgemeine Regelungskonzept vorgestellt worden. Nachfolgend erfolgte eine Reihe von Erläuterung über verschiedene Typen von neuronalen Netzen, welche in der Lage sind, dynamische Nichtlinearitäten eines System durch die Adaption der Gewichte zu approximieren bzw. zu lernen. Nun ist es denkbar, auf Basis neuronaler Netze ein Blackbox-Modell eines nichtlinearen dynamischen Systems zu entwickeln, welches entweder als Hilfsglied in einem Regelkreis oder direkt als Regler fungiert. Dafür sind verschiedene Regelungskonzepte in der Literatur gegenwärtig. Es erfolgt nun eine Übersicht der Regelungskonzepte aus Basis der Methoden des maschinellen Lernens in den Kategorien \textit{überwachtes} und \textit{bestärkendes Lernen}.\\
+
+
+\subsection{Überwachtes Lernen} 
+
+Im Bereich des \textit{überwachten Lernens} gibt es eine Reihe von verschiedenen Regelungskonzepten auf Basis neuronaler Netze, für die nun ein Überblick gegeben wird.
+
+
+\subsubsection{Direkte inverse Regelung}
+\label{cha:direct_inverse}
+Das von \cite{Werbos.2014} erstmals eingeführte Regelungskonzept der \textit{direkten inversen Regelung} basiert auf der Annahme, dass für ein dynamisches System eine inverse Abbildung des Ausgangszustandes in den Eingangszustand existiert.  Ist dies der Fall, kann ein neuronales Netz offline, also nicht während der Betriebseinsatzes, so trainiert werden, dass es die inverse Dynamik des Systemes abbildet, siehe Abbildung \ref{fig:direct_inverse_offline}. \\ 
+
+\begin{figure} [h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{images/direct_inverse_control_offline}
+	\caption{Direkte inverse Regelung mit offline-Netztraining \cite{Sklyarenko.2002}}
+	\label{fig:direct_inverse_offline}
+\end{figure}
+
+Daraufhin ist eine direkte Schaltung der neuronalen Netzes in den Regelkreis möglich.  In der Regel findet dann eine Übergabe der Sollgröße $r$ an das invertierte neuronale Netz statt, siehe auch \cite{Almusawi.2016}. Die Ausgangsgröße des neuronalen Netzes entspricht dann den Stellgrößen des dynamischen Systems.  Entsprechen die Ausgangsgrößen des dynamischen Systems $y$ nicht im ausreichenden Maße den Sollgrößen $r$, ist es zweckmäßig, das Netz offline erneut zu trainieren. Jedoch findet während des Betriebes keine direkte Fehlerrückführung statt, sodass eine stabile Regelstrecke Voraussetzung ist. Offline trainierte Netze gehören zur Klasse der nicht adaptiven Regler.   \\
+Beim Konzept der \textit{direkten inversen Regelung} ist es auch möglich, die Adaption der Netzwerkgewichte während des Betriebes, also online, vorzunehmen, siehe Abbildung \ref{fig:direct_inverse_online}. 
+
+\begin{figure} [h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{images/direct_inverse_control_online}
+	\caption{Direkte inverse Regelung mit online-Netztraining \cite{Sklyarenko.2002}}
+	\label{fig:direct_inverse_online}
+\end{figure}
+
+Diese Regler gehören zur Klasse der adaptiven Regler, da eine Anpassung der Regelparameter während des Betriebs stattfindet. Dabei soll das Netz möglichst den Fehler $e_c$ minimieren, was jedoch nicht immer möglich ist, da die Jacobi-Matrix des nichtlinearen dynamischen Systems (in Abbildung als Roboter bezeichnet), in der Regel nicht bekannt ist. Die Kenntnis der Jacobi-Matrix ist allerdings für Minimierung der Fehlerfunktion unabdingbar. Nach \cite{Sklyarenko.2002} ist es jedoch möglich, die Elemente der Jacobi-Matrix numerisch mit einer Differenzengleichung zu ermitteln. Ein weiterer Nachteil ergibt sich dadurch, dass die Regelstrecke anfangs mit einem untrainierten neuronalen Netz betrieben wird, was zu unkontrolliertem Systemverhalten führen kann. \\
+
+\subsubsection{Indirekte neuronale Regelung mit Referenzmodell}
+
+Wie in Abschnitt \ref{cha:direct_inverse} erläutert, stellt sich bei der \textit{direkten inversen} neuronalen Regelung das Problem, dass in vielen regelungstechnischen Anwendungen die Jakobi-Matrix der dynamischen nichtlinearen Regelstrecke nicht bekannt ist. Damit gestaltet sich die Gewichtsadaptierung des inversen neuronalen Netzes als schwierig, um die Differenz zwischen der Ausgangsgröße des dynamischen Systems $y$ und der Sollgröße $r$ zu minimieren. Dieses Problem umgeht die indirekte neuronale Regelung mit Referenzmodell, siehe Abbildung \ref{fig:indirect_control}.
+
+
+\begin{figure} [h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{images/indirect_control}
+	\caption{Indirekte neuronale Regelung mit Referenzmodell \cite{Sklyarenko.2002}}
+	\label{fig:indirect_control}
+\end{figure}
+
+Im Unterschied zur \textit{direkten inversen} neuronalen Regelung ist ebenfalls ein nicht invertiertes neuronales Netz Bestandteil der Regelstruktur (in Abbildung als NM bezeichnet), siehe \cite{Nguyen.1990}, \cite{BenNasr.2014} und \cite{HUSSAIN.1999}. Dieses ist derartig offline trainiert, dass es die Eingangsgröße der Regelstrecke $u$ in die  Ausgangsgröße $y$ der Regelstrecke transformiert. Während des Betriebs findet keine Gewichtsadaptierung des Netzes NM mehr statt, da dieses nun als Referenzmodell dient. Dagegen findet die Gewichtsadaptierung der Netzes NC während des Betriebes (online) derartig statt, dass die Differenz zwischen der Ausgangsgröße des Netzes NM $\hat{y}$ und der Sollgröße $r$ minimiert wird. Dies ist deshalb möglich, da der Fehler $e_c$ durch das bekannte Netz NM hindurch propagiert werden kann. Die Regelgüte dieser Regelstruktur hängt sehr stark von der Approximationsfähigkeit des NM-Netzes in Bezug auf die aktuelle Regelstrecke ab. Kommt es im Laufe der Zeit zu Veränderungen in Bezug auf das dynamische Verhalten der Regelstrecke, muss das NM-Netz neu trainiert werden, um es an das aktuelle Verhalten der Regelstrecke anzupassen.  Zudem gibt es keine Rückführung des Fehlers $e_m$, welcher die Differenz zwischen dem realen Systemausgang $y$ und der Sollgröße $r$ abbildet. Die Stabilität dieser Regelstruktur ist in \cite{VijayaKumar.2009} und \cite{Ruan.2007} diskutiert.
+ 
+
+
+

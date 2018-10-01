@@ -18,10 +18,10 @@ end
 
 
 trainFcn = 'trainlm';
-net = layrecnet(1:2,10);
-[Ys,Yi,Ai,Xs] = preparets(net,y1,x1);
+net = narxnet(1:2,1:2,10);
+[Ys,Yi,Ai,Xs] = preparets(net,y1,{},x1);
 view(net)
-net = train(net,Ys,Yi,Ai); 
+net = train(net,Ys,Xs,Yi,Ai); 
 netz_output = net(Ys,Yi,Ai);
 
 

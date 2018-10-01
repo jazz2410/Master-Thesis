@@ -19,5 +19,9 @@
 \BOOKMARK [3][-]{subsubsection.2.5.3.2}{Herausforderungen\040bei\040rekurrenten\040Netzen}{subsection.2.5.3}% 19
 \BOOKMARK [3][-]{subsubsection.2.5.3.3}{Moderne\040rekurrente\040Netzarchitekturen\040\(dynamische\040Funktionsapproximatoren\)}{subsection.2.5.3}% 20
 \BOOKMARK [3][-]{subsubsection.2.5.3.4}{Klassifikation\040rekurrenter\040Netze}{subsection.2.5.3}% 21
-\BOOKMARK [0][-]{chapter.3}{Ausblick}{}% 22
-\BOOKMARK [0][-]{section*.17}{Literaturverzeichnis}{}% 23
+\BOOKMARK [1][-]{section.2.6}{Regelungskonzepte\040basierend\040auf\040Methoden\040des\040maschinellen\040Lernens}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.6.1}{\334berwachtes\040Lernen}{section.2.6}% 23
+\BOOKMARK [3][-]{subsubsection.2.6.1.1}{Direkte\040inverse\040Regelung}{subsection.2.6.1}% 24
+\BOOKMARK [3][-]{subsubsection.2.6.1.2}{Indirekte\040neuronale\040Regelung\040mit\040Referenzmodell}{subsection.2.6.1}% 25
+\BOOKMARK [0][-]{chapter.3}{Ausblick}{}% 26
+\BOOKMARK [0][-]{section*.17}{Literaturverzeichnis}{}% 27

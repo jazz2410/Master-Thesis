@@ -18,4 +18,7 @@
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Jordan-Netz \cite {Lipton.5292015}}}{24}{figure.2.11}
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Elman-Netz \cite {Lipton.5292015}}}{25}{figure.2.12}
 \contentsline {figure}{\numberline {2.13}{\ignorespaces Long Short-Termn Memory-Zelle \cite {Lipton.5292015}}}{27}{figure.2.13}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Direkte inverse Regelung mit offline-Netztraining \cite {Sklyarenko.2002}}}{29}{figure.2.14}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Direkte inverse Regelung mit online-Netztraining \cite {Sklyarenko.2002}}}{29}{figure.2.15}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Indirekte neuronale Regelung mit Referenzmodell \cite {Sklyarenko.2002}}}{30}{figure.2.16}
 \addvspace {10\p@ }

@@ -9,6 +9,12 @@
   Wiley-Interscience} and {IEEE Xplore}, Piscataway, New Jersey and Hoboken, NJ
   and Piscataway, New Jersey, 2008.
 
+\bibitem{Almusawi.2016}
+{\sc Almusawi, A. R.~J.}, {\sc L.~C. D{\"u}lger} \btxandshort{.}\ {\sc
+  S.~Kapucu}: {\em A New Artificial Neural Network Approach in Solving Inverse
+  Kinematics of Robotic Arm (Denso VP6242)\/}.
+\newblock Computational intelligence and neuroscience, 2016:5720163, 2016.
+
 \bibitem{Kollias.March1993}
 {\sc Anastassiou} \btxandshort{.}\ {\sc Kollias}: {\em Adaptive training of
   multilayer neural networks using a least squares estimation technique\/}.
@@ -29,6 +35,11 @@
   Artificial neural networks - ICANN 2009\/}, \btxvolumeshort{.}\ 5769
   \btxofseriesshort{.}\ {\em Lecture Notes in Computer Science\/},
   \btxpagesshort{.}\ 755--764. Springer, Berlin, 2009.
+
+\bibitem{BenNasr.2014}
+{\sc {Ben Nasr}, M.} \btxandshort{.}\ {\sc M.~Chtourou}: {\em Neural network
+  control of nonlinear dynamic systems using hybrid algorithm\/}.
+\newblock Applied Soft Computing, 24:423--431, 2014.
 
 \bibitem{Bishop.2010}
 {\sc Bishop, C.~M.}: {\em Neural networks for pattern recognition\/}.
@@ -109,6 +120,12 @@
   Multilayer feedforward networks are universal approximators\/}.
 \newblock Neural Networks, 2(5):359--366, 1989.
 
+\bibitem{HUSSAIN.1999}
+{\sc HUSSAIN, M.~A.} \btxandshort{.}\ {\sc L.~S. KERSHENBAUM}: {\em SIMULATION
+  AND EXPERIMENTAL IMPLEMENTATION OF A NEURAL-NETWORK-BASED INTERNAL-MODEL
+  CONTROL STRATEGY ON A REACTOR SYSTEM\/}.
+\newblock Chemical Engineering Communications, 172(1):151--169, 1999.
+
 \bibitem{Isermann.2010}
 {\sc Isermann, R.}: {\em Modellbasierte {\"U}berwachung und Fehlerdiagnose von
   kontinuierlichen technischen Prozessen\/}.
@@ -150,6 +167,11 @@
   sourcebook\/}.
 \newblock Wiley, New York, 1. Dr \btxeditionshort{.}, 1995.
 
+\bibitem{Nguyen.1990}
+{\sc Nguyen, D.~H.} \btxandshort{.}\ {\sc B.~Widrow}: {\em Neural networks for
+  self-learning control systems\/}.
+\newblock IEEE Control Systems Magazine, 10(3):18--23, 1990.
+
 \bibitem{Parekh.2000}
 {\sc Parekh, R.}, {\sc J.~Yang} \btxandshort{.}\ {\sc V.~Honavar}: {\em
   Constructive neural-network learning algorithms for pattern
@@ -171,6 +193,12 @@
 {\sc Rakowitsch, M.}: {\em Modellierung der Dynamik eines Koppelgetriebes am
   Beispiel der 3D-Servo-Presse: Studienarbeit\/}.
 \newblock Darmstadt, 2018.
+
+\bibitem{Ruan.2007}
+{\sc Ruan, X.}, {\sc M.~Ding}, {\sc D.~Gong} \btxandshort{.}\ {\sc J.~Qiao}:
+  {\em On-line adaptive control for inverted pendulum balancing based on
+  feedback-error-learning\/}.
+\newblock Neurocomputing, 70(4-6):770--776, 2007.
 
 \bibitem{WarrenS.Sarle.1994}
 {\sc Sarle, W.~S.}: {\em Neural Network Implementation in SAS{\circledR}
@@ -211,6 +239,20 @@
   representing an in-depth view at a single perceptron, along with its position
   within a larger-scale multilayer perceptron ({\~{}}unrestricted feedforward
   neural network).\/}, 2018.
+
+\bibitem{VijayaKumar.2009}
+{\sc {Vijaya Kumar}, M.}, {\sc S.~Suresh}, {\sc S.~N. Omkar}, {\sc R.~Ganguli}
+  \btxandshort{.}\ {\sc P.~Sampath}: {\em A direct adaptive neural command
+  controller design for an unstable helicopter\/}.
+\newblock Engineering Applications of Artificial Intelligence, 22(2):181--191,
+  2009.
+
+\bibitem{Werbos.2014}
+{\sc Werbos, P.~J.}: {\em NEUROCONTROL AND RELATED TECHNIQUES\/}.
+\newblock \Btxinshort{.}\ {\sc Maren, A.~J.}, {\sc C.~T. Harston}
+  \btxandshort{.}\ {\sc R.~M. Pap}\ (\btxeditorsshort{.}): {\em Handbook of
+  Neural Computing Applications\/}, \btxpagesshort{.}\ 345--380. {Elsevier
+  Science}, Burlington, 2014.
 
 \bibitem{Zeiler.12222012}
 {\sc Zeiler, M.~D.}: {\em ADADELTA: An Adaptive Learning Rate Method\/}.

@@ -26,7 +26,7 @@ for i = 1:1:972
     
 end
 
-net = narxnet(1:2,1:2,20,'open','trainbr'); 
+net = narxnet(1:2,1:2,5,'open','trainbr'); 
 [Ys,Yi,Ai,Xs] = preparets(net,y1,{},x1); 
 net = train(net,Ys,Xs,Yi,Ai); 
 view(net); 
@@ -35,13 +35,6 @@ x = cell2mat(XOpen);
 x = x';
 Xs = cell2mat(Xs);
 Xs = Xs';
-
-
-
-
-
-
-
 
 
     

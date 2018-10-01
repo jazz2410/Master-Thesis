@@ -23,5 +23,9 @@
 \contentsline {subsubsection}{\numberline {2.5.3.2}Herausforderungen bei rekurrenten Netzen}{25}{subsubsection.2.5.3.2}
 \contentsline {subsubsection}{\numberline {2.5.3.3}Moderne rekurrente Netzarchitekturen (dynamische Funktionsapproximatoren)}{26}{subsubsection.2.5.3.3}
 \contentsline {subsubsection}{\numberline {2.5.3.4}Klassifikation rekurrenter Netze}{28}{subsubsection.2.5.3.4}
-\contentsline {chapter}{\numberline {3}Ausblick}{29}{chapter.3}
-\contentsline {chapter}{Literaturverzeichnis}{31}{section*.17}
+\contentsline {section}{\numberline {2.6}Regelungskonzepte basierend auf Methoden des maschinellen Lernens}{28}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}\IeC {\"U}berwachtes Lernen}{28}{subsection.2.6.1}
+\contentsline {subsubsection}{\numberline {2.6.1.1}Direkte inverse Regelung}{29}{subsubsection.2.6.1.1}
+\contentsline {subsubsection}{\numberline {2.6.1.2}Indirekte neuronale Regelung mit Referenzmodell}{30}{subsubsection.2.6.1.2}
+\contentsline {chapter}{\numberline {3}Ausblick}{33}{chapter.3}
+\contentsline {chapter}{Literaturverzeichnis}{35}{section*.17}
