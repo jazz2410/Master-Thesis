@@ -23,5 +23,7 @@
 \BOOKMARK [2][-]{subsection.2.6.1}{\334berwachtes\040Lernen}{section.2.6}% 23
 \BOOKMARK [3][-]{subsubsection.2.6.1.1}{Direkte\040inverse\040Regelung}{subsection.2.6.1}% 24
 \BOOKMARK [3][-]{subsubsection.2.6.1.2}{Indirekte\040neuronale\040Regelung\040mit\040Referenzmodell}{subsection.2.6.1}% 25
-\BOOKMARK [0][-]{chapter.3}{Ausblick}{}% 26
-\BOOKMARK [0][-]{section*.17}{Literaturverzeichnis}{}% 27
+\BOOKMARK [3][-]{subsubsection.2.6.1.3}{Internal\040Model\040Control\040\(IMC\)}{subsection.2.6.1}% 26
+\BOOKMARK [3][-]{subsubsection.2.6.1.4}{Feedback\040Linearisierung\040mit\040neuronalen\040Netzen}{subsection.2.6.1}% 27
+\BOOKMARK [0][-]{chapter.3}{Ausblick}{}% 28
+\BOOKMARK [0][-]{section*.17}{Literaturverzeichnis}{}% 29

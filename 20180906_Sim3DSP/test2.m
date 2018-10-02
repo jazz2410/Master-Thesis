@@ -1,7 +1,20 @@
-[X,T] = simpleseries_dataset;
-net = layrecnet(1:2,10);
-[Xs,Xi,Ai,Ts] = preparets(net,X,T);
-net = train(net,Xs,Ts,Xi,Ai);
-view(net)
-Y = net(Xs,Xi,Ai);
-perf = perform(net,Y,Ts)
+load('u1.mat');
+load('input.mat');
+
+
+u = u';
+
+
+
+trainFcn = 'trainlm';
+net = feedforwardnet(20,trainFcn); 
+
+net.divideFcn = 'dividerand';
+net.divideParam.trainRatio = 70/100;
+net.divideParam.valRatio = 15/100;
+net.divideParam.testRatio = 15/100;
+
+net = train(net,y1,u); 
+view(net); 
+netz_output = net(y1);
+

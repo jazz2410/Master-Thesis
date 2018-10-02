@@ -26,6 +26,12 @@
   \btxandshort{.}\ {\sc J.~Bauer}: {\em Leitfaden Industrie 4.0:
   Orientierungshilfe zur Einf{\"u}hrung in den Mittelstand\/}, 2018.
 
+\bibitem{Andersen.1990}
+{\sc Andersen, K.}, {\sc G.~E. Cook}, {\sc G.~Karsai} \btxandshort{.}\ {\sc
+  K.~Ramaswamy}: {\em Artificial neural networks applied to arc welding process
+  modeling and control\/}.
+\newblock IEEE Transactions on Industry Applications, 26(5):824--830, 1990.
+
 \bibitem{Bayer.2009}
 {\sc Bayer, J.}, {\sc D.~Wierstra}, {\sc J.~Togelius} \btxandshort{.}\ {\sc
   J.~Schmidhuber}: {\em Evolving Memory Cell Structures for Sequence
@@ -49,6 +55,12 @@
 {\sc Dauphin, Y.}, {\sc R.~Pascanu}, {\sc C.~Gulcehre}, {\sc K.~Cho}, {\sc
   S.~Ganguli} \btxandshort{.}\ {\sc Y.~Bengio}: {\em Identifying and attacking
   the saddle point problem in high-dimensional non-convex optimization\/}.
+
+\bibitem{Deng.2008}
+{\sc Deng, H.}, {\sc H.-X. Li} \btxandshort{.}\ {\sc Y.-H. Wu}: {\em
+  Feedback-linearization-based neural adaptive control for unknown nonaffine
+  nonlinear discrete-time systems\/}.
+\newblock IEEE transactions on neural networks, 19(9):1615--1625, 2008.
 
 \bibitem{Dobel.2018}
 {\sc D{\"o}bel, I.}, {\sc M.~Leis}, {\sc M.-M. Vogelsang}, {\sc D.~Neustroev},
@@ -145,12 +157,29 @@
   \btxvolumeshort{.}\ 121 \btxofseriesshort{.}\ {\em Advances in Psychology\/},
   \btxpagesshort{.}\ 471--495. Elsevier, Amsterdam and New York, 1997.
 
+\bibitem{Jung.1995}
+{\sc Jung, S.} \btxandshort{.}\ {\sc T.~C. Hsia}: {\em A new neural network
+  control technique for robot manipulators\/}.
+\newblock \Btxinshort{.}\ {\em Proceedings of the 1995 American Control
+  Conference\/}, \btxpagesshort{.}\ 878--882, Piscataway, N.J, 1995.
+  {Distributed through the IEEE Service Center}.
+
 \bibitem{Kalman.June1992}
 {\sc Kalman, B.~L.} \btxandshort{.}\ {\sc S.~C. Kwasny}: {\em Why tanh:
   choosing a sigmoidal function\/}.
 \newblock \Btxinshort{.}\ {\em IEEE-INNS International Joint Conference on
   Neural Networks, Baltimore, 1992\/}, \btxpagesshort{.}\ 578--581, Piscataway,
   June 1992. IEEE.
+
+\bibitem{Kambhampati.2000}
+{\sc Kambhampati, C.}, {\sc R.~J. Craddock}, {\sc M.~Tham} \btxandshort{.}\
+  {\sc K.~Warwick}: {\em Inverse model control using recurrent networks\/}.
+\newblock Mathematics and Computers in Simulation, 51(3-4):181--199, 2000.
+
+\bibitem{Leeghim.2008}
+{\sc Leeghim, H.}, {\sc I.-H. Seo} \btxandshort{.}\ {\sc H.~Bang}: {\em
+  Adaptive nonlinear control using input normalized neural networks\/}.
+\newblock Journal of Mechanical Science and Technology, 22(6):1073--1083, 2008.
 
 \bibitem{Lipton.5292015}
 {\sc Lipton, Z.~C.}, {\sc J.~Berkowitz} \btxandshort{.}\ {\sc C.~Elkan}: {\em A
@@ -167,10 +196,26 @@
   sourcebook\/}.
 \newblock Wiley, New York, 1. Dr \btxeditionshort{.}, 1995.
 
+\bibitem{Miller.1989}
+{\sc Miller, W.~T.}: {\em Real-time application of neural networks for
+  sensor-based control of robots with vision\/}.
+\newblock IEEE Transactions on Systems, Man, and Cybernetics, 19(4):825--831,
+  1989.
+
+\bibitem{Mohammadzaheri.2012}
+{\sc Mohammadzaheri, M.}, {\sc L.~Chen} \btxandshort{.}\ {\sc S.~Grainger}:
+  {\em A critical review of the most popular types of neuro control\/}.
+\newblock Asian Journal of Control, 14(1):1--11, 2012.
+
 \bibitem{Nguyen.1990}
 {\sc Nguyen, D.~H.} \btxandshort{.}\ {\sc B.~Widrow}: {\em Neural networks for
   self-learning control systems\/}.
 \newblock IEEE Control Systems Magazine, 10(3):18--23, 1990.
+
+\bibitem{Nordgren.1993}
+{\sc Nordgren, R.~E.} \btxandshort{.}\ {\sc P.~H. Meckl}: {\em An analytical
+  comparison of a neural network and a model-based adaptive controller\/}.
+\newblock IEEE transactions on neural networks, 4(4):685--694, 1993.
 
 \bibitem{Parekh.2000}
 {\sc Parekh, R.}, {\sc J.~Yang} \btxandshort{.}\ {\sc V.~Honavar}: {\em

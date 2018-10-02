@@ -21,4 +21,6 @@
 \contentsline {figure}{\numberline {2.14}{\ignorespaces Direkte inverse Regelung mit offline-Netztraining \cite {Sklyarenko.2002}}}{29}{figure.2.14}
 \contentsline {figure}{\numberline {2.15}{\ignorespaces Direkte inverse Regelung mit online-Netztraining \cite {Sklyarenko.2002}}}{29}{figure.2.15}
 \contentsline {figure}{\numberline {2.16}{\ignorespaces Indirekte neuronale Regelung mit Referenzmodell \cite {Sklyarenko.2002}}}{30}{figure.2.16}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Internal Model Control-Regelkreis \cite {Sklyarenko.2002}}}{31}{figure.2.17}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Feedback Linearisierung mit neuronalen Netzen \cite {Sklyarenko.2002}}}{33}{figure.2.18}
 \addvspace {10\p@ }
