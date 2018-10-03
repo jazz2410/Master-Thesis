@@ -9,6 +9,12 @@
   Wiley-Interscience} and {IEEE Xplore}, Piscataway, New Jersey and Hoboken, NJ
   and Piscataway, New Jersey, 2008.
 
+\bibitem{Alexandridis.2005}
+{\sc Alexandridis, A.} \btxandshort{.}\ {\sc H.~Sarimveis}: {\em Nonlinear
+  adaptive model predictive control based on self-correcting neural network
+  models\/}.
+\newblock AIChE Journal, 51(9):2495--2506, 2005.
+
 \bibitem{Almusawi.2016}
 {\sc Almusawi, A. R.~J.}, {\sc L.~C. D{\"u}lger} \btxandshort{.}\ {\sc
   S.~Kapucu}: {\em A New Artificial Neural Network Approach in Solving Inverse
@@ -50,6 +56,12 @@
 \bibitem{Bishop.2010}
 {\sc Bishop, C.~M.}: {\em Neural networks for pattern recognition\/}.
 \newblock {Oxford Univ. Press}, Oxford, Reprinted. \btxeditionshort{.}, 2010.
+
+\bibitem{Cheng.2009}
+{\sc Cheng, L.}, {\sc Z.-G. Hou} \btxandshort{.}\ {\sc M.~Tan}: {\em Adaptive
+  neural network tracking control for manipulators with uncertain kinematics,
+  dynamics and actuator model\/}.
+\newblock Automatica, 45(10):2312--2318, 2009.
 
 \bibitem{Dauphin.6102014}
 {\sc Dauphin, Y.}, {\sc R.~Pascanu}, {\sc C.~Gulcehre}, {\sc K.~Cho}, {\sc
@@ -109,6 +121,13 @@
 {\sc Han, S.}, {\sc J.~Pool}, {\sc J.~Tran} \btxandshort{.}\ {\sc W.~J. Dally}:
   {\em Learning both Weights and Connections for Efficient Neural Networks\/}.
 
+\bibitem{Han.2009}
+{\sc Han, S.~I.} \btxandshort{.}\ {\sc K.~S. Lee}: {\em Sliding mode-based
+  friction control with adaptive dual friction observer and intelligent
+  uncertainty compensator\/}.
+\newblock Proceedings of the Institution of Mechanical Engineers, Part I:
+  Journal of Systems and Control Engineering, 223(8):1129--1147, 2009.
+
 \bibitem{StevenA.Harp.1992}
 {\sc Harp, S.~A.} \btxandshort{.}\ {\sc T.~Samad}: {\em Optimizing Neural
   Networks with Genetic Algorithms\/}.
@@ -127,10 +146,22 @@
   (\btxeditorsshort{.}): {\em Field Guide to Dynamical Recurrent Networks\/}.
   {IEEE Press}, 2001.
 
+\bibitem{Hong.2009}
+{\sc Hong, C.-H.}, {\sc K.-C. Choi} \btxandshort{.}\ {\sc B.-S. Kim}: {\em
+  Applications of adaptive neural network control to an unmanned airship\/}.
+\newblock International Journal of Control, Automation and Systems,
+  7(6):911--917, 2009.
+
 \bibitem{Hornik.1989}
 {\sc Hornik, K.}, {\sc M.~Stinchcombe} \btxandshort{.}\ {\sc H.~White}: {\em
   Multilayer feedforward networks are universal approximators\/}.
 \newblock Neural Networks, 2(5):359--366, 1989.
+
+\bibitem{Hsu.2009}
+{\sc Hsu, C.-F.}, {\sc K.-H. Cheng} \btxandshort{.}\ {\sc T.-T. Lee}: {\em
+  Robust wavelet-based adaptive neural controller design with a fuzzy
+  compensator\/}.
+\newblock Neurocomputing, 73(1-3):423--431, 2009.
 
 \bibitem{HUSSAIN.1999}
 {\sc HUSSAIN, M.~A.} \btxandshort{.}\ {\sc L.~S. KERSHENBAUM}: {\em SIMULATION
@@ -149,6 +180,12 @@
 \newblock Advanced Textbooks in Control and Signal Processing. {Springer-Verlag
   Berlin Heidelberg}, Berlin, Heidelberg, 2011.
 
+\bibitem{Jolly.2009}
+{\sc Jolly, K.~G.}, {\sc R.~{Sreerama Kumar}} \btxandshort{.}\ {\sc
+  R.~Vijayakumar}: {\em An artificial neural network based dynamic controller
+  for a robot in a multi-agent system\/}.
+\newblock Neurocomputing, 73(1-3):283--294, 2009.
+
 \bibitem{Jordan.1997}
 {\sc Jordan, M.~I.}: {\em Serial Order: A Parallel Distributed Processing
   Approach\/}.
@@ -164,6 +201,11 @@
   Conference\/}, \btxpagesshort{.}\ 878--882, Piscataway, N.J, 1995.
   {Distributed through the IEEE Service Center}.
 
+\bibitem{KKaramodin.2009}
+{\sc K-Karamodin, A.} \btxandshort{.}\ {\sc H.~H-Kazemi}: {\em Semi-active
+  control of structures using neuro-predictive algorithm for MR dampers\/}.
+\newblock Structural Control and Health Monitoring, 5(4):n/a--n/a, 2009.
+
 \bibitem{Kalman.June1992}
 {\sc Kalman, B.~L.} \btxandshort{.}\ {\sc S.~C. Kwasny}: {\em Why tanh:
   choosing a sigmoidal function\/}.
@@ -176,6 +218,11 @@
   {\sc K.~Warwick}: {\em Inverse model control using recurrent networks\/}.
 \newblock Mathematics and Computers in Simulation, 51(3-4):181--199, 2000.
 
+\bibitem{KOKER.2006}
+{\sc KOKER, R.}: {\em Design and performance of an intelligent predictive
+  controller for a six-degree-of-freedom robot using the Elman network\/}.
+\newblock Information Sciences, 176(12):1781--1799, 2006.
+
 \bibitem{Leeghim.2008}
 {\sc Leeghim, H.}, {\sc I.-H. Seo} \btxandshort{.}\ {\sc H.~Bang}: {\em
   Adaptive nonlinear control using input normalized neural networks\/}.
@@ -184,6 +231,14 @@
 \bibitem{Lipton.5292015}
 {\sc Lipton, Z.~C.}, {\sc J.~Berkowitz} \btxandshort{.}\ {\sc C.~Elkan}: {\em A
   Critical Review of Recurrent Neural Networks for Sequence Learning\/}.
+
+\bibitem{Liu.2006}
+{\sc Liu, X.-J.} \btxandshort{.}\ {\sc J.-Z. Liu}: {\em Neuro-Fuzzy Generalized
+  Predictive Control of Boiler Steam Temperature\/}.
+\newblock \Btxinshort{.}\ {\sc Chai, T.}\ (\btxeditorshort{.}): {\em The Sixth
+  World Congress on Intelligent Control and Automation, 2006, WCICA 2006\/},
+  \btxpagesshort{.}\ 6531--6535, Piscataway, NJ, 2006. {IEEE Operations
+  Center}.
 
 \bibitem{Lunze.2013}
 {\sc Lunze, J.}: {\em Regelungstechnik 1: Systemtheoretische Grundlagen,
@@ -201,6 +256,11 @@
   sensor-based control of robots with vision\/}.
 \newblock IEEE Transactions on Systems, Man, and Cybernetics, 19(4):825--831,
   1989.
+
+\bibitem{Mohammadzaheri.2010}
+{\sc Mohammadzaheri, M.} \btxandshort{.}\ {\sc L.~Chen}: {\em Intelligent
+  predictive control of a model helicopter's yaw angle\/}.
+\newblock Asian Journal of Control, 12(6):667--679, 2010.
 
 \bibitem{Mohammadzaheri.2012}
 {\sc Mohammadzaheri, M.}, {\sc L.~Chen} \btxandshort{.}\ {\sc S.~Grainger}:
@@ -223,6 +283,11 @@
   classification\/}.
 \newblock IEEE transactions on neural networks, 11(2):436--451, 2000.
 
+\bibitem{Parlos.2001}
+{\sc Parlos, A.~G.}, {\sc S.~Parthasarathy} \btxandshort{.}\ {\sc A.~F. Atiya}:
+  {\em Neuro-predictive process control using online controller adaptation\/}.
+\newblock IEEE Transactions on Control Systems Technology, 9(5):741--755, 2001.
+
 \bibitem{Pascanu.11212012}
 {\sc Pascanu, R.}, {\sc T.~Mikolov} \btxandshort{.}\ {\sc Y.~Bengio}: {\em On
   the difficulty of training Recurrent Neural Networks\/}.
@@ -234,10 +299,22 @@
   (\btxeditorsshort{.}): {\em Chemical process control-CPCIV\/}, AIChE
   publication. CACHE, Austin Tex., 1991.
 
+\bibitem{Prasad.1998}
+{\sc Prasad, G.}, {\sc E.~Swidenbank} \btxandshort{.}\ {\sc B.~W. Hogg}: {\em A
+  neural net model-based multivariable long-range predictive control strategy
+  applied in thermal power plant control\/}.
+\newblock IEEE Transactions on Energy Conversion, 13(2):176--182, 1998.
+
 \bibitem{Rakowitsch.2018}
 {\sc Rakowitsch, M.}: {\em Modellierung der Dynamik eines Koppelgetriebes am
   Beispiel der 3D-Servo-Presse: Studienarbeit\/}.
 \newblock Darmstadt, 2018.
+
+\bibitem{Ren.2009}
+{\sc Ren, X.~M.} \btxandshort{.}\ {\sc A.~B. Rad}: {\em Adaptive non-linear
+  compensation control based on neural networks for non-linear systems with
+  time delay\/}.
+\newblock International Journal of Systems Science, 40(12):1283--1292, 2009.
 
 \bibitem{Ruan.2007}
 {\sc Ruan, X.}, {\sc M.~Ding}, {\sc D.~Gong} \btxandshort{.}\ {\sc J.~Qiao}:
@@ -299,7 +376,19 @@
   Neural Computing Applications\/}, \btxpagesshort{.}\ 345--380. {Elsevier
   Science}, Burlington, 2014.
 
+\bibitem{Yang.2007}
+{\sc Yang, Y.-S.} \btxandshort{.}\ {\sc X.-F. Wang}: {\em Adaptive H$\infty$
+  tracking control for a class of uncertain nonlinear systems using
+  radial-basis-function neural networks\/}.
+\newblock Neurocomputing, 70(4-6):932--941, 2007.
+
 \bibitem{Zeiler.12222012}
 {\sc Zeiler, M.~D.}: {\em ADADELTA: An Adaptive Learning Rate Method\/}.
+
+\bibitem{Zhao.2009}
+{\sc Zhao, B.} \btxandshort{.}\ {\sc H.~Hu}: {\em A new inverse controller for
+  servo--system based on neural network model reference adaptive control\/}.
+\newblock COMPEL - The international journal for computation and mathematics in
+  electrical and electronic engineering, 28(6):1503--1515, 2009.
 
 \end{thebibliography}

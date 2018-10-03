@@ -79,16 +79,44 @@ Daraufhin kann die Stellgröße des nächsten Zeitschrittes $u(k+1)$ nach \cite{
 u(k+1) = \frac{y_d(k+d) - f(\textbf{y},\textbf{u})}{b(\textbf{y},\textbf{u})}
 \end{equation}
 
-ermittelt werden. Diese führt dazu, dass die Zustandsgröße $y(k+d)$ gegen die Sollgröße $y_d(k+d)$ konvergiert. Dabei approximiert das neuronale Netz die Funktionen \textit{f} und \textit{b}. Die Übergabe der Stellgröße $u(k+1)$ kann dann durch einen vorher trainierten linearen Regler an die Regelstrecke stattfinden, siehe Abbildung \ref{fig:linear}. Das neuronale Netz ist also nicht direkt als Regler, sondern als Hilfsglied für den Entwurf bzw. Training des linearen Reglers verantwortlich.
+ermittelt werden. Diese führt dazu, dass die Zustandsgröße $y(k+d)$ gegen die Sollgröße $y_d(k+d)$ konvergiert. Dabei approximiert das neuronale Netz die Funktionen \textit{f} und \textit{b}. Die Übergabe der Stellgröße $u(k+1)$ kann dann durch einen vorher trainierten linearen Regler an die Regelstrecke stattfinden, siehe Abbildung \ref{fig:linear}. 
 
-\begin{figure} [h]
+\begin{figure} [H]
 	\centering
 	\includegraphics[width=0.65\textwidth]{images/linear}
 	\caption{Feedback Linearisierung mit neuronalen Netzen \cite{Sklyarenko.2002}}
 	\label{fig:linear}
 \end{figure}
 
-Die Bezeichnung der auf diesem Prinzip basierenden Regelsysteme lautet \textit{NARMA-L2-Control}. Bei dieser Methode kommen sowohl MLP-, siehe \cite{Leeghim.2008}, als auch RBF-Netze, siehe \cite{Deng.2008}, zum Einsatz. Nach \cite{Leeghim.2008} sowohl kann eine Änderung des Regelgesetzes während des Betriebs (adaptive Regelung) als auch die Stabilität solcher Regelkonzepte nachgewiesen werden.
+
+Das neuronale Netz ist also nicht direkt als Regler, sondern als Hilfsglied für den Entwurf bzw. Training des linearen Reglers verantwortlich. Die Bezeichnung der auf diesem Prinzip basierenden Regelsysteme lautet \textit{NARMA-L2-Control}. Bei dieser Methode kommen sowohl MLP- \cite{Leeghim.2008} als auch RBF-Netze \cite{Deng.2008} zum Einsatz. Nach \cite{Leeghim.2008} kann sowohl eine Änderung des Regelgesetzes während des Betriebs (adaptive Regelung) als auch die Stabilität solcher Regelkonzepte nachgewiesen werden.
+
+
+\subsubsection{Neuronale prädiktive Regelung}
+
+
+Prädikative Regelungen verwenden neuronale Netze, um die Ausgangsgröße der Regelstrecke für einen zukünftigen Zeithorizont zu prädizieren, siehe Abbildung \ref{fig:predictive}.
+
+
+\begin{figure} [h]
+	\centering
+	\includegraphics[width=0.65\textwidth]{images/predictive}
+	\caption{Neuronale prädiktive Regelung \cite{Sklyarenko.2002}}
+	\label{fig:predictive}
+\end{figure}
+
+
+
+
+Dabei ist das neuronale Netz derartig trainiert, dass es die Eingangsgröße $u(k)$ der Regelstrecke in die zukünftige Ausgangsgröße $y(k+n)$ transformiert. Nach dem Training prädiziert das neuronale Netz die Ausgangsgröße $\hat{y}(k+n)$ über $n$ Zeitschritte hinweg. Nach der Prädiktion  kommt eine Fehlerfunktion zum Einsatz, welche üblicherweise die Prädiktionsfehler und die Veränderung der Eingangsgrößen berücksichtigt. Abschließend minimiert ein Optimierungsalgorithmus die bekannte Fehlerfunktion. 
+
+Bei prädiktiven neuronalen Regelungen kommen in der Regel MLP- \cite{Mohammadzaheri.2010}, RFB- \cite{Alexandridis.2005} und Neuro-Fuzzy-Netzwerke \cite{Liu.2006} zum Einsatz. \cite{Parlos.2001} und \cite{Alexandridis.2005} trainierten die Netze online (während des Betriebsprozesses), sodass hier von adaptiven prädiktiven neuronalen Netzen gesprochen werden kann. Zudem passte \cite{Parlos.2001} die Modellstruktur und das Regelgesetz so an, dass stabile Regelkreise entstehen. Als Optimierungsalgorithmen kommen unter anderem der Levenberg-Marquardt \cite{Mohammadzaheri.2010}- und der Fuzzy-Gradienten-Algorithmus zum Einsatz. Weitere Beispiele sind der lineare quadratische Gaußsche-Regler \cite{KKaramodin.2009} und das sequentielle quadratische Programmieren \cite{Prasad.1998} \cite{Parlos.2001}. Auch neuronale Netze können als Optimierer fungieren \cite{KOKER.2006}.
+
+\subsubsection{Regelungssysteme mit neuronalen Netzen als Kompensatoren}
+
+Häufig kommen neuronale Netze nicht als Regler, sondern als Hilfsglieder in Regelkreisen zum Einsatz, um Unsicherheiten dynamischer Systeme zu kompensieren. Dafür ist eine Zerlegung des Systems in der Zustandsraumdarstellung in bekannte und nicht bekannte Funktionen zweckmäßig. Die unbekannte Funktion ist von dem Zustandsvektor und dem Stellgrößenvektor abhängig und repräsentiert die Unsicherheiten des dynamischen Systems. Häufig kann dann ein Regelgesetz aufgestellt werden, in welchem die unbekannte Funktion durch ein neuronales Netz approximiert werden kann. Dadurch ergibt sich dann eine Stellgröße, welches die Unsicherheit des dynamischen Systems mit berücksichtigt bzw. kompensiert. In solchen hybriden Regelsystemen kommen neuronale Netze in Kombination mit P- \cite{Ren.2009}, PID- \cite{Hong.2009}, Sliding Mode- \cite{Han.2009}, Back-Stepping- \cite{Jolly.2009}, Feedback Linearisierungs- \cite{Yang.2007} und Modell-Referenz-Reglern \cite{Zhao.2009} zum Einsatz. Dabei finden häufig MLP- \cite{Cheng.2009}, RFB- \cite{Yang.2007}, Neuro-Fuzzy- \cite{Han.2009}, Sigma-Pi- \cite{Hong.2009} und Wavelet-basierte neuronale Netze \cite{Hsu.2009} Anwendung.
+
+
 
 
 
