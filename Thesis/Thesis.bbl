@@ -305,6 +305,13 @@
   applied in thermal power plant control\/}.
 \newblock IEEE Transactions on Energy Conversion, 13(2):176--182, 1998.
 
+\bibitem{Prasad.2014}
+{\sc Prasad, L.~B.}, {\sc H.~O. Gupta} \btxandshort{.}\ {\sc B.~Tyagi}: {\em
+  Application of policy iteration technique based adaptive optimal control
+  design for automatic voltage regulator of power system\/}.
+\newblock International Journal of Electrical Power {\&} Energy Systems,
+  63:940--949, 2014.
+
 \bibitem{Rakowitsch.2018}
 {\sc Rakowitsch, M.}: {\em Modellierung der Dynamik eines Koppelgetriebes am
   Beispiel der 3D-Servo-Presse: Studienarbeit\/}.
@@ -368,6 +375,12 @@
   controller design for an unstable helicopter\/}.
 \newblock Engineering Applications of Artificial Intelligence, 22(2):181--191,
   2009.
+
+\bibitem{Vrabie.2009}
+{\sc Vrabie, D.}, {\sc O.~Pastravanu}, {\sc M.~Abu-Khalaf} \btxandshort{.}\
+  {\sc F.~L. Lewis}: {\em Adaptive optimal control for continuous-time linear
+  systems based on policy iteration\/}.
+\newblock Automatica, 45(2):477--484, 2009.
 
 \bibitem{Werbos.2014}
 {\sc Werbos, P.~J.}: {\em NEUROCONTROL AND RELATED TECHNIQUES\/}.

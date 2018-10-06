@@ -4,7 +4,7 @@ In Abschnitt \ref{cha:regelung} ist bereits das allgemeine Regelungskonzept vorg
 
 
 \subsection{Überwachtes Lernen} 
-
+\label{cha:supervised}
 Im Bereich des \textit{überwachten Lernens} gibt es eine Reihe von verschiedenen Regelungskonzepten auf Basis neuronaler Netze, für die nun ein Überblick gegeben wird.
 
 
@@ -115,6 +115,29 @@ Bei prädiktiven neuronalen Regelungen kommen in der Regel MLP- \cite{Mohammadza
 \subsubsection{Regelungssysteme mit neuronalen Netzen als Kompensatoren}
 
 Häufig kommen neuronale Netze nicht als Regler, sondern als Hilfsglieder in Regelkreisen zum Einsatz, um Unsicherheiten dynamischer Systeme zu kompensieren. Dafür ist eine Zerlegung des Systems in der Zustandsraumdarstellung in bekannte und nicht bekannte Funktionen zweckmäßig. Die unbekannte Funktion ist von dem Zustandsvektor und dem Stellgrößenvektor abhängig und repräsentiert die Unsicherheiten des dynamischen Systems. Häufig kann dann ein Regelgesetz aufgestellt werden, in welchem die unbekannte Funktion durch ein neuronales Netz approximiert werden kann. Dadurch ergibt sich dann eine Stellgröße, welches die Unsicherheit des dynamischen Systems mit berücksichtigt bzw. kompensiert. In solchen hybriden Regelsystemen kommen neuronale Netze in Kombination mit P- \cite{Ren.2009}, PID- \cite{Hong.2009}, Sliding Mode- \cite{Han.2009}, Back-Stepping- \cite{Jolly.2009}, Feedback Linearisierungs- \cite{Yang.2007} und Modell-Referenz-Reglern \cite{Zhao.2009} zum Einsatz. Dabei finden häufig MLP- \cite{Cheng.2009}, RFB- \cite{Yang.2007}, Neuro-Fuzzy- \cite{Han.2009}, Sigma-Pi- \cite{Hong.2009} und Wavelet-basierte neuronale Netze \cite{Hsu.2009} Anwendung.
+
+\subsection{Bestärkendes Lernen}
+
+Die in Abschnitt \ref{cha:supervised} vorgestellten Regelungskonzepte basieren auf neuronalen Netzen, welche mit Hilfe von Trainingsdaten parametrisiert sind. Das heißt, dass die zu approximierende Größe (z.B. die Stößelhöhe für ein nicht invertiertes Netz oder die beiden Spindelvorschübe und der Exzenterwinkel für ein invertiertes Netz) in den Trainingsdaten vorgegeben sind. Allerdings ist es nicht für alle Anwendungen möglich, aus Experimenten die zu approximierende Größe zu ermitteln. Weiterhin stellt das experimentelle Ermitteln der Trainingsdaten einen Aufwand dar, der mit der Anzahl der Freiheitsgrade des Systems steigt. Aus diesen Gründen werden beim \textit{bestärkenden Lernen} keine experimentell ermittelten Werte der zu approximierenden Größe vorgegeben. Beim \textit{bestärkenden Lernen} befindet sich das System in einem sogenannte Markov Decision Process (MDP), bei dem das System versucht, eine größtmögliche Belohnung (\textit{rewards}) zu erzielen. Dabei führt das System eine Menge von Aktionen (\textit{actions}) aus, die dazu führen, dass sich das System durch verschiedene Zustände (\textit{states}) bewegt. Welchen Zustand das System erreicht, kann durch eine Wahrscheinlichkeit, welche von den gewählten Aktionen und dem aktuellen Zustand abhängt, beschrieben werden. Diese Wahrscheinlichkeit ist durch eine Übergangsfunktion definiert. Dabei bekommt das System nach jedem Übergang in einen neuen Zustand auf Grundlage seines Ausgangszustands und seiner gewählten Aktion eine Belohnung. Dabei verwendet das System eine Strategie (\textit{policy}), welche jedem Zustand eine Aktion zuordnet. Das Ziel besteht nun darin, eine Strategie zu finden, welche den höchsten Gesamtgewinn (die Summe aller erhaltenen Belohnungen) erreicht. In der Regel kommen dabei zwei Vorgehensweisen zum Einsatz, zum einen die \textit{policy iteration (PI)} und die \textit{value iteration (VI)}. Bei der \textit{value iteration} findet im ersten Schritt die Ermittlung der optimalen Kostenfunktion statt. Im zweiten Schritte kann dann die optimale Strategie ermittelt werden (\textit{policy extraction}). Bei der \textit{policy iteration} findet im ersten Schritt die Strategiebewertung (\textit{policy evaluation}) und im zweiten Schritt die Verbesserung der Strategie (\textit{policy improvement}) statt. Diese beiden Schritten werden so lange iterativ ausgeführt, bis die Verbesserung der Strategie konvergiert. Die Anwendung des \textit{value iteration} in Kombination mit der \textit{policy extraction} setzt die Kenntnis der Übergangsfunktionen und der Belohnungsfunktion voraus. Diese sind oftmals nicht bekannt. Im Bereich des \textit{Reinforcement Learning} haben sich für diese Fälle eine Reihe von Algorithmen durchgesetzt, welche sich folgendermaßen klassifizieren lassen:
+
+\begin{itemize}
+	\item Model Based Approaches
+	\item Temporal Difference Learning
+	\item Q-Values/Q-Learning
+	\item Exploration
+	\item State-Action-Reward-State-Action (SARSA)-Algorithmus
+	\item Double Q-Learning
+	\item Deep Q-Learning
+\end{itemize}
+
+\cite{Prasad.2014} benutzte die Methode der \textit{policy iteration}, um eine adaptive optimale Regelung für einen automatischen Spannungsregler zu entwickeln. Dabei verwendete \cite{Prasad.2014} eine sogenannte \textit{actor-critic}-Struktur. Der \textit{actor} parametrisiert dabei die Regelungsstrategie und der \textit{critic} approximiert die mit der Regelungsstrategie verbundenen Kosten, welche die Regelgüte beschreibt. Die Regelstrategie kann iterativ so lange verbessert werden, bis die Kosten konvergieren, also die optimale Regelstrategie gefunden wurde. Dabei ist nur eine teilweise Erkenntnis der internen Systemdynamik notwendig. Die Matrix $A$ in der Zustandsraumdarstellung $\dot{x}(t) = A x(t) + B u(t) $ wird dabei als nicht bekannt und die Matrix $B$ als bekannt vorausgesetzt. \\
+\cite{Vrabie.2009} verwendet ebenfalls eine \textit{actor-critic}-Struktur, um eine optimale Lastfrequenzsteuerung für ein Kraftwerk zu entwickeln. Auch hier ist die Erkenntnis internen Systemdynamik (repräsentiert durch die Matrix A) nicht, aber dafür die Erkenntnis der Matrix B notwendig.
+
+
+
+
+
+ 
 
 
 
