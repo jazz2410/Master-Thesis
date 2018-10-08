@@ -131,9 +131,9 @@ Die in Abschnitt \ref{cha:supervised} vorgestellten Regelungskonzepte basieren a
 \end{itemize}
 
 \cite{Prasad.2014} benutzte die Methode der \textit{policy iteration}, um eine adaptive optimale Regelung für einen automatischen Spannungsregler zu entwickeln. Dabei verwendete \cite{Prasad.2014} eine sogenannte \textit{actor-critic}-Struktur. Der \textit{actor} parametrisiert dabei die Regelungsstrategie und der \textit{critic} approximiert die mit der Regelungsstrategie verbundenen Kosten, welche die Regelgüte beschreibt. Die Regelstrategie kann iterativ so lange verbessert werden, bis die Kosten konvergieren, also die optimale Regelstrategie gefunden wurde. Dabei ist nur eine teilweise Erkenntnis der internen Systemdynamik notwendig. Die Matrix $A$ in der Zustandsraumdarstellung $\dot{x}(t) = A x(t) + B u(t) $ wird dabei als nicht bekannt und die Matrix $B$ als bekannt vorausgesetzt. \\
-\cite{Vrabie.2009} verwendet ebenfalls eine \textit{actor-critic}-Struktur, um eine optimale Lastfrequenzsteuerung für ein Kraftwerk zu entwickeln. Auch hier ist die Erkenntnis internen Systemdynamik (repräsentiert durch die Matrix A) nicht, aber dafür die Erkenntnis der Matrix B notwendig.
+\cite{Vrabie.2009} verwendet ebenfalls eine \textit{actor-critic}-Struktur, um eine optimale Lastfrequenzsteuerung für ein Kraftwerk zu entwickeln. Auch hier ist die Erkenntnis internen Systemdynamik (repräsentiert durch die Matrix A) nicht, aber dafür die Erkenntnis der Matrix B notwendig.\\
 
-
+Für die Entwicklung eines Black-Box-Modells dagegen werden keine Kenntnisse über die interne Dynamik des Systems (repräsentiert durch die Zustandsraumdarstellung) vorausgesetzt. Als Black-Box-Modelle bieten sich neuronale Netze an. Im nächsten Kapitel findet daher eine Modellbildung der 3D-Servo-Presse mittels verschiedener Netzarten statt. Dabei findet eine Validierung der neuronalen Netze auf Grundlage ihrer Approximationsfähigkeit, Trainingszeit, ihrer Robustheit, ihres Interpolations- und Extrapolationsverhaltens statt. 
 
 
 

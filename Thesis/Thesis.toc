@@ -32,5 +32,7 @@
 \contentsline {subsubsection}{\numberline {2.6.1.5}Neuronale pr\IeC {\"a}diktive Regelung}{33}{subsubsection.2.6.1.5}
 \contentsline {subsubsection}{\numberline {2.6.1.6}Regelungssysteme mit neuronalen Netzen als Kompensatoren}{34}{subsubsection.2.6.1.6}
 \contentsline {subsection}{\numberline {2.6.2}Best\IeC {\"a}rkendes Lernen}{34}{subsection.2.6.2}
-\contentsline {chapter}{\numberline {3}Ausblick}{37}{chapter.3}
-\contentsline {chapter}{Literaturverzeichnis}{39}{section*.17}
+\contentsline {chapter}{\numberline {3}Modellbildung}{37}{chapter.3}
+\contentsline {section}{\numberline {3.1}Aufbau der 3D-Servo-Presse}{37}{section.3.1}
+\contentsline {chapter}{\numberline {4}Ausblick}{41}{chapter.4}
+\contentsline {chapter}{Literaturverzeichnis}{43}{section*.17}
