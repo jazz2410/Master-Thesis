@@ -48,6 +48,10 @@
   \btxofseriesshort{.}\ {\em Lecture Notes in Computer Science\/},
   \btxpagesshort{.}\ 755--764. Springer, Berlin, 2009.
 
+\bibitem{Beale.2018}
+{\sc Beale, M.~H.}, {\sc M.~T. Hagan} \btxandshort{.}\ {\sc H.~B. Demuth}: {\em
+  Neural Network Toolbox: User's Guide\/}, 2018.
+
 \bibitem{BenNasr.2014}
 {\sc {Ben Nasr}, M.} \btxandshort{.}\ {\sc M.~Chtourou}: {\em Neural network
   control of nonlinear dynamic systems using hybrid algorithm\/}.

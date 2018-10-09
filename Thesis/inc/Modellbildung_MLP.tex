@@ -1,6 +1,6 @@
 \chapter{Modellbildung}
 
-Ein Ziel dieser Arbeit besteht darin, für die am PtU der TU Darmstadt entwickelte und konstruierte 3D-Servo-Presse ein Black-Box-Modell zu entwickeln. Für die Bestimmung der Eingangs- und Ausgangsgrößen für das Modell ist die Erläuterung des Aufbaus und der Funktionsweise der 3D-Servo-Presse notwendig. Daraufhin erfolgt die Modellbildung der 3D-Servo-Presse mittels verschiedener neuronaler Netze. Die entwickelten Modelle werden dann in Bezug auf ihre Approximationsfähigkeit, Trainingszeit, Robustheit, ihr Interpolations- und Extrapolationsverhaltens untersucht.
+Ein Ziel dieser Arbeit besteht darin, für die am PtU der TU Darmstadt entwickelte und konstruierte 3D-Servo-Presse ein Black-Box-Modell zu entwickeln. Für die Bestimmung der Eingangs- und Ausgangsgrößen für das Modell ist die Erläuterung des Aufbaus und der Funktionsweise der 3D-Servo-Presse notwendig. Daraufhin folgen die Festlegung der System- und Modellgrenzen, die Vorgehensweise bei der experimentellen Datenermittlung und einige Erläuterungen zur der eingesetzten Software für die Modellbildung. Im Anschluss erfolgt die Modellbildung der 3D-Servo-Presse mittels verschiedener neuronaler Netze. Die entwickelten Modelle werden dann in Bezug auf ihre Approximationsfähigkeit, Trainingszeit, Robustheit, ihr Interpolations- und Extrapolationsverhaltens untersucht.
 
 \section{Aufbau der 3D-Servo-Presse}
 
@@ -24,15 +24,23 @@ Das Pressengetriebe besteht aus insgesamt drei Getriebeeinheiten, welche um $120
 
 
 Gelenke verbinden dabei die drei Druckstangen mit dem Stößel. Für eine rein translatorische Hubbewegung des Stößels verfahren alle drei Druckstangen gleichermaßen. Verfahren die drei Druckstangen unterschiedlich, kommt es zu einer Schrägstellung des Stößels. Jede der drei Getriebeeinheiten ist wiederum mit einer sich im Zentrum befindenden Verstelleinheit verbunden, siehe Abbildung, \ref{fig:verstelleinheit}.
-\begin{figure} [h]
+
+Die Verstelleinheit besteht aus Führungsstangen und zwei übereinander angeordneten Spindeln, wobei jede Spindel durch einen Servo-Motor verstellt werden kann. Durch die Verstellung der oberen und der unteren Spindel findet die Einstellung des oberen und des unteren Totpunktes für die Druckstange statt. Die Einstellung des oberen und des unteren Totpunktes gilt dabei für jede Getriebeeinheit, da jede Getriebeeinheit mit der gleichen Verstelleinheit verbunden ist. Die Höhenverstellung jeder der drei Druckstangen ist also bedingt durch die Verstellung der oberen und unteren Spindel, genannt $s_o$ und $s_u$, und durch den Exzenterwinkel $\varphi_{exz}$, siehe Abbildung \ref{fig:prinzipskizze}.
+
+
+
+
+Das Pressenmodell wird für eine rein translatorische Hubbewegung des Stößels entwickelt. Damit ist die Höhenverstellung aller drei Druckstangen identisch. Die Höhenverstellung der drei Druckstangen entspricht somit auch der Höhenverstellung des Stößels. 
+Damit ist es zweckmäßig, ein Pressenmodell zu entwickeln, welches die Eingangsgrößen (obere Verstellung der Spindel $s_o$, untere Verstellung der Spindel $s_u$ und der Exzenterwinkel $\varphi_{exz}$) in die Höhenverstellung $y$ des Stößels als Ausgangsgröße transformiert. 
+
+\begin{figure} [H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{images/verstelleinheit}
 	\caption{Verstelleinheit zur Einstellung des oberen und unteren Totpunktes für die Druckstangen \cite{Rakowitsch.2018}}
 	\label{fig:verstelleinheit}
 \end{figure}
-Die Verstelleinheit besteht aus Führungsstangen und zwei übereinander angeordneten Spindeln, wobei jede Spindel durch Servo-Motor verstellt werden kann. Durch die Verstellung der oberen und der unteren Spindel findet die Einstellung des oberen und des unteren Totpunktes für die Druckstange statt. Die Einstellung des oberen und des unteren Totpunktes gilt dabei für jede Getriebeeinheit, da jede Getriebeeinheit mit der gleichen Verstelleinheit verbunden ist. Die Höhenverstellung jeder der drei Druckstangen ist also bedingt durch die Verstellung der oberen und unteren Spindel, genannt $s_o$ und $s_u$, und durch den Exzenterwinkel $\varphi_{exz}$, siehe Abbildung \ref{fig:prinzipskizze}.
 
-\begin{figure} [h]
+\begin{figure} [H]
 	\centering
 	\includegraphics[width=0.65\textwidth]{images/prinzipskizze}
 	\caption{Prinzipskizze des Getriebes \cite{Rakowitsch.2018}}
@@ -40,8 +48,40 @@ Die Verstelleinheit besteht aus Führungsstangen und zwei übereinander angeordn
 \end{figure}
 
 
-Das Pressenmodell wird für eine rein translatorische Bewegung des Stößels entwickelt. Damit ist die Höhenverstellung aller drei Druckstangen identisch. Die Höhenverstellung der drei Druckstangen entspricht somit auch der Höhenverstellung des Stößels. 
-Damit ist es zweckmäßig, ein Pressenmodell zu entwickeln, welches die Eingangsgrößen (obere Verstellung der Spindel $s_o$, untere Verstellung der Spindel $s_u$ und der Exzenterwinkel $\varphi_{exz}$) in die Höhenverstellung $y$ des Stößels als Ausgangsgröße transformiert. 
+\section{Definition der System- und Modellgrenzen}
+
+
+Wie in letzten Abschnitt erklärt, ergibt sich die Höhenverstellung des Stößels $y$ aus der oberen Spindelverstellung $s_o$, der unteren Spindelverstellung $s_u$ und dem Exzenterwinkel $\varphi_{exz}$. Bei der Ermittlung der Messdaten findet eine rein translatorische Hubbewegung des Stößels statt, sodass die Neigung des Stößels um eine horizontale Ebene als potentielle weitere Ausgangsgröße wegfällt. Das Black-Box-Modell, welche die Eingangsgrößen in die Ausgangsgrößen transformiert, ist in dieser Arbeit ein  neuronales Netz, siehe Abbildung \ref{fig:blackbox}.
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=0.85\textwidth]{images/blackbox}
+	\caption{Neuronales Netz als Modellstruktur}
+	\label{fig:blackbox}
+\end{figure}
+
+
+\section{Verwendete Software}
+Für die Entwicklung neuronaler Netze zur Modellbildung der 3D-Servo-Presse kommt die Neural Network Toolbox\texttrademark  der MathWorks Inc. zum Einsatz. Für eine ausführliche Dokumentation der Neural Network Toolbox\texttrademark  sei auf \cite{Beale.2018} verwiesen. Die Neural Network Toolbox\texttrademark bietet die Möglichkeit, MLP-, RBF, GRNN-Netze und dynamische Netze, wozu das \textit{Nonlinear Autoregressive with External Input (NARX)}-, das \textit{Nonlinear Autoregressive (NAR)}- und das \textit{Nonlinear Input-Output}-Netz gehören, zu entwickeln. Wie in Abschnitt \ref{cha_ff} erklärt, kommen bei neuronalen Netzen Algorithmen zur Minimierung der Fehlerfunktion bei der Adaption der Netzwerkgewichte zum Einsatz. Die Neural Network Toolbox\texttrademark bietet insgesamt folgende zwölf Algorithmen an:
+
+\begin{itemize}
+	\item Levenberg-Marquardt (trainlm)
+	\item Bayesian Regularization  (trainbr) 
+	\item BFGS Quasi-Newton (trainbfg)
+	\item Resilient Backpropagation (trainrp)
+	\item Scaled Conjugate Gradient (trainscg)
+	\item Conjugate Gradient with Powell/Beale Restarts (traincgb)
+	\item Fletcher-Powell Conjugate Gradient (traincgf)
+	\item Polak-Ribiére Conjugate Gradient (traincgp)
+	\item One Step Secant (trainoss)
+	\item Variable Learning Rate Gradient Descent (traingdx)
+	\item Gradient Descent with Momentum (traingdm)
+	\item Gradient Descent (traingd)
+\end{itemize} 
+
+
+
+
 
 
 

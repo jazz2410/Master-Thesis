@@ -34,5 +34,7 @@
 \contentsline {subsection}{\numberline {2.6.2}Best\IeC {\"a}rkendes Lernen}{34}{subsection.2.6.2}
 \contentsline {chapter}{\numberline {3}Modellbildung}{37}{chapter.3}
 \contentsline {section}{\numberline {3.1}Aufbau der 3D-Servo-Presse}{37}{section.3.1}
-\contentsline {chapter}{\numberline {4}Ausblick}{41}{chapter.4}
-\contentsline {chapter}{Literaturverzeichnis}{43}{section*.17}
+\contentsline {section}{\numberline {3.2}Definition der System- und Modellgrenzen}{40}{section.3.2}
+\contentsline {section}{\numberline {3.3}Verwendete Software}{40}{section.3.3}
+\contentsline {chapter}{\numberline {4}Ausblick}{43}{chapter.4}
+\contentsline {chapter}{Literaturverzeichnis}{45}{section*.17}
