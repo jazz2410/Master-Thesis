@@ -19,20 +19,20 @@ error_list = [];
 output_list = [];
 %Importieren und Vorbereiten der Daten
 
-load('u1.mat');
-load('y1.mat');
-
+%load('u1.mat');
+%load('y1.mat');
+load('million_daten');
 u = u';
 y = y';
 
-for i=1:1:10
+for i=1:1:1
     
 
     %Bestimmen der Netzparamter
 
 
     trainFcn = 'trainlm';
-    net = feedforwardnet(i,trainFcn); 
+    net = feedforwardnet(10,trainFcn); 
     net = configure(net,u,y);
 
     %Setup Division of Data for Training, Validation, Testing
