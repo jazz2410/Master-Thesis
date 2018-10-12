@@ -31,7 +31,7 @@ for i=1:1:1
     %Bestimmen der Netzparamter
 
 
-    trainFcn = 'trainlm';
+    trainFcn = 'traingd';
     net = feedforwardnet(10,trainFcn); 
     net = configure(net,u,y);
 

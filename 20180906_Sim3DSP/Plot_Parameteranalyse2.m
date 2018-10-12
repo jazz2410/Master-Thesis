@@ -5,7 +5,7 @@ for j = 1:1:10
     for i=1:1:12
         
         mean_container{j,1}(i,:) = mean(error_container{j,1}(i,:));
-        sem_container{j,1}(i,:) = std(error_container{j,1}(i,:))/sqrt(length);
+        sem_container{j,1}(i,:) = std(error_container{j,1}(i,:));
     end
 
 end

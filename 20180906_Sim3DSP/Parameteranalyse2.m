@@ -32,7 +32,7 @@ for k=1:1:10
 
     for j = 1:1:12
 
-        for i=1:1:10
+        for i=1:1:100
 
 
             %Bestimmen der Netzparamter
@@ -62,17 +62,17 @@ for k=1:1:10
             %view(net); 
             netz_output = net(u);
 
-            disp("Input Weights after training")
-            net.IW{1,1}
-            disp("Layer Weights after training")
-            net.LW{2,1}
-            disp("Input bias after training")
-            net.b{1}
-            disp("Layer bias after training")
-            net.b{2}
+            %disp("Input Weights after training")
+            %net.IW{1,1}
+            %disp("Layer Weights after training")
+            %net.LW{2,1}
+            %disp("Input bias after training")
+            %net.b{1}
+            %disp("Layer bias after training")
+            %net.b{2}
 
-            wb = getwb(net);
-            net.performFcn
+            %wb = getwb(net);
+            %net.performFcn
 
             perf = perform(net,y,netz_output);
 
